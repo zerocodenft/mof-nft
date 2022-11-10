@@ -23,11 +23,14 @@ export default async function ({ redirect, $cloudFns, $axios }, inject) {
 			return this.configs.find((x) => x.key === key)
 		},
 	}
+	if(appConfig.length){
 
-	appConfigs.reduce((acc, val) => {
-		acc[val.key] = val.value
-		return acc
-	}, appConfig)
-
-	inject('appConfig', Object.freeze(appConfig))
+		appConfigs.reduce((acc, val) => {
+			acc[val.key] = val.value
+			return acc
+		}, appConfig)
+		
+		inject('appConfig', Object.freeze(appConfig))
+	}
+	inject('appConfig',{iconURL:''})
 }
