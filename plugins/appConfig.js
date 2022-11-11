@@ -15,7 +15,6 @@ export default async function ({ redirect, $cloudFns, $axios }, inject) {
 			redirect('/error?type=missingConfig')
 		}
 	}
-	// Create a custom axios instance
 
 	const appConfig = {
 		configs: appConfigs,
@@ -23,8 +22,7 @@ export default async function ({ redirect, $cloudFns, $axios }, inject) {
 			return this.configs.find((x) => x.key === key)
 		},
 	}
-	if(appConfig.length){
-
+	if(appConfigs.length){
 		appConfigs.reduce((acc, val) => {
 			acc[val.key] = val.value
 			return acc
