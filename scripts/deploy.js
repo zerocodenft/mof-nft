@@ -3,7 +3,7 @@ const updateEnv = require('./updateEnv.js');
 const updateSiteConfig = require('./updateSiteConfig');
 
 async function main() {
-  const contractFactory = await ethers.getContractFactory("YourContractName")
+  const contractFactory = await ethers.getContractFactory("MOFNFT")
 
   const [deployer] = await ethers.getSigners();
 
@@ -11,11 +11,11 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const { HIDDEN_METADATA_CID, VOUCHER_SIGNER_PUBLIC_KEY } = process.env;
+  const { HIDDEN_METADATA_CID } = process.env;
   
   const placeholderURI = `ipfs://${HIDDEN_METADATA_CID}`
 
-  const contract = await contractFactory.deploy(placeholderURI, VOUCHER_SIGNER_PUBLIC_KEY)
+  const contract = await contractFactory.deploy(placeholderURI, 2)
 
   const envUpdate = {
     'CONTRACT_ADDRESS': contract.address

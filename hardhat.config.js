@@ -5,10 +5,10 @@
  require("@nomiclabs/hardhat-waffle");
  require("@nomiclabs/hardhat-etherscan");
  const { 
-  ALCHEMY_RINKEBY_API_KEY,
   ALCHEMY_MAINNET_API_KEY,
   ETHERSCAN_API_KEY,
-  CONTRACT_OWNER_PRIVATE_KEY
+  CONTRACT_OWNER_PRIVATE_KEY,
+  ALCHEMY_GOERLI_API_KEY
 } = process.env;
  
 module.exports = {
@@ -24,8 +24,8 @@ module.exports = {
   defaultNetwork: "localhost",
   networks: {
     localhost: {},
-    rinkeby: {
-      url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_RINKEBY_API_KEY}`,
+    goerli: {
+      url: `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_GOERLI_API_KEY}`,
       accounts: [CONTRACT_OWNER_PRIVATE_KEY]
     },
     mainnet: {
