@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<Header />
-		<Nuxt />
+		<div class="wert-container">
+			<Nuxt />
+		</div>
 		<Footer />
 		<Web3Modal />
 	</div>

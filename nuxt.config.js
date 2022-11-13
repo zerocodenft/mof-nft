@@ -4,6 +4,9 @@ const {
 	FORTMATIC_KEY,
 	GTAG_DEBUG,
 	OPENSEA_API_KEY,
+	WERT_LOGIN,
+	WERT_PASSWORD,
+	WERT_PARTNER_ID,
 } = process.env
 
 export default {
@@ -28,6 +31,9 @@ export default {
 		FORTMATIC_KEY,
 		GTAG_DEBUG,
 		OPENSEA_API_KEY,
+		WERT_LOGIN,
+	WERT_PASSWORD,
+	WERT_PARTNER_ID,
 	},
 
 	// Target: https://go.nuxtjs.dev/config-target

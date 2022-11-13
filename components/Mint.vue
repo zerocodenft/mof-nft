@@ -79,6 +79,8 @@ export default {
 					return 'MintButtonV2'
 				case 'V3':
 					return 'MintButtonV3'
+				case 'MintButtonWithWert':
+					return 'MintButtonWithWert'
 				default:
 					return 'MintButtonV2'
 				// default: return 'MintButtonV3'

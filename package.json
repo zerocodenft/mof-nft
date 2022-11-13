@@ -36,7 +36,8 @@
     "web3": "^1.7.5",
     "web3modal-vue": "^1.0.5",
     "@metamask/onboarding": "^1.0.1",
-    "dotenv": "^9.0.2"
+    "dotenv": "^9.0.2",
+    "@wert-io/widget-initializer": "^2.0.3"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.2.1",
