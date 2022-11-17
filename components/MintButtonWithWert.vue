@@ -23,7 +23,7 @@
 				menu-class="w-100 text-center"
 				toggle-class="split-mint-toggle"
 				:text="`Mint [${mintCount}]`"
-				@click="mint"
+				@click="mintWithCrypto"
 			>
 				<b-dropdown-item @click="reconnectMetamask"
 					>Select Different Wallet</b-dropdown-item
@@ -36,10 +36,11 @@
 			<b-button
 				v-else
 				class="mint-button font-weight-bold border-0"
-				@click="mint"
+				@click="mintWithWert"
 				>Mint [{{ mintCount }}]</b-button
 			>
             <b-button
+			disabled
 				class="mint-button font-weight-bold border-0 mt-2"
 				@click="wertMint"
 				>Pay with wert</b-button
@@ -246,10 +247,7 @@ export default {
 
 			return whitelist
 		},
-        async mint(){
-            this.wertMint();
-        },
-        async wertMint(){
+        async mintWithWert(){
         const options = {
 			partner_id: this.$config.WERT_PARTNER_ID,
 			container_id: 'wert-container',
@@ -260,7 +258,7 @@ export default {
 		console.log('wertWidget: ', wertWidget)
         wertWidget.open();
         },
-		async cryptoMint() {
+		async mintWithCrypto() {
 			const {
 				hasWhitelist,
 				name: smartContractName,

@@ -1,6 +1,5 @@
 const {
 	API_URL,
-	AZURE_FUNCTIONS_URL,
 	FORTMATIC_KEY,
 	GTAG_DEBUG,
 	OPENSEA_API_KEY,
@@ -27,7 +26,6 @@ export default {
 
 	publicRuntimeConfig: {
 		API_URL,
-		AZURE_FUNCTIONS_URL,
 		FORTMATIC_KEY,
 		GTAG_DEBUG,
 		OPENSEA_API_KEY,
@@ -57,7 +55,6 @@ export default {
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [
-		'@/plugins/cloudFns',
 		'@/plugins/appConfig',
 		'@/plugins/siteConfig',
 		'@/plugins/wallet',

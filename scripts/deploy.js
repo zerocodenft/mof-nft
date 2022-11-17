@@ -3,7 +3,7 @@ const updateEnv = require('./updateEnv.js');
 const updateSiteConfig = require('./updateSiteConfig');
 
 async function main() {
-  const contractFactory = await ethers.getContractFactory("MOFNFT")
+  const contractFactory = await ethers.getContractFactory("vFootballs")
 
   const [deployer] = await ethers.getSigners();
 
@@ -15,7 +15,7 @@ async function main() {
   
   const placeholderURI = `ipfs://${HIDDEN_METADATA_CID}`
 
-  const contract = await contractFactory.deploy(placeholderURI, 2)
+  const contract = await contractFactory.deploy(placeholderURI)
 
   const envUpdate = {
     'CONTRACT_ADDRESS': contract.address

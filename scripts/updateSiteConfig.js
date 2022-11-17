@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const abi = require(path.join(process.cwd(), '/artifacts/contracts/MOFNFT.sol/MOFNFT.json')).abi;
+const abi = require(path.join(process.cwd(), '/artifacts/contracts/vFootballs.sol/vFootballs.json')).abi;
 const siteConfig = require(path.join(process.cwd(), 'siteConfig.json'));
 
 module.exports = function (contractAddress) {
