@@ -23,8 +23,7 @@
 				menu-class="w-100 text-center"
 				toggle-class="split-mint-toggle"
 				:text="`Mint [${mintCount}]`"
-				@click="mintWithCrypto"
-			>
+				@click="mintWithCrypto">
 				<b-dropdown-item @click="reconnectMetamask"
 					>Select Different Wallet</b-dropdown-item
 				>
@@ -36,13 +35,12 @@
 			<b-button
 				v-else
 				class="mint-button font-weight-bold border-0"
-				@click="mintWithWert"
+				@click="mintWithCrypto"
 				>Mint [{{ mintCount }}]</b-button
 			>
-            <b-button
-			disabled
+			<b-button
 				class="mint-button font-weight-bold border-0 mt-2"
-				@click="wertMint"
+				@click="mintWithWert"
 				>Pay with wert</b-button
 			>
 		</b-overlay>
@@ -51,8 +49,7 @@
 			:variant="message.variant"
 			dismissible
 			@dismissed="message = {}"
-			class="mt-2"
-		>
+			class="mt-2">
 			{{ message.text }}
 		</b-alert>
 		<b-button
@@ -67,15 +64,17 @@
 		<TweetModal
 			:images="mintedTokens"
 			:mintCount="mintCount"
-			@hidden="handleTweetModalHide"
-		></TweetModal>
+			@hidden="handleTweetModalHide"></TweetModal>
 	</div>
 </template>
 
 <script>
 import WertWidget from '@wert-io/widget-initializer'
+import { signSmartContractData } from '@wert-io/widget-sc-signer'
+import { v4 as uuidv4 } from 'uuid'
+import { Buffer } from 'buffer'
 import { ethers } from 'ethers'
-import { getHexProof, wait } from '@/utils'
+import { wait } from '@/utils'
 import { SALE_STATUS, ANALYTICS_EVENTS } from '@/constants'
 import { useOnboard } from '@web3-onboard/vue'
 import { ref, computed, watch } from '@vue/composition-api'
@@ -106,18 +105,13 @@ export default {
 		const message = ref({})
 		const isBusy = computed(() => isMinting.value || connectingWallet.value)
 		const isConnected = computed(() => connectedWallet.value !== null)
-		const isMetaMask = computed(
-			() => connectedWallet.value?.label === 'MetaMask'
-		)
+		const isMetaMask = computed(() => connectedWallet.value?.label === 'MetaMask')
 		const walletAddress = computed(
 			() => connectedWallet.value?.accounts[0]?.address
 		)
 		const walletProvider = computed(
 			() =>
-				new ethers.providers.Web3Provider(
-					connectedWallet.value?.provider,
-					'any'
-				)
+				new ethers.providers.Web3Provider(connectedWallet.value?.provider, 'any')
 		)
 
 		function reconnectMetamask() {
@@ -239,30 +233,88 @@ export default {
 		async getWL() {
 			let { id, whitelist } = this.$siteConfig.smartContract
 			try {
-				const { data } = await this.$axios.get(
-					`/smartcontracts/${id}/whitelist`
-				)
+				const { data } = await this.$axios.get(`/smartcontracts/${id}/whitelist`)
 				whitelist = data
 			} catch {}
 
 			return whitelist
 		},
-        async mintWithWert(){
-        const options = {
-			partner_id: this.$config.WERT_PARTNER_ID,
-			container_id: 'wert-container',
-			// sc_id:,
-			// sc_address:,
-		}
-		const wertWidget = new WertWidget(options)
-		console.log('wertWidget: ', wertWidget)
-        wertWidget.open();
-        },
+		async mintWithWert() {
+			// window.Buffer = Buffer
+			/*
+				const web3 = new Web3(window.ethereum)
+				const userAddress = userAccounts[0];
+				// Encode the call to mintNFT(address = userAddress, numberOfTokens = 1)
+				const sc_input_data = web3.eth.abi.encodeFunctionCall({
+				"inputs": [
+					{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+					},
+					{
+					"internalType": "uint256",
+					"name": "numberOfTokens",
+					"type": "uint256"
+					}
+				],
+				"name": "mintNFT",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+				}, [userAddress, 1]);
+				const privateKey = '0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3';
+				// Create signed SC data for wert-widget
+				// Please do this on backend
+				const signedData = signSmartContractData({
+				address: userAddress, // user's address
+				commodity: 'MATIC',
+				commodity_amount: '1.5', // the crypto amount that should be send to the contract method
+				pk_id: 'key1', // always 'key1'
+				sc_address: this.$siteConfig.address,
+				sc_id: uuidv4(), // must be unique for any request
+				sc_input_data,
+				}, privateKey);
+				*/
+			const otherWidgetOptions = {
+				// container_id: 'wert-container',
+				partner_id: this.$config.WERT_PARTNER_ID,
+				origin: 'https://sandbox.wert.io',
+				commodity: 'ETH:Ethereum-Goerli',
+				signature: '',
+				click_id: uuidv4(),
+				listeners: {
+					loaded: () => {
+						console.log('loaded')
+					},
+					error: () => {
+						console.log('error')
+					},
+					close: () => {
+						console.log('close')
+					},
+				},
+			}
+			const nftOptions = {
+				extra: {
+					item_info: {
+						author: 'MOF-NFT',
+						image_url: 'https://www.tbstat.com/wp/uploads/2021/08/bayc2.jpg',
+						name: 'vFootballs NFT',
+						seller: 'Wert',
+					},
+				},
+			}
+			const wertWidget = new WertWidget({
+				// ...signedData,
+				...otherWidgetOptions,
+				...nftOptions,
+			})
+			console.log('wertWidget: ', wertWidget)
+			wertWidget.open()
+		},
 		async mintWithCrypto() {
-			const {
-				hasWhitelist,
-				name: smartContractName,
-			} = this.$siteConfig.smartContract
+			const { name: smartContractName } = this.$siteConfig.smartContract
 
 			this.message = {}
 
@@ -288,7 +340,7 @@ export default {
 				const signedContract = this.$smartContract.connect(
 					this.walletProvider.getSigner()
 				)
-				
+
 				const total = await signedContract.calcTotal(this.mintCount)
 				console.info({
 					total: ethers.utils.formatEther(total),
@@ -300,9 +352,8 @@ export default {
 
 				const provider = this.$smartContract.provider
 
-				const {
-					baseFeePerGas = ethers.BigNumber.from('0'),
-				} = await provider.getBlock('latest')
+				const { baseFeePerGas = ethers.BigNumber.from('0') } =
+					await provider.getBlock('latest')
 				// console.info(block, baseFeePerGas)
 
 				// const feeData = await provider.getFeeData()
@@ -322,22 +373,7 @@ export default {
 					txOverrides.gasPrice = await provider.getGasPrice()
 				}
 
-				if (hasWhitelist) {
-					let hexProof
-					if (saleStatus === SALE_STATUS.Presale) {
-						const whitelist = await this.getWL()
-						hexProof = getHexProof(whitelist, this.walletAddress)
-					} else {
-						hexProof = []
-					}
-					txResponse = await signedContract.redeem(
-						hexProof,
-						this.mintCount,
-						txOverrides
-					)
-				} else {
-					txResponse = await signedContract.mint(this.mintCount, txOverrides)
-				}
+				txResponse = await signedContract.mint(this.mintCount, txOverrides)
 
 				console.log({ txResponse })
 
@@ -382,8 +418,7 @@ export default {
 					const json = await res.json()
 					this.mintedTokens.push({
 						name: json.name,
-						imageSrc:
-							'https://ipfs.io/ipfs/' + json.image.replace('ipfs://', ''),
+						imageSrc: 'https://ipfs.io/ipfs/' + json.image.replace('ipfs://', ''),
 					})
 				}
 				this.setBusy({ isBusy: false })
@@ -400,11 +435,7 @@ export default {
 
 				const { data, reason, message, error } = err
 				const text =
-					reason ||
-					message ||
-					error?.message ||
-					data?.message ||
-					'Minting failed'
+					reason || message || error?.message || data?.message || 'Minting failed'
 
 				this.message = {
 					variant: 'danger',
