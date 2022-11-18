@@ -36,9 +36,9 @@ export default ({ $siteConfig, $appConfig, route }, inject) => {
 		],
 		appMetadata: {
 			name: title,
-			// icon: smartContract.isAttributionHidden
-			// 	? iconURL || require('assets/img/wallet.svg')
-			// 	: $appConfig.iconURL,
+			icon: smartContract.isAttributionHidden
+				? iconURL || require('assets/img/wallet.svg')
+				: $appConfig.iconURL,
 			icon:  iconURL || require('assets/img/wallet.svg'),
 			description: description || `${title} Mint Page`,
 			recommendedInjectedWallets: [

@@ -39,6 +39,7 @@
 				>Mint [{{ mintCount }}]</b-button
 			>
 			<b-button
+				v-if="isConnected"
 				class="mint-button font-weight-bold border-0 mt-2"
 				@click="mintWithWert"
 				>Pay with wert</b-button
@@ -70,6 +71,7 @@
 
 <script>
 import WertWidget from '@wert-io/widget-initializer'
+import Web3 from 'web3'
 import { signSmartContractData } from '@wert-io/widget-sc-signer'
 import { v4 as uuidv4 } from 'uuid'
 import { Buffer } from 'buffer'
@@ -240,84 +242,10 @@ export default {
 			return whitelist
 		},
 		async mintWithWert() {
-			// window.Buffer = Buffer
-			/*
-				const web3 = new Web3(window.ethereum)
-				const userAddress = userAccounts[0];
-				// Encode the call to mintNFT(address = userAddress, numberOfTokens = 1)
-				const sc_input_data = web3.eth.abi.encodeFunctionCall({
-				"inputs": [
-					{
-					"internalType": "address",
-					"name": "to",
-					"type": "address"
-					},
-					{
-					"internalType": "uint256",
-					"name": "numberOfTokens",
-					"type": "uint256"
-					}
-				],
-				"name": "mintNFT",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-				}, [userAddress, 1]);
-				const privateKey = '0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3';
-				// Create signed SC data for wert-widget
-				// Please do this on backend
-				const signedData = signSmartContractData({
-				address: userAddress, // user's address
-				commodity: 'MATIC',
-				commodity_amount: '1.5', // the crypto amount that should be send to the contract method
-				pk_id: 'key1', // always 'key1'
-				sc_address: this.$siteConfig.address,
-				sc_id: uuidv4(), // must be unique for any request
-				sc_input_data,
-				}, privateKey);
-				*/
-			const otherWidgetOptions = {
-				// container_id: 'wert-container',
-				partner_id: this.$config.WERT_PARTNER_ID,
-				origin: 'https://sandbox.wert.io',
-				commodity: 'ETH:Ethereum-Goerli',
-				signature: '',
-				click_id: uuidv4(),
-				listeners: {
-					loaded: () => {
-						console.log('loaded')
-					},
-					error: () => {
-						console.log('error')
-					},
-					close: () => {
-						console.log('close')
-					},
-				},
-			}
-			const nftOptions = {
-				extra: {
-					item_info: {
-						author: 'MOF-NFT',
-						image_url: 'https://www.tbstat.com/wp/uploads/2021/08/bayc2.jpg',
-						name: 'vFootballs NFT',
-						seller: 'Wert',
-					},
-				},
-			}
-			const wertWidget = new WertWidget({
-				// ...signedData,
-				...otherWidgetOptions,
-				...nftOptions,
-			})
-			console.log('wertWidget: ', wertWidget)
-			wertWidget.open()
-		},
-		async mintWithCrypto() {
-			const { name: smartContractName } = this.$siteConfig.smartContract
-
+			window.Buffer = Buffer
+			const { name: smartContractName, address: scAddress } =
+				this.$siteConfig.smartContract
 			this.message = {}
-
 			try {
 				const success = await this.checkChain()
 				if (!success) {
@@ -327,6 +255,146 @@ export default {
 				this.isMinting = true
 
 				const saleStatus = await this.$smartContract.saleStatus()
+
+				this.$gtag('event', ANALYTICS_EVENTS.CheckoutBegin, {
+					name: smartContractName,
+					walletAddress: `address_${this.walletAddress}`, // prefix address_ cause gtag converts hex address into digits
+					saleStatus: SALE_STATUS[saleStatus],
+					quantity: this.mintCount,
+				})
+
+				const signedContract = this.$smartContract.connect(
+					this.walletProvider.getSigner()
+				)
+
+				const total = await signedContract.calcTotal(this.mintCount)
+				console.info({
+					total: ethers.utils.formatEther(total),
+				})
+				const web3 = new Web3(window.ethereum)
+				const sc_input_data = web3.eth.abi.encodeFunctionCall(
+					{
+						inputs: [
+							{
+								internalType: 'uint256',
+								name: 'count',
+								type: 'uint256',
+							},
+						],
+						name: 'mint',
+						outputs: [],
+						stateMutability: 'payable',
+						type: 'function',
+					},
+					[this.mintCount]
+				)
+				const signedData = signSmartContractData(
+					{
+						address: this.walletAddress,
+						commodity: 'ETH',
+						commodity_amount: ethers.utils.formatEther(total),
+						pk_id: 'key1',
+						sc_address: scAddress,
+						sc_id: uuidv4(),
+						sc_input_data,
+					},
+					this.$config.WERT_PRIVATE_KEY
+				)
+				const otherWidgetOptions = {
+					container_id: 'wert-container',
+					width: 500,
+					height: 500,
+					partner_id: this.$config.WERT_PARTNER_ID,
+					origin: 'https://sandbox.wert.io',
+					commodity: 'ETH:Ethereum-Goerli',
+					signature: signedData.signature,
+					click_id: uuidv4(),
+					extra: {
+						item_info: {
+							author: 'MOF-NFT',
+							author_image_url: 'https://www.tbstat.com/wp/uploads/2021/08/bayc2.jpg',
+							image_url: 'https://www.tbstat.com/wp/uploads/2021/08/bayc2.jpg',
+							name: 'vFootballs NFT',
+							seller: 'Wert'
+						},
+					},
+					listeners: {
+						'loaded': () => {
+							this.isMinting = true
+						},
+						'error': ({ message }) => {
+							this.message = {
+								variant : 'error',
+								text:message
+							}
+							this.isMinting = false;
+						},
+						'payment-status': (payload) => {
+							switch (payload.status) {
+								case 'failed':
+									this.message = {
+										variant: 'danger',
+										text: 'Transaction Failed',
+									}
+									this.isMinting = false;
+									break
+								case 'success':
+									alert('success')
+									this.isMinting = false;
+									this.mintWithCrypto();
+									break;
+							}
+						},
+					},
+				}
+				const wertWidget = new WertWidget({
+					...signedData,
+					...otherWidgetOptions,
+				})
+				console.log('wertWidget: ', wertWidget)
+				wertWidget.open()
+			} catch (err) {
+				console.error(err, err.message)
+
+				if (!err || err.message === 'JSON RPC response format is invalid') {
+					return
+				}
+
+				const { data, reason, message, error } = err
+				const text =
+					reason || message || error?.message || data?.message || 'Minting failed'
+
+				this.message = {
+					variant: 'danger',
+					text,
+				}
+
+				this.$gtag('event', ANALYTICS_EVENTS.CheckoutError, {
+					name: smartContractName,
+					walletAddress: `address_${this.walletAddress}`, // prefix address_ cause gtag converts hex address into digits
+					message: text,
+				})
+			} finally {
+				this.isMinting = false
+				this.setBusy({ isBusy: false })
+			}
+		},
+		async mintWithCrypto() {
+			const { name: smartContractName } = this.$siteConfig.smartContract
+
+			this.message = {}
+
+			try {
+				const success = await this.checkChain()
+				console.log('success: ', success)
+				if (!success) {
+					throw new Error('Chain switch request failed')
+				}
+
+				this.isMinting = true
+
+				const saleStatus = await this.$smartContract.saleStatus()
+				console.log('saleStatus: ', saleStatus)
 
 				this.$gtag('event', ANALYTICS_EVENTS.CheckoutBegin, {
 					name: smartContractName,
