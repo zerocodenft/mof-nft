@@ -291,7 +291,7 @@ export default {
 						commodity: 'ETH',
 						commodity_amount: ethers.utils.formatEther(total),
 						pk_id: 'key1',
-						sc_address: '0x7C1051481EC1DCEfB5a854f7Ac2A6fc65D008B05',
+						sc_address: scAddress,
 						sc_id: uuidv4(),
 						sc_input_data,
 					},
@@ -303,11 +303,10 @@ export default {
 					click_id: uuidv4(),
 					listeners: {
 						'loaded': () => {
-							console.log('loaded: ')
 							this.isMinting = true
 						},
 						'error': (err) => {
-							console.log('err: ', err);
+							console.log('err: ', err)
 							const { message = null } = err
 							if (message) {
 								console.log('message: ', message)
@@ -321,7 +320,7 @@ export default {
 						'payment-status': (payload) => {
 							console.log('payload: ', payload)
 							switch (payload.status) {
-								case 'failed':
+								case ('failed', 'canceled'):
 									this.message = {
 										variant: 'danger',
 										text: 'Transaction Failed',
@@ -358,6 +357,7 @@ export default {
 					...otherWidgetOptions,
 					...nftOptions,
 				})
+				console.log('wertWidget: ', wertWidget)
 				wertWidget.open()
 			} catch (err) {
 				console.error(err, err.message)
