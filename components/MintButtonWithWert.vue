@@ -107,18 +107,13 @@ export default {
 		const message = ref({})
 		const isBusy = computed(() => isMinting.value || connectingWallet.value)
 		const isConnected = computed(() => connectedWallet.value !== null)
-		const isMetaMask = computed(
-			() => connectedWallet.value?.label === 'MetaMask'
-		)
+		const isMetaMask = computed(() => connectedWallet.value?.label === 'MetaMask')
 		const walletAddress = computed(
 			() => connectedWallet.value?.accounts[0]?.address
 		)
 		const walletProvider = computed(
 			() =>
-				new ethers.providers.Web3Provider(
-					connectedWallet.value?.provider,
-					'any'
-				)
+				new ethers.providers.Web3Provider(connectedWallet.value?.provider, 'any')
 		)
 
 		function reconnectMetamask() {
@@ -240,9 +235,7 @@ export default {
 		async getWL() {
 			let { id, whitelist } = this.$siteConfig.smartContract
 			try {
-				const { data } = await this.$axios.get(
-					`/smartcontracts/${id}/whitelist`
-				)
+				const { data } = await this.$axios.get(`/smartcontracts/${id}/whitelist`)
 				whitelist = data
 			} catch {}
 
@@ -274,10 +267,6 @@ export default {
 					this.walletProvider.getSigner()
 				)
 				const total = await signedContract.calcTotal(this.mintCount)
-				console.info({
-					total: ethers.utils.formatEther(total),
-				})
-
 				const web3 = new Web3(window.ethereum)
 				const sc_input_data = web3.eth.abi.encodeFunctionCall(
 					{
@@ -295,7 +284,6 @@ export default {
 					},
 					[this.mintCount]
 				)
-				console.log('sc_input_data: ', sc_input_data)
 				const privateKey = this.$config.WERT_PRIVATE_KEY
 				const signedData = signSmartContractData(
 					{
@@ -303,29 +291,35 @@ export default {
 						commodity: 'ETH',
 						commodity_amount: ethers.utils.formatEther(total),
 						pk_id: 'key1',
-						sc_address: scAddress,
+						sc_address: '0x7C1051481EC1DCEfB5a854f7Ac2A6fc65D008B05',
 						sc_id: uuidv4(),
 						sc_input_data,
 					},
 					privateKey
 				)
-				console.log('signedData: ', signedData)
 				const otherWidgetOptions = {
 					partner_id: this.$config.WERT_PARTNER_ID,
 					origin: 'https://sandbox.wert.io',
 					click_id: uuidv4(),
 					listeners: {
 						'loaded': () => {
+							console.log('loaded: ')
 							this.isMinting = true
 						},
-						'error': ({ message }) => {
-							this.message = {
-								variant: 'error',
-								text: message,
+						'error': (err) => {
+							console.log('err: ', err);
+							const { message = null } = err
+							if (message) {
+								console.log('message: ', message)
+								this.message = {
+									variant: 'error',
+									text: message,
+								}
 							}
 							this.isMinting = false
 						},
 						'payment-status': (payload) => {
+							console.log('payload: ', payload)
 							switch (payload.status) {
 								case 'failed':
 									this.message = {
@@ -350,6 +344,8 @@ export default {
 					extra: {
 						item_info: {
 							author: 'vFootballs',
+							author_image_url:
+								'https://www.citypng.com/public/uploads/preview/world-cup-trophy-hd-png-11649280868xrfincwcil.png',
 							image_url:
 								'https://www.citypng.com/public/uploads/preview/world-cup-trophy-hd-png-11649280868xrfincwcil.png',
 							name: 'vFootballs NFT',
@@ -357,13 +353,11 @@ export default {
 						},
 					},
 				}
-
 				const wertWidget = new WertWidget({
 					...signedData,
 					...otherWidgetOptions,
 					...nftOptions,
 				})
-				console.log('wertWidget: ', wertWidget)
 				wertWidget.open()
 			} catch (err) {
 				console.error(err, err.message)
@@ -374,11 +368,7 @@ export default {
 
 				const { data, reason, message, error } = err
 				const text =
-					reason ||
-					message ||
-					error?.message ||
-					data?.message ||
-					'Minting failed'
+					reason || message || error?.message || data?.message || 'Minting failed'
 
 				this.message = {
 					variant: 'danger',
@@ -502,8 +492,7 @@ export default {
 					const json = await res.json()
 					this.mintedTokens.push({
 						name: json.name,
-						imageSrc:
-							'https://ipfs.io/ipfs/' + json.image.replace('ipfs://', ''),
+						imageSrc: 'https://ipfs.io/ipfs/' + json.image.replace('ipfs://', ''),
 					})
 				}
 				this.setBusy({ isBusy: false })
@@ -520,11 +509,7 @@ export default {
 
 				const { data, reason, message, error } = err
 				const text =
-					reason ||
-					message ||
-					error?.message ||
-					data?.message ||
-					'Minting failed'
+					reason || message || error?.message || data?.message || 'Minting failed'
 
 				this.message = {
 					variant: 'danger',
