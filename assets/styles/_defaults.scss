@@ -1,15 +1,19 @@
 
-$mintBtnBgColor: #8859EC;
+$mintBtnBgColor: #3936FF;
 $mintBtnTextColor: #fff;
 $mintBtnWidth: 100%;
 $mintBtnHeight: 100%;
 $mintBtnFontSize: 1rem;
+$mintPaddingY: 1rem;
+$mintPaddingX: 1.25rem;
 
 .mint-button {
-    background-color: var(--mintBtnBgColor, $mintBtnBgColor);
+    background-color: $mintBtnBgColor;
     color: var(--mintBtnTextColor, $mintBtnTextColor);
     font-size: var(--mintBtnFontSize, $mintBtnFontSize);
     width: var(--mintBtnWidth, $mintBtnWidth);
+				padding: var(--mintPaddingY, $mintPaddingY) var(--mintPaddingX, $mintPaddingX);
+				white-space: nowrap;
     // height: var(--mintBtnHeight, $mintBtnHeight);
 }
 
@@ -21,12 +25,9 @@ $mintBtnFontSize: 1rem;
 
 $navbarBgColor: #343a40;
 $pageBackground: #fff;
-$pageTextColor: #8859EC;
+$pageTextColor: #3936FF;
+$buttonBgColor: #3936FF;
 
-.zc-navbar {
-    background-color: var(--navbarBgColor, $navbarBgColor);
-    color: var(--pageTextColor, $pageTextColor);
-}
 
 .zc-text {
     color: var(--pageTextColor, $pageTextColor) !important;

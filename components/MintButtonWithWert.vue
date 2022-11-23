@@ -13,7 +13,10 @@
 				v-else-if="!isConnected"
 				class="mint-button font-weight-bold border-0"
 				@click="connect"
-				>Connect Wallet</b-button
+				>
+				{{buttonText}}
+				<b-img :src="buttonImg"></b-img>
+			</b-button
 			>
 			<b-dropdown
 				v-else-if="isConnected && isMetaMask && !isMobile"
@@ -85,6 +88,14 @@ import isMobile from '../hooks/isMobile'
 export default {
 	props: {
 		soldOut: Boolean,
+		buttonText:{
+				type:String,
+			 default: 'Connect Wallet'
+		},
+		buttonImg:{
+			type:String,
+			default: '/_nuxt/assets/img/header/wallet.svg'
+		},
 		mintCount: {
 			type: Number,
 			default: 1,
