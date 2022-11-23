@@ -1,0 +1,19 @@
+.home-benefits{
+	background: $bg-content;
+	padding-top: 3.625rem;
+
+	&__header{
+		font-size: 2.25rem;
+		font-weight: 700;
+		line-height: 2.625rem;
+		text-transform: uppercase;
+		color: white;
+	}
+
+	&__list{
+		margin: 1.875rem 0;
+		&-item{
+			color: $color-text-small;
+		}
+	}
+}

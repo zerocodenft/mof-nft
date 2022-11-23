@@ -1,21 +1,20 @@
 <template>
 	<div
-		class="d-flex justify-content-center align-items-center zc-container zc-background">
-		<b-jumbotron
-			:header="$siteConfig.title"
-			:lead="$siteConfig.description"
-			class="shadow text-center jumbo py-4"
-			bg-variant="dark">
-			<Mint />
-			<PoweredByBrand
-				v-if="!$siteConfig.smartContract.isAttributionHidden"
-				class="mt-2">
-				Powered by Zero Code NFT
-			</PoweredByBrand>
-		</b-jumbotron>
+		class="d-flex flex-column">
+		<HomeWelcome/>
+		<HomeBenfits/>
+		<HomeAbout/>
 	</div>
 </template>
+<script>
+import HomeWelcome from "~/components/home/welcome/HomeWelcome";
+import HomeBenfits from "@/components/home/HomeBenfits";
+import HomeAbout from "@/components/home/HomeAbout";
 
+export  default {
+	components: {HomeWelcome, HomeBenfits, HomeAbout}
+}
+</script>
 <style lang="scss">
 :root {
 	--account-center-position-top: 40px;

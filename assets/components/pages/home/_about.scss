@@ -1,0 +1,32 @@
+.about-wrapper{
+	background: $bg-content;
+	padding-top: 7.188rem;
+
+	&__content{
+		gap: 6.25rem;
+		@media (max-width: 769px) {
+				flex-direction: column-reverse;
+		}
+	}
+
+	&__header{
+		font-size: 2.25rem;
+		font-weight: 700;
+		line-height: 2.625rem;
+		text-transform: uppercase;
+		color: white;
+		margin-bottom: 1.875rem;
+	}
+
+	&__paragraph{
+		color: $color-text-small;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		margin-bottom: 1.25rem;
+	}
+
+	&__paragraph2{
+		margin-bottom: 1.875rem;
+	}
+}

@@ -37,7 +37,7 @@
 
 			<b-button
 				v-else
-				class="mint-button font-weight-bold border-0"
+				class="mint-button border-0"
 				@click="mintWithCrypto"
 				>Mint [{{ mintCount }}]</b-button
 			>
