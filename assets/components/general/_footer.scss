@@ -1,0 +1,33 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables";
+
+.footer {
+	margin-top: 3.625rem;
+	padding-bottom: clamp(10rem, 20vw, 20rem);
+
+	&__logo {
+		@include fonts(normal, 700, clamp(1.5rem, 2.5vw, 2.25rem), inherit);
+		color: $white;
+	}
+
+	&__list{
+		list-style-type: none;
+		padding: 0;
+		margin-top: clamp(3rem, 2.5vw ,5.625rem);
+		margin-bottom: clamp(3rem, 6vw, 5.625rem);
+
+	}
+	.list__item {
+		@include fonts(normal, 600, clamp(0.875rem, 2.5vw, 1rem), inherit);
+		margin-right: 1.875rem;
+		color: $white;
+		cursor: pointer;
+	}
+
+	&__copyright {
+		@include fonts(normal, 400, clamp(0.6rem, 2.5vw, 0.875rem), inherit);
+		color: $white;
+		opacity: 0.3;
+	}
+
+}

@@ -1,22 +1,24 @@
 <template>
-	<div
-		class="d-flex flex-column">
+	<main class="main overflow-hidden">
 		<HomeWelcome/>
 		<HomeBenfits/>
 		<HomeAbout/>
-	</div>
+		<FAQ />
+	</main>
 </template>
+
 <script>
 import HomeWelcome from "~/components/home/welcome/HomeWelcome";
-import HomeBenfits from "@/components/home/HomeBenfits";
-import HomeAbout from "@/components/home/HomeAbout";
-
-export  default {
-	components: {HomeWelcome, HomeBenfits, HomeAbout}
+import HomeBenfits from "~/components/home/HomeBenfits";
+import HomeAbout from "~/components/home/HomeAbout";
+import FAQ from '~/components/home/faq/FAQ'
+export default {
+	name: 'index',
+	components: {
+		HomeWelcome,
+		HomeBenfits,
+		HomeAbout,
+		FAQ
+	}
 }
 </script>
-<style lang="scss">
-:root {
-	--account-center-position-top: 40px;
-}
-</style>

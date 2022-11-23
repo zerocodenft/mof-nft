@@ -1,0 +1,50 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables";
+.faq {
+
+	&__title {
+		@include fonts(normal, 700, clamp(1.5rem, 2.5vw, 2.25rem), inherit);
+		margin-bottom: clamp(1.8rem, 4rem, 3.75rem);
+	}
+
+
+	&__gradient-line {
+		padding: 1px 0;
+		background: linear-gradient(90deg, rgba(21,11,64,1) 0%, rgba(248,63,255,1) 30%, rgba(57,54,255,1) 80%, rgba(21,11,64,1) 100%);
+	}
+
+	&__content {
+		background: radial-gradient(circle, rgba(38,29,78,1) 0%, rgba(21,11,64,1) 100%);
+	}
+
+	&__button {
+		background: transparent;
+		&:hover,&:active,&:focus {
+			background: transparent !important;
+			outline: 0;
+			border: 0;
+			box-shadow: none !important;
+		}
+	}
+
+	.button__text {
+		@include fonts(normal, 700, clamp(0.85rem, 2.5vw, 1rem), inherit);
+	}
+
+	&__arrow {
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%) rotate(180deg);
+		transition: all 0.3s;
+	}
+
+	&__description {
+		@include fonts(normal, 400, clamp(0.85rem, 2.5vw, 1rem), inherit);
+		color: $pigeon !important;
+		line-height: 1.5rem;
+	}
+
+	.toggle-open {
+		transform: rotate(0deg);
+	}
+}
