@@ -12,7 +12,17 @@
 
 <script>
 import { ANALYTICS_EVENTS } from '@/constants'
+import {computed} from '@vue/composition-api'
+import { useOnboard } from '@web3-onboard/vue'
+
 export default {
+	setup(){
+		const {connectedWallet} = useOnboard();
+		const walletAddress = computed(
+			() => connectedWallet.value?.accounts[0]?.address
+		)
+		return{walletAddress}
+	},
 	methods: {
 		onLinkClick() {
 			const { id, name } = this.$siteConfig.smartContract
@@ -22,7 +32,7 @@ export default {
 					name,
 					scId: id,
 					// prefix address_ cause gtag converts hex address into digits
-					walletAddress: `address_${this.$wallet.account}`,
+					walletAddress: `address_${this.walletAddress}`,
 				})
 			}
 			window.open(mainWebsiteURL, '_blank')

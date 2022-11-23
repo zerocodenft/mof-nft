@@ -1,9 +1,11 @@
 const {
 	API_URL,
-	AZURE_FUNCTIONS_URL,
-	FORTMATIC_KEY,
 	GTAG_DEBUG,
 	OPENSEA_API_KEY,
+	WERT_LOGIN,
+	WERT_PASSWORD,
+	WERT_PARTNER_ID,
+	WERT_PRIVATE_KEY,
 } = process.env
 
 export default {
@@ -24,10 +26,12 @@ export default {
 
 	publicRuntimeConfig: {
 		API_URL,
-		AZURE_FUNCTIONS_URL,
-		FORTMATIC_KEY,
 		GTAG_DEBUG,
 		OPENSEA_API_KEY,
+		WERT_LOGIN,
+		WERT_PASSWORD,
+		WERT_PARTNER_ID,
+		WERT_PRIVATE_KEY,
 	},
 
 	// Target: https://go.nuxtjs.dev/config-target
@@ -51,10 +55,8 @@ export default {
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [
-		'@/plugins/cloudFns',
 		'@/plugins/appConfig',
 		'@/plugins/siteConfig',
-		'@/plugins/wallet',
 		'@/plugins/smartContract',
 		'@/plugins/walletV3',
 		{ src: '@/plugins/vuePlugins', mode: 'client' },

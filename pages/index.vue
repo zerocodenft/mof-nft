@@ -10,7 +10,7 @@
 			<PoweredByBrand
 				v-if="!$siteConfig.smartContract.isAttributionHidden"
 				class="mt-2">
-				Powered by {{ $appConfig.companyName }}
+				Powered by Zero Code NFT
 			</PoweredByBrand>
 		</b-jumbotron>
 	</div>

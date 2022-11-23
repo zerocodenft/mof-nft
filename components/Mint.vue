@@ -9,14 +9,12 @@
 				<component
 					:is="mintCountSelector"
 					v-model.number="mintCount"
-					:max="mintMax"
-				></component>
+					:max="mintMax"></component>
 			</div>
 			<component
 				:is="mintBtnComponent"
 				:mintCount="mintCount"
-				:soldOut="soldOut"
-			/>
+				:soldOut="soldOut" />
 			<b-modal
 				v-model="$store.state.isBusy"
 				body-class="text-center"
@@ -26,19 +24,16 @@
 				no-close-on-backdrop
 				no-close-on-esc
 				hide-footer
-				hide-header-close
-			>
+				hide-header-close>
 				<h4
 					v-if="$store.state.isBusyMessage"
 					v-html="$store.state.isBusyMessage"
-					class="break-word"
-				></h4>
+					class="break-word"></h4>
 				<b-spinner
-					style="width: 3rem; height: 3rem;"
+					style="width: 3rem; height: 3rem"
 					class="m-3"
 					label="Loading..."
-					type="grow"
-				></b-spinner>
+					type="grow"></b-spinner>
 			</b-modal>
 		</div>
 	</div>
@@ -74,15 +69,7 @@ export default {
 	},
 	computed: {
 		mintBtnComponent() {
-			switch (this.$siteConfig.mintBtnVersion) {
-				case 'V2':
-					return 'MintButtonV2'
-				case 'V3':
-					return 'MintButtonV3'
-				default:
-					return 'MintButtonV2'
-				// default: return 'MintButtonV3'
-			}
+			return this.$siteConfig.mintBtnVersion
 		},
 		mintCountSelector() {
 			return this.$siteConfig.mintCountSelectorType === MINT_SELECTOR_TYPE.Range
@@ -101,15 +88,10 @@ export default {
 			return this.mintedCount >= this.collectionSize
 		},
 		mintMax() {
-			const {
-				maxTokensPerTransaction,
-				maxTokensPerPersonOnWhitelist,
-				collectionSize,
-			} = this.$siteConfig.smartContract
+			const { maxTokensPerTransaction, collectionSize } =
+				this.$siteConfig.smartContract
 
-			return this.saleStatus === SALE_STATUS.Presale
-				? maxTokensPerPersonOnWhitelist
-				: maxTokensPerTransaction || collectionSize
+			return maxTokensPerTransaction || collectionSize
 		},
 	},
 	methods: {
