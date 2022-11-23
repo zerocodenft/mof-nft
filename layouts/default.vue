@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="home-page">
 		<Header />
 			<Nuxt />
 		<Footer />
@@ -29,3 +29,9 @@ export default {
 	},
 }
 </script>
+<style lang="scss">
+@import "assets/styles/variables";
+.home-page {
+	background-color: $bg-content;
+}
+</style>
