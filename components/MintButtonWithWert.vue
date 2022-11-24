@@ -15,7 +15,7 @@
 				@click="connect"
 				>
 				{{buttonText}}
-				<b-img :src="buttonImg"></b-img>
+				<b-img :src="require(`~/assets/img/header/${buttonImg}.svg`)"/>
 			</b-button
 			>
 			<b-dropdown
@@ -75,16 +75,17 @@
 <script>
 import WertWidget from '@wert-io/widget-initializer'
 import Web3 from 'web3'
-import { signSmartContractData } from '@wert-io/widget-sc-signer'
-import { v4 as uuidv4 } from 'uuid'
-import { Buffer } from 'buffer'
-import { ethers } from 'ethers'
-import { wait } from '@/utils'
-import { SALE_STATUS, ANALYTICS_EVENTS } from '@/constants'
-import { useOnboard } from '@web3-onboard/vue'
-import { ref, computed, watch } from '@vue/composition-api'
-import { mapMutations } from 'vuex'
+import {signSmartContractData} from '@wert-io/widget-sc-signer'
+import {v4 as uuidv4} from 'uuid'
+import {Buffer} from 'buffer'
+import {ethers} from 'ethers'
+import {wait} from '@/utils'
+import {ANALYTICS_EVENTS, SALE_STATUS} from '@/constants'
+import {useOnboard} from '@web3-onboard/vue'
+import {computed, ref, watch} from '@vue/composition-api'
+import {mapMutations} from 'vuex'
 import isMobile from '../hooks/isMobile'
+
 export default {
 	props: {
 		soldOut: Boolean,
@@ -94,7 +95,7 @@ export default {
 		},
 		buttonImg:{
 			type:String,
-			default: '/_nuxt/assets/img/header/wallet.svg'
+			default: ''
 		},
 		mintCount: {
 			type: Number,

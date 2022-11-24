@@ -1,7 +1,7 @@
 <template>
-	<section class="about-wrapper container-fluid mx-auto">
+	<section class="about-wrapper container mx-auto">
 		<b-row class="about-wrapper__content">
-			<b-col xl="6">
+			<b-col xl="7">
 				<b-img class="w-100" src="~/assets/img/about/about-img.png" alt="aboutImg"/>
 			</b-col>
 			<b-col xl="5" class="align-self-center">

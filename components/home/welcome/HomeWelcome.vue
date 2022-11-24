@@ -1,6 +1,5 @@
 <template>
-	<section class="welcome-block container-fluid mx-auto position-relative">
-		<b-img class="position-absolute welcome-block__left-circle" src="~/assets/img/welcome/left-sector-circle.svg" alt="leftCircle"/>
+	<section class="welcome-block container mx-auto position-relative">
 		<b-row class="welcome-block__content flex justify-content-between align-items-center">
 			<b-col>
 				<div>
@@ -18,8 +17,6 @@
 			</b-col>
 			<b-col>
 				<b-img class="position-relative welcome-block__balls" src="~/assets/img/welcome/balls.svg" alt="ballsIcons"/>
-				<b-img class="position-absolute welcome-block__circle" src="~/assets/img/welcome/blue-circle.svg" alt="circle"/>
-				<b-img class="position-absolute welcome-block__right-circle" src="~/assets/img/welcome/right-sector-circle.svg" alt="circle"/>
 			</b-col>
 		</b-row>
 	</section>
@@ -33,12 +30,12 @@ export default {
 	components: {HomeWelcomeBenefits},
 	setup() {
 		const benefitsDataFirstRow = [
-			{imgSrc: '~/assets/img/welcome/nft.svg', title: 'Only 5000 NFTs'},
-			{imgSrc: '~/assets/img/welcome/star.svg', title: 'Access to events with super stars and Khabib'},
+			{imgName: 'nft', title: 'Only 5000 NFTs'},
+			{imgName: 'star', title: 'Access to events with super stars and Khabib'},
 		]
 		const benefitsDataSecondRow = [
-			{imgSrc: '~/assets/img/welcome/allocation.svg', title: 'Token Allocation in vGame tokensale'},
-			{imgSrc: '~/assets/img/welcome/ticket.svg', title: 'Football Event Tickets/Raffles'},
+			{imgName: 'allocation', title: 'Token Allocation in vGame tokensale'},
+			{imgName: 'ticket', title: 'Football Event Tickets/Raffles'},
 		]
 		return {benefitsDataFirstRow, benefitsDataSecondRow}
 	}

@@ -1,5 +1,5 @@
 <template>
-	<section class="home-benefits container-fluid mx-auto">
+	<section class="home-benefits container mx-auto">
 		<b-row>
 			<b-col xl="5" class="align-self-center">
 				<h2 class="home-benefits__header">What benefits get the owners of vFootballs NFT?</h2>
@@ -11,7 +11,7 @@
 					<b-img src="~/assets/img/welcome/button-arrows.svg" alt="arrows"></b-img>
 				</b-button>
 			</b-col>
-			<b-col xl="6">
+			<b-col xl="7">
 				<b-img class="w-100" src="~/assets/img/benefits/benefits-img.svg" alt="benefits"/>
 			</b-col>
 		</b-row>

@@ -47,7 +47,6 @@
     "@openzeppelin/contracts": "^4.7.2",
     "chai": "^4.3.4",
     "erc721a": "^4.2.3",
-    "eslint-config-prettier": "^8.5.0",
     "ethereum-waffle": "^3.4.0",
     "hardhat": "^2.6.8",
     "prettier": "^2.7.1",
