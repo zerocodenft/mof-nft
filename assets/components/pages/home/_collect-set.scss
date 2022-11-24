@@ -1,0 +1,120 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables";
+
+.collect-set {
+
+	&__title {
+		@include fonts(normal, 700, clamp(1.5rem, 4.5vw, 2.25rem), inherit);
+		color: $white;
+		text-transform: uppercase;
+	}
+
+	.swiper-box {
+
+		min-height: 30rem;
+
+		&__slide {
+			border-radius: 50%;
+			background: #2D205F;
+			box-shadow: 0 8px 7px rgba(21, 11, 64, 0.8);
+			border: none;
+			position: absolute;
+			top: 50%;
+			transform: translateX(-50%);
+			z-index: 2;
+			height: 3rem;
+			width: 3rem;
+			opacity: 0.7;
+
+			&:hover, &:active, &:focus {
+				background: #2D205F !important;
+				box-shadow: none !important;
+			}
+
+		}
+
+		.slide-prev {
+			left: 5rem !important;
+
+			@media (max-width: 768px) {
+				left: 2rem !important;
+			}
+		}
+
+		.slide-next {
+			right: 5rem !important;
+			transform: rotate(180deg);
+
+			@media (max-width: 768px) {
+				right: 1rem !important;
+			}
+		}
+	}
+
+	.swiper {
+		position: relative;
+
+
+		&__content {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 3.1rem;
+			max-height: 40rem;
+
+			@media (max-width: 768px) {
+				flex-direction: column;
+				padding: 1rem;
+			}
+		}
+
+		&__ball {
+			width: clamp(10rem, 19vw, 19rem);
+			max-width: 100%;
+		}
+
+		&__title {
+			margin-top: 1.5rem;
+			color: #fff;
+			@include fonts(normal, 700, clamp(1.3rem, 2.5vw, 1.5rem), inherit);
+		}
+
+		&__description {
+			color: #BFBEE0;
+			margin-top: 1.25rem;
+			@include fonts(normal, 400, clamp(0.75rem, 1.5vw, 1rem), inherit);
+			width: 20rem;
+		}
+
+		&__info {
+			display: none;
+			padding-left: 1.5rem;
+		}
+
+
+		.swiper-wrapper {
+
+			.swiper-slide-active {
+				opacity: 1 !important;
+				width: 60% !important;
+				transform: scale(1) !important;
+
+				.swiper__info {
+					display: block;
+				}
+
+			}
+
+			.swiper-slide {
+				margin: 0 auto;
+				width: 40%;
+				opacity: 0.3;
+				transform: scale(0.8);
+				transition: all 1s;
+			}
+
+		}
+
+	}
+
+}
