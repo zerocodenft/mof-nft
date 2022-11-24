@@ -1,14 +1,14 @@
 <template>
-    <b-button size="sm" variant="link" @click="copyToClipboard(value)"></b-button>   
+  <b-button size="sm" variant="link" @click="copyToClipboard(value)"></b-button>
 </template>
 
 <script>
-import { copyToClipboard } from '@/utils'
+import {copyToClipboard} from '@/utils'
 
 export default {
-    props: ['value'],
-    methods: {
-        copyToClipboard
-    }
+  props: ['value'],
+  methods: {
+    copyToClipboard
+  }
 }
 </script>

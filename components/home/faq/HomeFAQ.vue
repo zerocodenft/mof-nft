@@ -1,6 +1,11 @@
 <template>
-	<div class="faq container" role="tablist">
-		<h2 class="faq__title text-white text-center">FAQ</h2>
+	<div
+		class="faq container"
+		role="tablist"
+	>
+		<h2 class="faq__title text-white text-center">
+			FAQ
+		</h2>
 		<div
 			v-for="item in faqData"
 			:key="item.id"
@@ -9,18 +14,36 @@
 			<div
 				class="faq__content py-4"
 			>
-				<b-button class="faq__button border-0 px-3 w-100 position-relative" block v-b-toggle="item.id">
-					<p class="text-left button__text mb-0">{{ item.title }}</p>
-					<img :class="{ 'toggle-open': item.visible }" class="faq__arrow position-absolute right-0" src="@/assets/img/faq/arrow.svg" alt="" />
+				<b-button
+					v-b-toggle="item.id"
+					class="faq__button border-0 px-3 w-100 position-relative"
+					block
+				>
+					<p class="text-left button__text mb-0">
+						{{ item.title }}
+					</p>
+					<img
+						:class="{ 'toggle-open': item.visible }"
+						class="faq__arrow position-absolute right-0"
+						src="@/assets/img/faq/arrow.svg"
+						alt=""
+					>
 				</b-button>
-				<b-collapse v-model="item.visible" :id="item.id" visible accordion="my-accordion" role="tabpanel">
+				<b-collapse
+					:id="item.id"
+					v-model="item.visible"
+					visible
+					accordion="my-accordion"
+					role="tabpanel"
+				>
 					<b-card-body class="px-3">
-						<b-card-text class="faq__description">{{ item.text }}</b-card-text>
+						<b-card-text class="faq__description">
+							{{ item.text }}
+						</b-card-text>
 					</b-card-body>
 				</b-collapse>
 			</div>
 		</div>
-
 	</div>
 </template>
 
@@ -28,8 +51,8 @@
 import {ref} from '@vue/composition-api'
 
 export default {
-	name: 'FAQ',
-	setup(_, { emit }) {
+	name: 'HomeFAQ',
+	setup() {
 		const faqData = ref([
 			{
 				id: 'one',
