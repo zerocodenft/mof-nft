@@ -1,15 +1,16 @@
 <template>
-	<main class="main overflow-hidden">
-			<FAQ />
-	</main>
+  <main class="main overflow-hidden">
+    <HomeFAQ/>
+  </main>
 </template>
 
 <script>
-import FAQ from '~/components/home/faq/FAQ'
+import HomeFAQ from '~/components/home/faq/HomeFAQ'
+
 export default {
-	name: 'index',
-	components: {
-		FAQ
-	}
+  name: 'Index',
+  components: {
+    HomeFAQ
+  }
 }
 </script>

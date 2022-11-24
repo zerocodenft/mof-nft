@@ -1,5 +1,6 @@
 @import "assets/styles/mixins";
 @import "assets/styles/variables";
+
 .faq {
 
 	&__title {
@@ -7,19 +8,19 @@
 		margin-bottom: clamp(1.8rem, 4rem, 3.75rem);
 	}
 
-
 	&__gradient-line {
 		padding: 1px 0;
-		background: linear-gradient(90deg, rgba(21,11,64,1) 0%, rgba(248,63,255,1) 30%, rgba(57,54,255,1) 80%, rgba(21,11,64,1) 100%);
+		background: linear-gradient(90deg, rgba(21, 11, 64, 1) 0%, rgba(248, 63, 255, 1) 30%, rgba(57, 54, 255, 1) 80%, rgba(21, 11, 64, 1) 100%);
 	}
 
 	&__content {
-		background: radial-gradient(circle, rgba(38,29,78,1) 0%, rgba(21,11,64,1) 100%);
+		background: radial-gradient(circle, rgba(38, 29, 78, 1) 0%, rgba(21, 11, 64, 1) 100%);
 	}
 
 	&__button {
 		background: transparent;
-		&:hover,&:active,&:focus {
+
+		&:hover, &:active, &:focus {
 			background: transparent !important;
 			outline: 0;
 			border: 0;

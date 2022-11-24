@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: "Countdown",
+  name: 'Countdown',
   props: {
     date: {
       type: String
@@ -66,7 +66,7 @@ export default {
     }, 1000);
   },
   methods: {
-    twoDigits (value) {
+    twoDigits(value) {
       if (value < 0) {
         return '00';
       }
@@ -79,83 +79,84 @@ export default {
 }
 </script>
 <style lang="scss">
-@mixin count-position($bottom,$width,$left){
-  bottom: $bottom;
-  width: $width;
-  left: $left;
+@mixin count-position($bottom,$width,$left) {
+	bottom: $bottom;
+	width: $width;
+	left: $left;
 }
-.countdown-wrapper {
-  @media (min-width: 1199.5px) {
-    @include count-position(130px,250px,20px);
-    .header {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-    }
-    .digit {
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-      line-height: 27px;
-    }
-    .title {
-      font-size: clamp(.475rem, 2.5vw, .675rem);
-      opacity: .8;
-    }
-  }
-  @media (max-width: 1199px) {
-    @include count-position(100px,200px,20px);
-    .header {
-      font-size: clamp(1rem, 2.5vw, 1rem);
-    }
-    .digit {
-      font-size: clamp(1.2rem, 2.5vw, 1rem);
-      line-height: 27px;
-    }
-    .title {
-      font-size: clamp(.475rem, 2.5vw, .675rem);
-      opacity: .8;
-    }
 
-  }
-  @media (max-width: 992px) {
-    @include count-position(170px,225px,50px);
-    .header {
-      font-size: clamp(1rem, 2.5vw, 1.4rem);
-    }
-    .digit {
-      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-      line-height: 27px;
-    }
-    .title {
-      font-size: clamp(.475rem, 2.5vw, .675rem);
-      opacity: .8;
-    }
-  }
-  @media (max-width: 767px){
-    @include count-position(120px,225px,20px);
-    .header {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-    }
-    .digit {
-      font-size: clamp(1.2rem, 2.5vw, 1.2rem);
-      line-height: 27px;
-    }
-    .title {
-      font-size: clamp(.475rem, 2.5vw, .675rem);
-      opacity: .8;
-    }
-  }
-  @media (max-width: 492px) {
-    @include count-position(75px,170px,15px);
-    .header {
-      font-size: clamp(.8rem, 2.5vw, 1rem);
-    }
-    .digit {
-      font-size: clamp(1.2rem, 2.5vw, 1.2rem);
-      line-height: 27px;
-    }
-    .title {
-      font-size: clamp(.475rem, 2.5vw, .675rem);
-      opacity: .8;
-    }
-  }
+.countdown-wrapper {
+	@media (min-width: 1199.5px) {
+		@include count-position(130px, 250px, 20px);
+		.header {
+			font-size: clamp(1rem, 2.5vw, 1.3rem);
+		}
+		.digit {
+			font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+			line-height: 27px;
+		}
+		.title {
+			font-size: clamp(.475rem, 2.5vw, .675rem);
+			opacity: .8;
+		}
+	}
+	@media (max-width: 1199px) {
+		@include count-position(100px, 200px, 20px);
+		.header {
+			font-size: clamp(1rem, 2.5vw, 1rem);
+		}
+		.digit {
+			font-size: clamp(1.2rem, 2.5vw, 1rem);
+			line-height: 27px;
+		}
+		.title {
+			font-size: clamp(.475rem, 2.5vw, .675rem);
+			opacity: .8;
+		}
+
+	}
+	@media (max-width: 992px) {
+		@include count-position(170px, 225px, 50px);
+		.header {
+			font-size: clamp(1rem, 2.5vw, 1.4rem);
+		}
+		.digit {
+			font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+			line-height: 27px;
+		}
+		.title {
+			font-size: clamp(.475rem, 2.5vw, .675rem);
+			opacity: .8;
+		}
+	}
+	@media (max-width: 767px) {
+		@include count-position(120px, 225px, 20px);
+		.header {
+			font-size: clamp(1rem, 2.5vw, 1.2rem);
+		}
+		.digit {
+			font-size: clamp(1.2rem, 2.5vw, 1.2rem);
+			line-height: 27px;
+		}
+		.title {
+			font-size: clamp(.475rem, 2.5vw, .675rem);
+			opacity: .8;
+		}
+	}
+	@media (max-width: 492px) {
+		@include count-position(75px, 170px, 15px);
+		.header {
+			font-size: clamp(.8rem, 2.5vw, 1rem);
+		}
+		.digit {
+			font-size: clamp(1.2rem, 2.5vw, 1.2rem);
+			line-height: 27px;
+		}
+		.title {
+			font-size: clamp(.475rem, 2.5vw, .675rem);
+			opacity: .8;
+		}
+	}
 
 
 }
