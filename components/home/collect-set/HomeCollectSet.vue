@@ -6,17 +6,20 @@
     </h2>
     <div>
       <HomeCollectSetSwiper class="collect__swiper"/>
+      <HomeCollectSetRunningSwiper/>
     </div>
   </div>
 </template>
 
 <script>
 import HomeCollectSetSwiper from '@/components/home/collect-set/HomeCollectSetSwiper';
+import HomeCollectSetRunningSwiper from '@/components/home/collect-set/HomeCollectSetRunningSwiper';
 
 export default {
   name: 'HomeCollectSet',
   components: {
-    HomeCollectSetSwiper
+    HomeCollectSetSwiper,
+    HomeCollectSetRunningSwiper
   },
   setup() {
     return {}

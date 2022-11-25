@@ -1,0 +1,47 @@
+@import "assets/styles/variables";
+@import "assets/styles/mixins";
+
+.project-ecosystem {
+
+	&__head {
+		@include fonts(normal, 700, clamp(1.5rem, 2.5vw, 2.25rem), inherit);
+	}
+
+	&__slide {
+		border-radius: 50%;
+		background: #2D205F;
+		box-shadow: 0 8px 7px rgba(21, 11, 64, 0.8);
+		border: none;
+		position: absolute;
+		top: 50%;
+		transform: translateX(-50%);
+		z-index: 2;
+		height: 3rem;
+		width: 3rem;
+		opacity: 0.7;
+
+		&:hover, &:active, &:focus {
+			background: #2D205F !important;
+			box-shadow: none !important;
+		}
+
+	}
+
+	.slide-prev {
+		left: 5rem !important;
+
+		@media (max-width: 768px) {
+			left: 2rem !important;
+		}
+	}
+
+	.slide-next {
+		right: 5rem !important;
+		transform: rotate(180deg);
+
+		@media (max-width: 768px) {
+			right: 1rem !important;
+		}
+	}
+
+}

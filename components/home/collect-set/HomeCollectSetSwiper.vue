@@ -13,7 +13,7 @@
       </b-button>
       <swiper
         ref="mySwiper"
-        class="swiper"
+        class="collect-swiper"
         :options="swiperOptions">
         <swiper-slide
           v-for="(item, index) in balls"
@@ -21,15 +21,16 @@
         >
           <MGradientCard>
             <template #default>
-              <div class="swiper__content">
+              <div class="collect-swiper__content">
                 <b-img
-                  class="d-block swiper__ball"
+                  class="d-block collect-swiper__ball"
                   :src="require('assets/img/collect-set/ball-1.svg')"
                   alt="ball"
                 />
-                <div class="swiper__info">
-                  <p class="swiper__title">{{ item.title }}</p>
-                  <p class="swiper__description">Lorem ipsum dolor sit amet consectetur. Diam a consequat purus id suspendisse
+                <div class="collect-swiper__info">
+                  <p class="collect-swiper__title">{{ item.title }}</p>
+                  <p class="collect-swiper__description">Lorem ipsum dolor sit amet consectetur. Diam a consequat purus id
+                    suspendisse
                     quam diam. Sed elementum
                     sollicitudin tristique blandit lacus. Sed etiam consectetur ornare consequat proin orci. Bibendum lacus varius
                     ullamcorper netus.</p>
