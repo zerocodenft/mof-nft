@@ -15,13 +15,15 @@
         :key="member.imgName"
         class="team-wrapper__line"
       >
-        <div class="d-flex flex-column align-items-center team-wrapper__content">
-          <b-img
-            :src="require(`~/assets/img/team-sponsors/${member.imgName}.svg`)"
-            :alt="member.alt"/>
-          <p class="team-wrapper__content-paragraph mt-4 mb-0 text-white text-uppercase font-weight-bold">{{member.name}}</p>
-          <p class="team-wrapper__content-sub-paragraph">{{member.describe}}</p>
-        </div>
+        <MGradientCard>
+          <div class="d-flex flex-column align-items-center team-wrapper__content">
+            <b-img
+              :src="require(`~/assets/img/team-sponsors/${member.imgName}.svg`)"
+              :alt="member.alt"/>
+            <p class="team-wrapper__content-paragraph mt-4 mb-0 text-white text-uppercase font-weight-bold">{{member.name}}</p>
+            <p class="team-wrapper__content-sub-paragraph">{{member.describe}}</p>
+          </div>
+        </MGradientCard>
       </div>
     </div>
   </div>
@@ -29,10 +31,11 @@
 
 <script>
 import MBlur from "@/components/ui/MBlur";
+import MGradientCard from "@/components/ui/MGradientCard";
 
 export default {
   name: "HomeTeamMember",
-  components: {MBlur},
+  components: {MGradientCard, MBlur},
   setup() {
     const teamData = [
       {
