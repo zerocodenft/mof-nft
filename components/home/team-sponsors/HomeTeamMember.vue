@@ -1,6 +1,14 @@
 <template>
   <div class="team-wrapper">
     <p class="text-white team-wrapper__header text-uppercase font-weight-bold">Team</p>
+    <MBlur
+      width="277px"
+      height="443px"
+      background="#FF0039"
+      top="0"
+      blur="219.5"
+      left="0"
+    />
     <div class="d-flex flex-wrap justify-content-center align-items-center team-wrapper-container">
       <div
         v-for="member in teamData"
@@ -20,8 +28,11 @@
 </template>
 
 <script>
+import MBlur from "@/components/ui/MBlur";
+
 export default {
   name: "HomeTeamMember",
+  components: {MBlur},
   setup() {
     const teamData = [
       {
