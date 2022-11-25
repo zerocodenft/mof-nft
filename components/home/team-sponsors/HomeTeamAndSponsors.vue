@@ -1,75 +1,45 @@
 <template>
-  <section class="container mx-auto">
-    <b-row>
-      <b-col cols="9">
-        <p class="text-white">Team</p>
-        <div class="d-flex">
-          <div
-            v-for="member in teamData"
-            class="d-flex flex-column flex-wrap">
-            :key="member"
-            <b-img
-              :src="require(`~/assets/img/team-sponsors/${member.imgName}.svg`)"
-              :alt="member.alt"/>
-            <p>{{member.name}}</p>
-            <p>{{member.describe}}</p>
-          </div>
-        </div>
+  <section
+    id="team"
+    class="container mx-auto team-sponsor-wrapper">
+    <b-row class="team-sponsor-block">
+      <b-col
+        xl="9"
+        xs="12"
+        lg="8"
+        sm="12"
+        class="p-0">
+        <HomeTeamMember/>
       </b-col>
-      <b-col cols="3">
-        <p class="text-white">Sponsors</p>
+      <b-col
+        xl="3"
+        xs="12"
+        lg="4"
+        sm="12"
+      >
+        <HomeSponsor/>
       </b-col>
     </b-row>
   </section>
 </template>
 
 <script>
+import HomeSponsor from "~/components/home/team-sponsors/HomeSponsor";
+import HomeTeamMember from "~/components/home/team-sponsors/HomeTeamMember";
+
 export default {
   name: "HomeTeamAndSponsors",
-  setup(){
-    const teamData = [
-      {
-        imgName: "first-member",
-        alt: "first-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
-      },
-      {
-        imgName: "second-member",
-        alt: "second-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
-      },
-      {
-        imgName: "third-member",
-        alt: "third-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
-      },
-      {
-        imgName: "fourth-member",
-        alt: "fourth-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
-      },
-      {
-        imgName: "fifth-member",
-        name: "lorem ipsum",
-        alt: "fifth-member",
-        describe: "lorem ipsum"
-      },
-      {
-        imgName: "sixth-member",
-        alt: "sixth-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
-      },
-    ]
-    return {teamData}
-  }
+  components: {HomeTeamMember, HomeSponsor},
 }
 </script>
-
-<style scoped>
-
+<style lang="scss">
+.team-sponsor-wrapper{
+	margin-top: 7.5rem;
+	margin-bottom: 4.063rem;
+}
+.team-sponsor-block{
+	@media (max-width: 768px) {
+		flex-direction: column !important;
+	}
+}
 </style>

@@ -5,6 +5,7 @@
     <HomeProjectEcosystem/>
     <HomeBenfits/>
     <HomeAbout/>
+    <HomeRoadmap/>
     <HomeTeamAndSponsors/>
     <HomeFAQ/>
   </main>
@@ -18,10 +19,12 @@ import HomeFAQ from '~/components/home/faq/HomeFAQ'
 import HomeTeamAndSponsors from '~/components/home/team-sponsors/HomeTeamAndSponsors';
 import HomeCollectSet from '~/components/home/collect-set/HomeCollectSet';
 import HomeProjectEcosystem from '~/components/home/project-ecosystem/HomeProjectEcosystem';
+import HomeRoadmap from "@/components/home/roadmap/HomeRoadmap";
 
 export default {
   name: 'Index',
   components: {
+    HomeRoadmap,
     HomeWelcome,
     HomeBenfits,
     HomeAbout,

@@ -12,6 +12,8 @@
 
 	&__list{
 		list-style-type: none;
+		gap: 1.875rem;
+		flex-wrap: wrap;
 		padding: 0;
 		margin-top: clamp(3rem, 2.5vw ,5.625rem);
 		margin-bottom: clamp(3rem, 6vw, 5.625rem);
@@ -19,7 +21,6 @@
 	}
 	.list__item {
 		@include fonts(normal, 600, clamp(0.875rem, 2.5vw, 1rem), inherit);
-		margin-right: 1.875rem;
 		color: $white;
 		cursor: pointer;
 	}

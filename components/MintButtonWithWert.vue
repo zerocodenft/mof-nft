@@ -1,6 +1,9 @@
 <template>
   <div class="text-center">
-    <b-overlay :show="isBusy" z-index="2" rounded>
+    <b-overlay
+      :show="isBusy"
+      z-index="2"
+      rounded>
       <b-button
         v-if="soldOut"
         class="mint-button font-weight-bold border-0"
@@ -12,11 +15,13 @@
       >
       <b-button
         v-else-if="!isConnected"
-        class="mint-button font-weight-bold border-0"
+        class="mint-button font-weight-bold border-0 justify-content-between align-items-center"
         @click="connect"
       >
         {{ buttonText }}
-							<b-img :src="require(`~/assets/img/header/${buttonImg}.svg`)"/>
+        <b-img
+          class="ml-2"
+          :src="require(`~/assets/img/header/${buttonImg}.svg`)"/>
       </b-button
       >
       <b-dropdown
@@ -38,41 +43,41 @@
         >
       </b-dropdown>
 
-			<b-button
-				v-else
-				class="mint-button border-0"
-				@click="mintWithCrypto"
-				>Mint [{{ mintCount }}]</b-button
-			>
-			<b-button
-				v-if="isConnected"
-				class="mint-button font-weight-bold border-0 mt-2"
-				@click="mintWithWert"
-				>Pay with wert</b-button
-			>
-		</b-overlay>
-		<b-alert
-			:show="message.show || !!message.text"
-			:variant="message.variant"
-			dismissible
-			@dismissed="message = {}"
-			class="mt-2">
-			{{ message.text }}
-		</b-alert>
-		<b-button
-			v-if="$route.name === 'button'"
-			variant="link"
-			class="mt-2 text-decoration-none"
-			:disabled="isBusy"
-			v-show="isConnected"
-			@click="disconnectConnectedWallet"
-			>Disconnect Wallet</b-button
-		>
-		<TweetModal
-			:images="mintedTokens"
-			:mintCount="mintCount"
-			@hidden="handleTweetModalHide"></TweetModal>
-	</div>
+      <b-button
+        v-else
+        class="mint-button border-0"
+        @click="mintWithCrypto"
+      >Mint [{{ mintCount }}]</b-button
+      >
+      <b-button
+        v-if="isConnected"
+        class="mint-button font-weight-bold border-0 mt-2"
+        @click="mintWithWert"
+      >Pay with wert</b-button
+      >
+    </b-overlay>
+    <b-alert
+      :show="message.show || !!message.text"
+      :variant="message.variant"
+      dismissible
+      class="mt-2"
+      @dismissed="message = {}">
+      {{ message.text }}
+    </b-alert>
+    <b-button
+      v-if="$route.name === 'button'"
+      v-show="isConnected"
+      variant="link"
+      class="mt-2 text-decoration-none"
+      :disabled="isBusy"
+      @click="disconnectConnectedWallet"
+    >Disconnect Wallet</b-button
+    >
+    <TweetModal
+      :images="mintedTokens"
+      :mint-count="mintCount"
+      @hidden="handleTweetModalHide"></TweetModal>
+  </div>
 </template>
 
 <script>
@@ -90,25 +95,25 @@ import {mapMutations} from 'vuex'
 import isMobile from '../hooks/isMobile'
 
 export default {
-	props: {
-		soldOut: Boolean,
-		buttonText:{
-				type:String,
+  props: {
+    soldOut: Boolean,
+    buttonText:{
+      type:String,
 			 default: 'Connect Wallet'
-		},
-		buttonImg:{
-			type:String,
-			default: ''
-		},
-		mintCount: {
-			type: Number,
-			default: 1,
-		},
-	},
-	setup(_, { root }) {
-		const mintedTokens = ref([])
-		const { name: smartContractName, chainId } = root.$siteConfig.smartContract
-		const hexChainId = `0x${chainId.toString(16)}`
+    },
+    buttonImg:{
+      type:String,
+      default: ''
+    },
+    mintCount: {
+      type: Number,
+      default: 1,
+    },
+  },
+  setup(_, { root }) {
+    const mintedTokens = ref([])
+    const { name: smartContractName, chainId } = root.$siteConfig.smartContract
+    const hexChainId = `0x${chainId.toString(16)}`
 
     const {
       connectedWallet,

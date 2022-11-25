@@ -29,6 +29,9 @@ $mintPaddingX: 1.25rem;
 	line-height: 1.375rem;
 	font-weight: 600;
 	border-radius: 6px;
+	@media(max-width: 768px){
+		margin-top: 3.125rem;
+	}
 	// height: var(--mintBtnHeight, $mintBtnHeight);
 }
 
@@ -42,6 +45,7 @@ $navbarBgColor: #343a40;
 $pageBackground: #fff;
 $pageTextColor: #3936FF;
 $buttonBgColor: #3936FF;
+$circleColor: #3936FF;
 
 
 .zc-text {

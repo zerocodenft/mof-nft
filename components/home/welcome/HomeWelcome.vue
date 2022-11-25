@@ -3,12 +3,11 @@
     <b-row class="welcome-block__content flex justify-content-between align-items-center">
       <b-col>
         <div>
-          <h1 class="welcome-block__title">Welcome to vFootballs!</h1>
+          <h1 class="welcome-block__title text-uppercase text-white font-weight-bold">Welcome to vFootballs!</h1>
           <p class="welcome-block__paragraph my-4">Limited NFT collection sponsored by Khabib Nurmagomedov, featuring iconic
             footballs portraying the same football
             moments that has gifted us the beautiful game.
             Buy vFootballs NFT and get a acsess to closed community with football superstars and Khabib Nurmagomedov</p>
-
           <b-button class="universal-button">
             Buy nft
             <b-img
@@ -26,6 +25,7 @@
           src="~/assets/img/welcome/balls.svg"
           alt="ballsIcons"/>
       </b-col>
+
     </b-row>
   </section>
 </template>
@@ -34,7 +34,7 @@
 import HomeWelcomeBenefits from '~/components/home/welcome/HomeWelcomeBenefits';
 
 export default {
-  name: 'HomeWelcome',
+  name: "HomeWelcome",
   components: {HomeWelcomeBenefits},
   setup() {
     const benefitsDataFirstRow = [
@@ -50,6 +50,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>

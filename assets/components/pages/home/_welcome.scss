@@ -2,12 +2,25 @@
 	background: $bg-content;
 	padding-top: 9.413rem;
 	padding-bottom: 15.938rem;
+	@media (max-width: 768px) {
+		padding-top: 0;
+		padding-bottom: 8rem;
+	}
+	@media (max-width: 468px) {
+		padding-bottom: 4rem;
+	}
+
+	&__content{
+		@media (max-width: 768px) {
+			flex-direction: column-reverse;
+		}
+	}
 
 	&__balls{
 		z-index: 3;
 		@media (max-width: 769px) {
 				width: 100%;
-			 margin-top: 1.875rem;
+			 margin-bottom: 3rem;
 		}
 	}
 
@@ -43,11 +56,14 @@
 	}
 
 	&__title{
-		font-weight: 700;
 		font-size: 4.5rem;
 		line-height: 4.5rem;
-		text-transform: uppercase;
-		color: white;
+		@media (max-width: 475px) {
+			font-size: 3.5rem;
+		}
+		@media (max-width: 375px) {
+			font-size: 3rem;
+		}
 	}
 
 	&__paragraph{

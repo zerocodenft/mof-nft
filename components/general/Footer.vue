@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <h1 class="footer__logo text-center">LOGO</h1>
-    <b-row class="d-flex flex-column align-items-center justify-content-center">
+    <b-row class="d-flex m-0 flex-column align-items-center justify-content-center">
       <ul class="footer__list d-flex justify-content-center p-0">
         <li
           v-for="(item, index) in footerData"

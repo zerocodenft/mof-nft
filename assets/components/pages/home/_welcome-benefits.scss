@@ -1,10 +1,19 @@
-.welcome-benefits-block{
+.welcome-benefits{
 	margin-top: 4.188rem;
+	gap:6.25rem;
+	@media (max-width: 424px) {
+		flex-direction: column;
+		gap: 3.125rem;
+	}
+	&__content{
+		gap: 3.438rem;
+	}
 	&__paragraph{
 		color: white;
 	}
 	&__image{
-		height: 33px;
-		width: 33px;
+		margin-right: 1.25rem;
+		height: 2.063rem;
+		width: 2.063rem;
 	}
 }
