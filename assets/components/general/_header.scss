@@ -1,26 +1,18 @@
 .header-block{
 	background: $bg-content;
-	&__button{
-		display: flex;
-		justify-content: center;
-	 align-content: center;
-		font-size: 1rem;
-	}
+
 	&__logo{
 		font-size: 2.25rem;
 		line-height: 2rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		color: white;
 	}
+
 	&__links{
 		gap: 1.25rem;
 	}
-	&__link > a{
+
+	&__link{
 		font-weight: 600;
 		font-size: 0.938rem;
 		line-height: 1.375rem;
-		text-transform: uppercase;
-		color: white !important;
 	}
 }

@@ -1,8 +1,23 @@
-.home-benefits{
+.home-benefits {
 	background: $bg-content;
-	padding-top: 3.625rem;
+	padding-top: 8.375rem;
+	@media (max-width: 768px) {
+		padding-top: 3rem;
+	}
 
-	&__header{
+	&__container{
+		@media (max-width: 1024px) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__image{
+		@media (max-width: 1024px) {
+			padding-bottom: 1.875rem;
+		}
+	}
+
+	&__header {
 		font-size: 2.25rem;
 		font-weight: 700;
 		line-height: 2.625rem;
@@ -10,9 +25,10 @@
 		color: white;
 	}
 
-	&__list{
+	&__list {
 		margin: 1.875rem 0;
-		&-item{
+		padding: 0 1.55rem;
+		&-item {
 			color: $color-text-small;
 		}
 	}
