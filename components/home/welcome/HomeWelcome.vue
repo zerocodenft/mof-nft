@@ -1,8 +1,27 @@
 <template>
-  <section class="welcome-block container mx-auto position-relative">
-    <b-row class="welcome-block__content flex justify-content-between align-items-center">
-      <b-col>
-        <div>
+  <section class="welcome-block mx-auto position-relative">
+    <Header/>
+    <!--  pink		-->
+    <MBlur
+      height="300px"
+      width="300px"
+      background="#F83FFF"
+      blur="200"
+      top="150px"
+      left="0"
+    />
+    <!--  red		-->
+    <MBlur
+      height="200px"
+      width="300px"
+      background="#FF0039"
+      blur="150"
+      top="50px"
+      left="20%"
+    />
+    <div class="welcome-block__content mx-auto container flex justify-content-between align-items-center">
+      <div>
+        <div class="welcome-block__info">
           <h1 class="welcome-block__title text-uppercase text-white font-weight-bold">Welcome to vFootballs!</h1>
           <p class="welcome-block__paragraph my-4">Limited NFT collection sponsored by Khabib Nurmagomedov, featuring iconic
             footballs portraying the same football
@@ -14,28 +33,49 @@
               src="~/assets/img/welcome/button-arrows.svg"
               alt="arrows"></b-img>
           </b-button>
+          <HomeWelcomeBenefits
+            :benefits-data-first-row="benefitsDataFirstRow"
+            :benefits-data-second-row="benefitsDataSecondRow"/>
         </div>
-        <HomeWelcomeBenefits
-          :benefits-data-first-row="benefitsDataFirstRow"
-          :benefits-data-second-row="benefitsDataSecondRow"/>
-      </b-col>
-      <b-col>
-        <b-img
-          class="position-relative welcome-block__balls"
-          src="~/assets/img/welcome/balls.svg"
-          alt="ballsIcons"/>
-      </b-col>
 
-    </b-row>
+      </div>
+      <b-img
+        class="position-relative welcome-block__balls"
+        src="~/assets/img/welcome/balls-all.svg"
+        alt="ballsIcons"
+      />
+      <!--		blue		-->
+      <MBlur
+        height="300px"
+        width="300px"
+        background="#3936FF"
+        blur="200"
+        top="500px"
+        left="80%"
+      />
+      <!--		pink		-->
+      <MBlur
+        height="300px"
+        width="300px"
+        background="#F83FFF"
+        blur="200"
+        top="400px"
+        left="90%"
+      />
+    </div>
   </section>
 </template>
 
 <script>
 import HomeWelcomeBenefits from '~/components/home/welcome/HomeWelcomeBenefits';
+import MBlur from '@/components/ui/MBlur';
 
 export default {
-  name: "HomeWelcome",
-  components: {HomeWelcomeBenefits},
+  name: 'HomeWelcome',
+  components: {
+    HomeWelcomeBenefits,
+    MBlur
+  },
   setup() {
     const benefitsDataFirstRow = [
       {imgName: 'nft', title: 'Only 5000 NFTs'},

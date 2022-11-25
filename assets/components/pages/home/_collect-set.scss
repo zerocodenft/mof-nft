@@ -3,6 +3,11 @@
 
 .collect-set {
 
+	overflow: hidden;
+	@media (max-width: 768px) {
+		padding: 1rem;
+	}
+
 	.collect-swiper {
 		position: relative;
 
@@ -35,18 +40,12 @@
 			color: #BFBEE0;
 			margin-top: 1.25rem;
 			@include fonts(normal, 400, clamp(0.75rem, 1.5vw, 1rem), inherit);
-			width: 20rem;
+			max-width: 20rem;
+			width: 100%;
 		}
 
 		&__info {
 			display: none;
-			padding-left: 1.5rem;
-			@media (max-width: 768px) {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
 		}
 
 
@@ -54,21 +53,36 @@
 
 			.swiper-slide-active {
 				opacity: 1 !important;
-				width: 60% !important;
-				transform: scale(1) !important;
+
+				@media (min-width: 768px) {
+					width: 60% !important;
+					transform: scale(1) !important;
+				}
 
 				.collect-swiper__info {
 					display: block;
+					padding-left: 1.5rem;
+
+					@media (max-width: 768px) {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						padding-left: 0;
+					}
 				}
 
 			}
 
 			.swiper-slide {
 				margin: 0 auto;
-				width: 40%;
 				opacity: 0.3;
-				transform: scale(0.8);
-				transition: all 1s;
+
+				@media (min-width: 768px) {
+					transform: scale(0.8);
+					width: 40%;
+				}
+
 			}
 
 		}

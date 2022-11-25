@@ -1,10 +1,10 @@
 <template>
-  <main class="main overflow-hidden">
+  <main class="main">
     <HomeWelcome/>
     <HomeCollectSet/>
-    <HomeProjectEcosystem/>
     <HomeBenfits/>
     <HomeAbout/>
+    <HomeProjectEcosystem/>
     <HomeRoadmap/>
     <HomeTeamAndSponsors/>
     <HomeFAQ/>
@@ -19,7 +19,7 @@ import HomeFAQ from '~/components/home/faq/HomeFAQ'
 import HomeTeamAndSponsors from '~/components/home/team-sponsors/HomeTeamAndSponsors';
 import HomeCollectSet from '~/components/home/collect-set/HomeCollectSet';
 import HomeProjectEcosystem from '~/components/home/project-ecosystem/HomeProjectEcosystem';
-import HomeRoadmap from "@/components/home/roadmap/HomeRoadmap";
+import HomeRoadmap from '@/components/home/roadmap/HomeRoadmap';
 
 export default {
   name: 'Index',
@@ -35,3 +35,10 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.main {
+	max-width: 1920px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+</style>

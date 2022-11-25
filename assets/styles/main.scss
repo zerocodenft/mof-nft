@@ -1,14 +1,15 @@
 @import './variables';
 @import '../components/components';
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @font-face {
-    font-family: 'Inter var';
-    src: url('../fonts/Inter-Regular.otf') format('opentype');
+	font-family: 'Inter var';
+	src: url('../fonts/Inter-Regular.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Satoshi';
-    src: url('../fonts/Satoshi.ttf') format('truetype');
+	font-family: 'Satoshi';
+	src: url('../fonts/Satoshi.ttf') format('truetype');
 }
 
 html, body {
@@ -23,44 +24,45 @@ html, body {
 }
 
 .required:after {
-  content: " *";
-  color: red;
+	content: " *";
+	color: red;
 }
 
 .pointer {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .form-control {
-  &.is-invalid {
-    border: 1px solid #dc3545;
-  }
+	&.is-invalid {
+		border: 1px solid #dc3545;
+	}
 }
 
 .zc-container {
-  min-height: calc(100vh - $header-height - $footer-height);
-  &:first-child {
-    height: inherit;
-  }
+	min-height: calc(100vh - $header-height - $footer-height);
+
+	&:first-child {
+		height: inherit;
+	}
 }
 
 .bg-gradient-primary {
-  background: $theme-gradient !important;
+	background: $theme-gradient !important;
 }
 
 .text-zerocodenft {
-    background: $theme-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background: $theme-gradient;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .zerocode-link {
 	&:hover {
 		background: linear-gradient(
-			100.07deg,
-			#db6f3d -28.71%,
-			#9534de 36.75%,
-			#5fb9e6 103.59%
+				100.07deg,
+				#db6f3d -28.71%,
+				#9534de 36.75%,
+				#5fb9e6 103.59%
 		);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

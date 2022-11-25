@@ -1,6 +1,5 @@
 <template>
   <div class="home-page">
-    <Header/>
     <Nuxt/>
     <Footer/>
   </div>

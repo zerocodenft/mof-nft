@@ -1,6 +1,5 @@
-.welcome-block{
-	background: $bg-content;
-	padding-top: 9.413rem;
+.welcome-block {
+	background: url("assets/img/welcome/bg.svg");
 	padding-bottom: 15.938rem;
 	@media (max-width: 768px) {
 		padding-top: 0;
@@ -10,21 +9,39 @@
 		padding-bottom: 4rem;
 	}
 
-	&__content{
+	&__content {
+		padding-top: 9.413rem;
+
 		@media (max-width: 768px) {
+			padding-top: 4.213rem;
 			flex-direction: column-reverse;
 		}
 	}
 
-	&__balls{
-		z-index: 3;
-		@media (max-width: 769px) {
-				width: 100%;
-			 margin-bottom: 3rem;
+	&__info {
+		position: relative;
+		z-index: 10;
+		width: 70%;
+
+		@media (max-width: 768px) {
+			width: 100%;
 		}
 	}
 
-	&__circle{
+	&__balls {
+		z-index: 3;
+		position: absolute !important;
+		right: 0;
+		top: 15rem;
+		width: clamp(10rem, 30vw, 30rem);
+
+		@media (max-width: 769px) {
+			margin-bottom: 3rem;
+			display: none;
+		}
+	}
+
+	&__circle {
 		top: 0;
 		left: 36.5%;
 		margin-top: -3.75rem;
@@ -36,7 +53,7 @@
 		}
 	}
 
-	&__left-circle{
+	&__left-circle {
 		top: 0;
 		left: 0;
 		margin-top: -4.375rem;
@@ -47,7 +64,7 @@
 		}
 	}
 
-	&__right-circle{
+	&__right-circle {
 		right: 0;
 		margin-top: 12rem;
 		@media (max-width: 769px) {
@@ -55,7 +72,7 @@
 		}
 	}
 
-	&__title{
+	&__title {
 		font-size: 4.5rem;
 		line-height: 4.5rem;
 		@media (max-width: 475px) {
@@ -66,7 +83,7 @@
 		}
 	}
 
-	&__paragraph{
+	&__paragraph {
 		font-weight: 400;
 		font-size: 1.25rem;
 		line-height: 1.625rem;

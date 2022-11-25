@@ -1,5 +1,8 @@
 <template>
-  <div class="container overflow-hidden">
+  <div
+    id="ecosystem"
+    class="project-ecosystem__wrapper container overflow-hidden"
+  >
     <p class="project-ecosystem__head text-center">Project Ecosystem</p>
     <HomeProjectEcosystemSwiper/>
   </div>
