@@ -9,7 +9,7 @@
       blur="219.5"
       left="0"
     />
-    <div class="d-flex flex-wrap justify-content-center align-items-center team-wrapper-container">
+    <div class="justify-content-center align-items-center team-wrapper-container">
       <div
         v-for="member in teamData"
         :key="member.imgName"
@@ -18,10 +18,12 @@
         <MGradientCard>
           <div class="d-flex flex-column align-items-center team-wrapper__content">
             <b-img
+              class="w-100"
               :src="require(`~/assets/img/team-sponsors/${member.imgName}.svg`)"
               :alt="member.alt"/>
-            <p class="team-wrapper__content-paragraph mt-4 mb-0 text-white text-uppercase font-weight-bold">{{member.name}}</p>
-            <p class="team-wrapper__content-sub-paragraph">{{member.describe}}</p>
+            <p class="team-wrapper__content-paragraph mt-4 mb-0 text-white text-uppercase font-weight-bold">
+              {{ member.name }}</p>
+            <p class="team-wrapper__content-sub-paragraph">{{ member.describe }}</p>
           </div>
         </MGradientCard>
       </div>
@@ -30,49 +32,49 @@
 </template>
 
 <script>
-import MBlur from "@/components/ui/MBlur";
-import MGradientCard from "@/components/ui/MGradientCard";
+import MBlur from '@/components/ui/MBlur';
+import MGradientCard from '@/components/ui/MGradientCard';
 
 export default {
-  name: "HomeTeamMember",
+  name: 'HomeTeamMember',
   components: {MGradientCard, MBlur},
   setup() {
     const teamData = [
       {
-        imgName: "first-member",
-        alt: "first-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
+        imgName: 'first-member',
+        alt: 'first-member',
+        name: 'lorem ipsum',
+        describe: 'lorem ipsum'
       },
       {
-        imgName: "second-member",
-        alt: "second-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
+        imgName: 'second-member',
+        alt: 'second-member',
+        name: 'lorem ipsum',
+        describe: 'lorem ipsum'
       },
       {
-        imgName: "third-member",
-        alt: "third-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
+        imgName: 'third-member',
+        alt: 'third-member',
+        name: 'lorem ipsum',
+        describe: 'lorem ipsum'
       },
       {
-        imgName: "fourth-member",
-        alt: "fourth-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
+        imgName: 'fourth-member',
+        alt: 'fourth-member',
+        name: 'lorem ipsum',
+        describe: 'lorem ipsum'
       },
       {
-        imgName: "fifth-member",
-        name: "lorem ipsum",
-        alt: "fifth-member",
-        describe: "lorem ipsum"
+        imgName: 'fifth-member',
+        name: 'lorem ipsum',
+        alt: 'fifth-member',
+        describe: 'lorem ipsum'
       },
       {
-        imgName: "sixth-member",
-        alt: "sixth-member",
-        name: "lorem ipsum",
-        describe: "lorem ipsum"
+        imgName: 'sixth-member',
+        alt: 'sixth-member',
+        name: 'lorem ipsum',
+        describe: 'lorem ipsum'
       },
     ]
     return {teamData}

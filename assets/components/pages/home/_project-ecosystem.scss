@@ -2,7 +2,12 @@
 @import "assets/styles/mixins";
 
 .project-ecosystem__wrapper {
-	margin-top: 10.875rem;
+	padding-top: 8.375rem;
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		padding-top: 4.375rem;
+	}
 }
 
 .project-ecosystem {

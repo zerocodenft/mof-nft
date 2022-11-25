@@ -1,7 +1,8 @@
 <template>
   <section
     id="roadmap"
-    class="roadmap-wrapper container mx-auto position-relative overflow-hidden">
+    class="roadmap-wrapper container-box mx-auto position-relative overflow-hidden">
+    <!--   TODO HomeRoadmapLine-->
     <h2 class="roadmap-wrapper__header text-white text-uppercase font-weight-bold">Roadmap</h2>
     <HomeRoadmapLine
       :tabs="tabs.items"
@@ -87,6 +88,7 @@ export default {
 	transform: translateX(10px);
 	opacity: 0;
 }
+
 .list-move,
 .list-enter-active,
 .list-leave-active {
@@ -98,26 +100,6 @@ export default {
 	opacity: 0;
 	transform: translateX(30px);
 }
-
-.fade-enter-active {
-	& > * {
-		&:nth-child(2) {
-			transition-delay: 100ms;
-		}
-
-		&:nth-child(3) {
-			transition-delay: 200ms;
-		}
-	}
-}
-
-$delay: 100ms;
-$delayStep: 100ms;
-.fade-leave-active {
-	& > * {
-		&:nth-child(1) {
-			transition-delay: 200ms;
-		}
 
 .list-leave-active {
 	position: absolute;

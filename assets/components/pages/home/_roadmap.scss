@@ -1,6 +1,11 @@
-.roadmap-wrapper{
-	margin-top: 10.875rem;
-	&__header{
+.roadmap-wrapper {
+	padding-top: 8.375rem;
+
+	@media (max-width: 768px) {
+		padding-top: 4rem;
+	}
+
+	&__header {
 		font-size: 2.25rem;
 		line-height: 2.625rem;
 		text-align: center;

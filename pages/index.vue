@@ -35,10 +35,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.main {
-	max-width: 1920px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="home-benefits container mx-auto">
+  <section class="home-benefits container-box mx-auto">
     <b-row class="home-benefits__container">
       <b-col
         xl="5"
@@ -29,7 +29,7 @@
           width="300px"
           background="#F83FFF"
           blur="150"
-          top="0"
+          top="150px"
           left="90%"
         />
       </b-col>

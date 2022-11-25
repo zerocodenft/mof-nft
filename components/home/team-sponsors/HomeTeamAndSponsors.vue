@@ -1,7 +1,7 @@
 <template>
   <section
     id="team"
-    class="container mx-auto team-sponsor-wrapper">
+    class="container-box mx-auto team-sponsor-wrapper">
     <b-row class="team-sponsor-block">
       <b-col
         xl="9"
@@ -24,20 +24,21 @@
 </template>
 
 <script>
-import HomeSponsor from "~/components/home/team-sponsors/HomeSponsor";
-import HomeTeamMember from "~/components/home/team-sponsors/HomeTeamMember";
+import HomeSponsor from '~/components/home/team-sponsors/HomeSponsor';
+import HomeTeamMember from '~/components/home/team-sponsors/HomeTeamMember';
 
 export default {
-  name: "HomeTeamAndSponsors",
+  name: 'HomeTeamAndSponsors',
   components: {HomeTeamMember, HomeSponsor},
 }
 </script>
 <style lang="scss">
-.team-sponsor-wrapper{
+.team-sponsor-wrapper {
 	margin-top: 7.5rem;
 	margin-bottom: 4.063rem;
 }
-.team-sponsor-block{
+
+.team-sponsor-block {
 	@media (max-width: 768px) {
 		flex-direction: column !important;
 	}

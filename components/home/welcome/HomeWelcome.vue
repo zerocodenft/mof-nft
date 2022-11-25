@@ -1,5 +1,5 @@
 <template>
-  <section class="welcome-block mx-auto position-relative">
+  <section class="welcome-block mx-auto position-relative overflow-hidden">
     <Header/>
     <!--  pink		-->
     <b-img
@@ -23,7 +23,7 @@
       top="50px"
       left="20%"
     />
-    <div class="welcome-block__content mx-auto container flex justify-content-between align-items-center">
+    <div class="welcome-block__content container-box mx-auto flex justify-content-between align-items-center">
       <div>
         <div class="welcome-block__info">
           <h1 class="welcome-block__title text-uppercase text-white font-weight-bold">Welcome to vFootballs!</h1>

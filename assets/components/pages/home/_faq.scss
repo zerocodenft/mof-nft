@@ -2,6 +2,16 @@
 @import "assets/styles/variables";
 
 .faq {
+	overflow: hidden;
+	padding-top: 8.375rem;
+	padding-left: 10rem;
+	padding-right: 10rem;
+
+	@media (max-width: 768px) {
+		padding-top: 4rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 
 	&__title {
 		@include fonts(normal, 700, clamp(1.5rem, 2.5vw, 2.25rem), inherit);
@@ -18,10 +28,10 @@
 	}
 
 
-
 	&__button {
 		background: transparent;
 		z-index: 222;
+
 		&:hover, &:active, &:focus {
 			background: transparent !important;
 			outline: 0;

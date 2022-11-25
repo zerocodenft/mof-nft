@@ -1,15 +1,16 @@
-.about-wrapper{
+.about-wrapper {
 	background: $bg-content;
 	padding-top: 7.188rem;
+	overflow: hidden;
 	@media (max-width: 1024px) {
-		padding-top: 0rem;
+		padding-top: 0;
 	}
 
-	&__content{
+	&__content {
 		z-index: 222;
 	}
 
-	&__header{
+	&__header {
 		font-size: 2.25rem;
 		font-weight: 700;
 		line-height: 2.625rem;
@@ -18,7 +19,7 @@
 		margin-bottom: 1.875rem;
 	}
 
-	&__paragraph{
+	&__paragraph {
 		color: $color-text-small;
 		font-weight: 400;
 		font-size: 1rem;
@@ -26,15 +27,15 @@
 		margin-bottom: 1.25rem;
 	}
 
-	&__image{
+	&__image {
 		z-index: 222;
 		@media (max-width: 1024px) {
-			 padding-top: 2rem;
-				padding-bottom: 3.75rem;
+			padding-top: 2rem;
+			padding-bottom: 3.75rem;
 		}
 	}
 
-	&__paragraph2{
+	&__paragraph2 {
 		margin-bottom: 1.875rem;
 	}
 }

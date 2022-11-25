@@ -1,5 +1,5 @@
 <template>
-  <div class="header-block container mx-auto">
+  <div class="header-block container-box mx-auto">
     <b-navbar
       class="d-flex align-items-center justify-content-between"
       toggleable="lg"
@@ -12,16 +12,6 @@
       <b-collapse
         id="nav-collapse"
         is-nav>
-        <!--        <b-navbar-nav class="w-100 d-flex header-block__links justify-content-center align-items-center">-->
-        <!--          <b-nav-item-->
-        <!--            v-for="link in headerLinks"-->
-        <!--            :key="link.id"-->
-        <!--            :to="link.id"-->
-        <!--            link-classes="header-block__link text-white text-uppercase"-->
-        <!--            class="text-uppercase text-white">-->
-        <!--            {{ link.link }}-->
-        <!--          </b-nav-item>-->
-        <!--        </b-navbar-nav>-->
         <HeaderNav/>
         <MintButtonWithWert
           :button-img="'wallet'"

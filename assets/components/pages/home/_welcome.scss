@@ -1,8 +1,10 @@
 .welcome-block {
-	background: url("assets/img/welcome/bg.svg");
-	padding-bottom: 15.938rem;
+	max-width: 1920px;
+	margin: 0 auto;
+	position: relative;
+	background: url("assets/img/welcome/bg.svg") no-repeat center;
+	padding-bottom: 20.938rem;
 	@media (max-width: 768px) {
-		padding-top: 0;
 		padding-bottom: 8rem;
 	}
 	@media (max-width: 468px) {

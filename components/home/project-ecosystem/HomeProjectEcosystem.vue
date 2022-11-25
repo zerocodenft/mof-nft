@@ -1,9 +1,9 @@
 <template>
   <div
     id="ecosystem"
-    class="project-ecosystem__wrapper container overflow-hidden"
+    class="project-ecosystem__wrapper container-box overflow-hidden"
   >
-    <p class="project-ecosystem__head text-center">Project Ecosystem</p>
+    <p class="project-ecosystem__head text-center">PROJECT ECOSYSTEM</p>
     <HomeProjectEcosystemSwiper/>
   </div>
 </template>

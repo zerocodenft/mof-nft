@@ -1,7 +1,7 @@
 <template>
   <div
     id="faq"
-    class="faq container position-relative"
+    class="faq position-relative"
     role="tablist"
   >
     <h2 class="faq__title text-white text-center">
@@ -47,9 +47,9 @@
     </div>
     <MBlur
       width="277px"
-      height="443px"
+      height="243px"
       background="#F83FFF"
-      top="0"
+      top="200px"
       blur="301"
       right="0"
       margin-right="-20%"
@@ -59,7 +59,7 @@
 
 <script>
 import {ref} from '@vue/composition-api'
-import MBlur from "@/components/ui/MBlur";
+import MBlur from '@/components/ui/MBlur';
 
 export default {
   name: 'HomeFAQ',

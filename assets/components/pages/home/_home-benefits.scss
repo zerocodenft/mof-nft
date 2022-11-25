@@ -1,17 +1,18 @@
 .home-benefits {
 	background: $bg-content;
 	padding-top: 8.375rem;
+	overflow: hidden;
 	@media (max-width: 768px) {
 		padding-top: 3rem;
 	}
 
-	&__container{
+	&__container {
 		@media (max-width: 1024px) {
 			flex-direction: column-reverse;
 		}
 	}
 
-	&__image{
+	&__image {
 		@media (max-width: 1024px) {
 			padding-bottom: 1.875rem;
 		}
@@ -28,6 +29,7 @@
 	&__list {
 		margin: 1.875rem 0;
 		padding: 0 1.55rem;
+
 		&-item {
 			color: $color-text-small;
 		}
