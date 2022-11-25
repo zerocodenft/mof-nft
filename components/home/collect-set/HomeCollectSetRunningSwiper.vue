@@ -72,13 +72,14 @@ export default {
 		width: 11rem;
 	}
 
+	.swiper-wrapper {
+		transition-timing-function: linear !important;
+	}
+
+	.swiper-slide {
+		width: fit-content !important;
+	}
+
 }
 
-.swiper-wrapper {
-	transition-timing-function: linear !important;
-}
-
-.swiper-slide {
-	width: fit-content !important;
-}
 </style>

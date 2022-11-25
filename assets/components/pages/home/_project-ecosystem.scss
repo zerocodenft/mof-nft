@@ -5,7 +5,58 @@
 
 	&__head {
 		@include fonts(normal, 700, clamp(1.5rem, 2.5vw, 2.25rem), inherit);
+		color: $white;
 	}
+
+	&__content {
+		padding: 4.3rem 3rem;
+
+		@media (max-width: 991px) {
+			padding: 2rem 0.5rem;
+		}
+		
+	}
+
+	&__title {
+		@include fonts(normal, 700, clamp(1rem, 1.5vw, 1.5rem), inherit);
+		color: $white;
+		margin-top: 4.5rem;
+
+		@media (max-width: 768px) {
+			margin-top: 2rem;
+		}
+	}
+
+	&__description {
+		@include fonts(normal, 400, clamp(0.85rem, 1.5vw, 1rem), inherit);
+		color: $pigeon;
+		margin-top: 1.25rem;
+
+		@media (max-width: 768px) {
+			margin-top: 1rem;
+		}
+	}
+
+	&__button {
+		margin-top: 2.875rem;
+
+		@media (max-width: 768px) {
+			margin-top: 1.5rem;
+		}
+	}
+
+	.swiper-slide {
+		transform: scale(0.8);
+		transition: all 0.5s;
+		opacity: 0.4;
+		cursor: pointer;
+	}
+
+	.swiper-slide-active {
+		transform: scale(1);
+		opacity: 1
+	}
+
 
 	&__slide {
 		border-radius: 50%;
@@ -28,19 +79,19 @@
 	}
 
 	.slide-prev {
-		left: 5rem !important;
+		left: 2rem !important;
 
 		@media (max-width: 768px) {
-			left: 2rem !important;
+			left: 1rem !important;
 		}
 	}
 
 	.slide-next {
-		right: 5rem !important;
+		right: 0.5rem !important;
 		transform: rotate(180deg);
 
 		@media (max-width: 768px) {
-			right: 1rem !important;
+			right: -0.3rem !important;
 		}
 	}
 

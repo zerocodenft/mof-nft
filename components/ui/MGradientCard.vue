@@ -23,7 +23,7 @@ export default {
 	overflow: hidden;
 
 	&__content {
-		background: linear-gradient(0deg, #150B40 0%, rgba(38, 29, 78, 1) 87%);
+		background: linear-gradient(0deg, rgba(22, 12, 65, 1) 0%, rgba(31, 19, 81, 1) 87%);
 		border-radius: 1rem;
 	}
 }
