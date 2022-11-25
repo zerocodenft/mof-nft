@@ -2,6 +2,10 @@
   <section class="welcome-block mx-auto position-relative">
     <Header/>
     <!--  pink		-->
+    <b-img
+      class="welcome-block__left-top-circle"
+      :src="require('assets/img/welcome/circle.svg')"
+      alt="circle"/>
     <MBlur
       height="300px"
       width="300px"

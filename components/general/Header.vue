@@ -6,21 +6,23 @@
       type="dark">
       <b-navbar-brand
         active-class="header-block__logo text-white text-uppercase font-weight-bold"
-        to="/">LOGO</b-navbar-brand>
+        to="/">LOGO
+      </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse
         id="nav-collapse"
         is-nav>
-        <b-navbar-nav class="w-100 d-flex header-block__links justify-content-center align-items-center">
-          <b-nav-item
-            v-for="link in headerLinks"
-            :key="link.id"
-            :to="link.id"
-            link-classes="header-block__link text-white text-uppercase"
-            class="text-uppercase text-white">
-            {{ link.link }}
-          </b-nav-item>
-        </b-navbar-nav>
+        <!--        <b-navbar-nav class="w-100 d-flex header-block__links justify-content-center align-items-center">-->
+        <!--          <b-nav-item-->
+        <!--            v-for="link in headerLinks"-->
+        <!--            :key="link.id"-->
+        <!--            :to="link.id"-->
+        <!--            link-classes="header-block__link text-white text-uppercase"-->
+        <!--            class="text-uppercase text-white">-->
+        <!--            {{ link.link }}-->
+        <!--          </b-nav-item>-->
+        <!--        </b-navbar-nav>-->
+        <HeaderNav/>
         <MintButtonWithWert
           :button-img="'wallet'"
           :button-text="'Connect wallet'"></MintButtonWithWert>
@@ -32,16 +34,17 @@
 <script>
 import {copyToClipboard} from '@/utils'
 import MintButtonWithWert from '~/components/MintButtonWithWert';
+import HeaderNav from '@/components/general/HeaderNav';
 
 export default {
-  components: {MintButtonWithWert},
+  components: {MintButtonWithWert, HeaderNav},
   data() {
     const headerLinks = [
       {id: '#about', link: 'About'},
       {id: '#ecosystem', link: 'Ecosystem'},
       {id: '#roadmap', link: 'Roadmap'},
-      {id: "#team", link: 'Team'},
-      {id: "#howToBuy", link: 'How to buy'},
+      {id: '#team', link: 'Team'},
+      {id: '#howToBuy', link: 'How to buy'},
       {id: '#faq', link: 'Faq'}
     ]
     return {headerLinks}

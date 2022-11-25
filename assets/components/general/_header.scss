@@ -4,10 +4,17 @@
 	&__logo {
 		font-size: 2.25rem;
 		line-height: 2rem;
+		position: relative;
+		z-index: 1;
 	}
 
 	&__links {
 		gap: 1.25rem;
+		flex-direction: row;
+		
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
 	}
 
 	&__link {

@@ -9,7 +9,7 @@
     <transition
       name="slide-fade"
       mode="out-in"
-      :duration="500">
+    >
       <component :is="tabs.active"/>
     </transition>
   </section>

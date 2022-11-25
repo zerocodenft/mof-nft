@@ -18,7 +18,6 @@ module.exports = {
     // vue
     indent: ['error', 2],
     'vue/html-indent': ['error', 2],
-    'vue/multi-word-component-names': 'off',
     'vue/no-v-html': 'off',
     'no-console': 'off',
     'vue/component-name-in-template-casing': [

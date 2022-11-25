@@ -1,4 +1,4 @@
-.roadmap-line{
+.roadmap-line {
 	height: 1rem;
 	background: linear-gradient(90deg, rgba(57, 54, 255, 0) 0.59%, #3936FF 52.11%, rgba(57, 54, 255, 0) 99.51%);
 	margin-top: 3.75rem;
@@ -6,7 +6,7 @@
 		height: 0.75rem;
 	}
 
-	&-circles{
+	&-circles {
 		gap: 10rem;
 		justify-content: center;
 		align-content: center;
@@ -21,7 +21,8 @@
 		}
 	}
 
-	&__big-circle{
+	&__big-circle {
+		transition: all 1s;
 		width: 3.375rem;
 		height: 3.375rem;
 		top: 50%;
@@ -34,7 +35,7 @@
 		}
 	}
 
-	&__block{
+	&__block {
 		background: #150B40;
 		top: -120%;
 		left: 50%;
@@ -42,20 +43,21 @@
 		@media (max-width: 475px) {
 			transform: translate(-50%, -100%);
 		}
-		&-title{
+
+		&-title {
 			font-size: 1.5rem;
 			line-height: 2rem;
 			margin-bottom: 0.313rem !important;
 		}
 
-		&-subtitle{
+		&-subtitle {
 			font-size: 1rem;
 			line-height: 1.375rem;
 			color: $circleColor;
 		}
 	}
 
-	&__small-circle{
+	&__small-circle {
 		background: $smallCircle;
 		width: 1.5rem;
 		height: 1.5rem;
@@ -68,7 +70,7 @@
 		}
 	}
 
-	&__vertical-line{
+	&__vertical-line {
 		width: 0.188rem;
 		height: 3.125rem;
 		left: 50%;
@@ -76,7 +78,7 @@
 		background: $circleColor;
 	}
 
-	&__default-vertical-line{
+	&__default-vertical-line {
 		width: 0.188rem;
 		height: 1.875rem;
 		left: 50%;
@@ -84,13 +86,13 @@
 		background: $circleColor;
 	}
 
-	&__default-circle{
+	&__default-circle {
 		width: 2.188rem;
 		height: 2.188rem;
 		top: 50%;
 		left: 0;
 		background: $circleColor;
-		transform: translate(-50%, -35%);
+		transform: translate(-50%, -30%);
 		@media (max-width: 475px) {
 			width: 1.563rem;
 			height: 1.563rem;
