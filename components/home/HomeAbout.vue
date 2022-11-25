@@ -2,8 +2,29 @@
   <section
     id="about"
     class="about-wrapper container mx-auto">
-    <b-row class="about-wrapper__content">
-      <b-col xl="7">
+    <b-row >
+      <b-col
+        class="about-wrapper__content"
+        xl="7">
+        <MBlur
+          width="266px"
+          height="359px"
+          background="#FF0039"
+          top="20%"
+          blur="219.5"
+          left="0"
+        />
+        <!--							blue-->
+        <MBlur
+          width="297px"
+          height="527px"
+          background="#3936FF"
+          bottom="0"
+          blur="219"
+          right="0"
+          margin-bottom="-45%"
+          transform="rotate(63.41deg)"
+        />
         <b-img
           class="w-100 about-wrapper__image"
           src="~/assets/img/about/about-img.png"
@@ -32,9 +53,11 @@
 </template>
 
 <script>
+import MBlur from "@/components/ui/MBlur";
 
 export default {
   name: "HomeBenfits",
+  components:{MBlur},
   setup() {
     const paragraphData = ["Our Mission is unite all football fans around the world. The Museum of Footballs project unites people together just as football does.",
       "The project was initiated by Khabib Nurmagomedov Foundation and includes vMuseum of Footballs in the metaverse, " +
