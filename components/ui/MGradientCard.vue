@@ -25,6 +25,7 @@ export default {
 	&__content {
 		background: linear-gradient(0deg, rgba(22, 12, 65, 1) 0%, rgba(31, 19, 81, 1) 87%);
 		border-radius: 1rem;
+		height: 100%;
 	}
 }
 </style>

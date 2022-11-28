@@ -27,20 +27,35 @@
       <div>
         <div class="welcome-block__info">
           <h1 class="welcome-block__title text-uppercase text-white font-weight-bold">Welcome to vFootballs!</h1>
-          <p class="welcome-block__paragraph my-4">Limited NFT collection sponsored by Khabib Nurmagomedov, featuring iconic
-            footballs portraying the same football
+          <p class="welcome-block__paragraph">Limited NFT collection
+            <span class="font-weight-bold">sponsored by Khabib Nurmagomedov</span>
+            featuring iconic footballs portraying the
+            same football
             moments that has gifted us the beautiful game.
-            Buy vFootballs NFT and get a acsess to closed community with football superstars and Khabib Nurmagomedov</p>
-          <b-button class="universal-button">
-            Buy nft
-            <b-img
-              src="~/assets/img/welcome/button-arrows.svg"
-              alt="arrows"></b-img>
-          </b-button>
-          <HomeWelcomeBenefits
-            :benefits-data-first-row="benefitsDataFirstRow"
-            :benefits-data-second-row="benefitsDataSecondRow"/>
+          </p>
+          <p class="mt-2 welcome-block__paragraph">
+            Buy vFootballs NFT and get
+            <span
+              class="font-weight-bold">a access to closed community with football superstars and Khabib Nurmagomedov
+            </span>
+            NFT mint will start:</p>
+          <HomeCountdown/>
+          <div class="d-flex">
+            <b-button class="universal-button">
+              Buy nft
+              <b-img
+                src="~/assets/img/welcome/button-arrows.svg"
+                alt="arrows"></b-img>
+            </b-button>
+            <b-button class="welcome-block__sign-in">
+              Sign in Whitelist
+            </b-button>
+          </div>
         </div>
+        <HomeWelcomeBenefits
+          :benefits-data-first-row="benefitsDataFirstRow"
+          :benefits-data-second-row="benefitsDataSecondRow"
+        />
 
       </div>
       <b-img
@@ -62,8 +77,8 @@
         height="300px"
         width="300px"
         background="#F83FFF"
-        blur="200"
-        top="400px"
+        blur="140"
+        top="500px"
         left="90%"
       />
     </div>
@@ -72,13 +87,15 @@
 
 <script>
 import HomeWelcomeBenefits from '~/components/home/welcome/HomeWelcomeBenefits';
-import MBlur from '@/components/ui/MBlur';
+import MBlur from '~/components/ui/MBlur';
+import HomeCountdown from '~/components/home/welcome/HomeCountdown';
 
 export default {
   name: 'HomeWelcome',
   components: {
     HomeWelcomeBenefits,
-    MBlur
+    MBlur,
+    HomeCountdown,
   },
   setup() {
     const benefitsDataFirstRow = [

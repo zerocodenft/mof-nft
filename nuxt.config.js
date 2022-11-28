@@ -18,6 +18,7 @@ export default {
 
   server: {
     port: 9001,
+    host: '0.0.0.0'
   },
 
   cli: {

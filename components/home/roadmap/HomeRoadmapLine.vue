@@ -3,13 +3,21 @@
     <div class="d-flex w-100 position-absolute roadmap-line-circles">
       <div
         v-for="(item,index) in tabs"
-        :key="index">
-        <component
-          :is="item.active ? 'RoadmapActiveCircle' : 'RoadmapDefaultCircle'"
-          :index="index"
-          :item="item"
-          @changeTab="changeTab"
-        />
+        :key="index"
+        class="position-relative">
+        <transition name="fade">
+          <!--          <component-->
+          <!--            :is="item.active ? 'RoadmapActiveCircle' : 'RoadmapDefaultCircle'"-->
+          <!--            :index="index"-->
+          <!--            :item="item"-->
+          <!--            @changeTab="changeTab"-->
+          <!--          />-->
+          <HomeRoadmapLineItem
+            :index="index"
+            :item="item"
+            @changeTab="changeTab"
+          />
+        </transition>
       </div>
     </div>
   </div>
@@ -18,10 +26,11 @@
 <script>
 import RoadmapActiveCircle from '~/components/home/roadmap/circles/RoadmapActiveCircle';
 import RoadmapDefaultCircle from '~/components/home/roadmap/circles/RoadmapDefaultCircle';
+import HomeRoadmapLineItem from '@/components/home/roadmap/HomeRoadmapLineItem';
 
 export default {
   name: 'RoadmapLine',
-  components: {RoadmapDefaultCircle, RoadmapActiveCircle},
+  components: {RoadmapDefaultCircle, RoadmapActiveCircle, HomeRoadmapLineItem},
   props: {
     tabs: {
       type: Array,
@@ -38,18 +47,13 @@ export default {
 }
 </script>
 <style lang="scss">
-.slide-fade-enter-active {
-	transition: all .2s ease;
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s ease;
 }
 
-.slide-fade-leave-active {
-	transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-
-.slide-fade-enter, .slide-fade-leave-to
-	/* .slide-fade-leave-active below version 2.1.8 */
-{
-	transform: translateX(10px);
+.fade-enter-from,
+.fade-leave-to {
 	opacity: 0;
 }
 </style>

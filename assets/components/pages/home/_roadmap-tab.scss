@@ -1,19 +1,23 @@
-.roadmap-tab{
+.roadmap-tab {
 	margin-top: 2.375rem;
 	border-radius: 1rem;
-	&__line{
+
+	&__line {
 		border-radius: 1rem;
 		padding: 1px 0;
 		overflow: hidden;
 		background: linear-gradient(90deg, rgba(21, 11, 64, 1) 0%, rgba(248, 63, 255, 1) 30%, rgba(57, 54, 255, 1) 80%, rgba(21, 11, 64, 1) 100%);
 		margin-bottom: 1.25rem;
 	}
-	&__image{
+
+	&__image {
+		max-width: 10rem;
 		@media (max-width: 425px) {
-				width: 100%;
+			width: 100%;
 		}
 	}
-	&__header{
+
+	&__header {
 		font-weight: 700;
 		font-size: 1.5rem;
 		line-height: 2rem;
@@ -22,7 +26,8 @@
 			line-height: 1.4rem;
 		}
 	}
-	&__paragraph{
+
+	&__paragraph {
 		line-height: 1.5rem;
 		font-size: 1rem;
 		color: #BFBEE0;
@@ -31,7 +36,8 @@
 			line-height: 1.2rem;
 		}
 	}
-	&-container{
+
+	&-container {
 		//min-height: 429px !important;
 		background: radial-gradient(circle, rgba(38, 29, 78, 1) 0%, rgba(21, 11, 64, 1) 100%);
 		padding: 4.5rem 0;

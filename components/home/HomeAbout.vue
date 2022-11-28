@@ -8,10 +8,10 @@
         xl="7">
         <MBlur
           width="266px"
-          height="359px"
+          height="209px"
           background="#FF0039"
-          top="20%"
-          blur="219.5"
+          top="40%"
+          blur="159.5"
           left="0"
         />
         <!--blue-->

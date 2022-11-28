@@ -1,17 +1,22 @@
-.welcome-benefits{
+@import "assets/styles/mixins";
+
+.welcome-benefits {
 	margin-top: 4.188rem;
-	gap:6.25rem;
+	gap: 6.25rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	@media (max-width: 424px) {
 		flex-direction: column;
 		gap: 3.125rem;
 	}
-	&__content{
-		gap: 3.438rem;
+
+
+	&__title {
+		@include fonts(normal, 400, clamp(1rem, 1.5vw, 1.25rem), inherit);
 	}
-	&__paragraph{
-		color: white;
-	}
-	&__image{
+
+
+	&__image {
 		margin-right: 1.25rem;
 		height: 2.063rem;
 		width: 2.063rem;

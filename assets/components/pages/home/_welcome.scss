@@ -3,7 +3,7 @@
 	margin: 0 auto;
 	position: relative;
 	background: url("assets/img/welcome/bg.svg") no-repeat center;
-	padding-bottom: 20.938rem;
+	padding-bottom: 8.475rem;
 	@media (max-width: 768px) {
 		padding-bottom: 8rem;
 	}
@@ -30,7 +30,7 @@
 	&__info {
 		position: relative;
 		z-index: 10;
-		width: 70%;
+		width: 50%;
 
 		@media (max-width: 768px) {
 			width: 100%;
@@ -41,8 +41,8 @@
 		z-index: 3;
 		position: absolute !important;
 		right: 0;
-		top: 15rem;
-		width: clamp(10rem, 30vw, 30rem);
+		top: 10rem;
+		width: clamp(10rem, 36vw, 36rem);
 
 		@media (max-width: 769px) {
 			margin-bottom: 3rem;
@@ -97,5 +97,21 @@
 		font-size: 1.25rem;
 		line-height: 1.625rem;
 		color: white;
+	}
+
+	&__sign-in {
+		margin-left: 2rem;
+		background-color: transparent;
+		border: 1px solid $white;
+		color: $white;
+		border-radius: 0.5rem;
+
+		&:active, &:focus, &:hover {
+			outline: none;
+			box-shadow: none !important;
+			border: 1px solid $white;
+			background-color: transparent !important;
+		}
+
 	}
 }

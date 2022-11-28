@@ -1,22 +1,19 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables";
+
 .home-benefits {
 	background: $bg-content;
 	padding-top: 8.375rem;
+	padding-bottom: 8.375rem;
 	overflow: hidden;
+	background-image: url("assets/img/home-benefits/soccer-bg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 	@media (max-width: 768px) {
 		padding-top: 3rem;
+		padding-bottom: 4.375rem;
 	}
 
-	&__container {
-		@media (max-width: 1024px) {
-			flex-direction: column-reverse;
-		}
-	}
-
-	&__image {
-		@media (max-width: 1024px) {
-			padding-bottom: 1.875rem;
-		}
-	}
 
 	&__header {
 		font-size: 2.25rem;
@@ -24,14 +21,58 @@
 		line-height: 2.625rem;
 		text-transform: uppercase;
 		color: white;
+		width: 50%;
+
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 	}
 
-	&__list {
-		margin: 1.875rem 0;
-		padding: 0 1.55rem;
+	&__cards {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		grid-gap: 1.5rem;
+		margin-top: 1.875rem;
+		width: 70%;
 
-		&-item {
-			color: $color-text-small;
+		@media (max-width: 768px) {
+			width: 100%;
+		}
+
+	}
+
+	&__card {
+		padding: 1.25rem 1.5rem !important;
+	}
+
+	&__number {
+		@include fonts(normal, 700, clamp(2rem, 2.5vw, 2.25rem), inherit);
+		background: linear-gradient(76.45deg, #F83FFF 20.31%, #3936FF 85.87%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+		margin-right: 1.25rem;
+	}
+
+	&__title {
+		@include fonts(normal, 700, clamp(0.875rem, 1.5vw, 1rem), inherit);
+		color: $pigeon;
+	}
+
+	&__poster {
+		right: 0;
+		top: 2rem;
+		z-index: 0;
+
+		@media (max-width: 768px) {
+			top: 5rem;
+		}
+
+		img {
+			width: 100%;
 		}
 	}
 }

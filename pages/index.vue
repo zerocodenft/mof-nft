@@ -1,6 +1,7 @@
 <template>
   <main class="main">
     <HomeWelcome/>
+    <HomeVisit/>
     <HomeCollectSet/>
     <HomeBenfits/>
     <HomeAbout/>
@@ -20,6 +21,7 @@ import HomeTeamAndSponsors from '~/components/home/team-sponsors/HomeTeamAndSpon
 import HomeCollectSet from '~/components/home/collect-set/HomeCollectSet';
 import HomeProjectEcosystem from '~/components/home/project-ecosystem/HomeProjectEcosystem';
 import HomeRoadmap from '@/components/home/roadmap/HomeRoadmap';
+import HomeVisit from '@/components/home/visit/HomeVisit';
 
 export default {
   name: 'Index',
@@ -31,7 +33,8 @@ export default {
     HomeTeamAndSponsors,
     HomeFAQ,
     HomeCollectSet,
-    HomeProjectEcosystem
+    HomeProjectEcosystem,
+    HomeVisit
   }
 }
 </script>

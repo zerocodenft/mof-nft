@@ -3,11 +3,12 @@
 
 .faq {
 	overflow: hidden;
-	padding-top: 8.375rem;
+	margin-top: 8.375rem;
 	padding-left: 10rem;
 	padding-right: 10rem;
 
 	@media (max-width: 768px) {
+		margin-top: 4rem;
 		padding-top: 4rem;
 		padding-left: 2rem;
 		padding-right: 2rem;

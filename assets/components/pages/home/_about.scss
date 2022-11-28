@@ -1,9 +1,11 @@
 .about-wrapper {
 	background: $bg-content;
-	padding-top: 7.188rem;
+	margin-top: 8.375rem;
+	margin-bottom: 8.375rem;
 	overflow: hidden;
 	@media (max-width: 1024px) {
-		padding-top: 0;
+		margin-top: 0;
+		margin-bottom: 4.375rem;
 	}
 
 	&__content {

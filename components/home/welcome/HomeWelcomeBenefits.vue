@@ -1,37 +1,23 @@
 <template>
-  <div class="welcome-benefits d-flex">
-    <div class="d-flex flex-column justify-content-between welcome-benefits__content">
-      <div
-        v-for="benefit in benefitsDataFirstRow"
-        :key="benefit.title">
-        <div class="d-flex  align-items-center">
-          <b-img
-            class="welcome-benefits__image"
-            :src="require(`~/assets/img/welcome/${benefit.imgName}.svg`)"
-            alt="img"/>
-          <p class="welcome-benefits__paragraph mb-0">{{ benefit.title }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="d-flex flex-column justify-content-between welcome-benefits__content">
-      <div
-        v-for="benefit in benefitsDataSecondRow"
-        :key="benefit.title">
-        <div class="d-flex  align-items-center">
-          <b-img
-            class="welcome-benefits__image"
-            :src="require(`~/assets/img/welcome/${benefit.imgName}.svg`)"
-            alt="img"/>
-          <p class="welcome-benefits__paragraph mb-0">{{ benefit.title }}</p>
-        </div>
-      </div>
+  <div class="welcome-benefits">
+    <div
+      v-for="item in benefits"
+      :key="item.id"
+      class="d-flex align-items-center"
+    >
+      <b-img
+        class="welcome-benefits__image"
+        :src="require(`~/assets/img/welcome/${item.imgName}.svg`)"
+        alt="img"/>
+      <span class="welcome-benefits__title text-white"> {{ item.title }} </span>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "HomeWelcomeBenefits",
+  name: 'HomeWelcomeBenefits',
   props: {
     benefitsDataFirstRow: {
       type: Array,
@@ -41,7 +27,19 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  setup() {
+    const benefits = [
+      {imgName: 'nft', title: 'Only 5000 NFTs'},
+      {imgName: 'star', title: 'Access to events with super stars and Khabib'},
+      {imgName: 'allocation', title: 'Token Allocation in vGame tokensale'},
+      {imgName: 'ticket', title: 'Football Event Tickets/Raffles'},
+    ]
+    return {
+      benefits
+    }
   }
+
 }
 </script>
 
