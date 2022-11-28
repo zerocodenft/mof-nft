@@ -60,7 +60,7 @@
       </div>
       <b-img
         class="position-relative welcome-block__balls"
-        src="~/assets/img/welcome/balls-all.svg"
+        src="~/assets/img/welcome/balls-all-new.svg"
         alt="ballsIcons"
       />
       <!--		blue		-->

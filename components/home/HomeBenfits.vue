@@ -3,15 +3,17 @@
     <h2 class="home-benefits__header">What benefits get the owners of vFootballs NFT?</h2>
     <div>
       <div class="home-benefits__cards">
-        <MGradientCard
+        <div
           v-for="(card, index) in listTitles"
           :key="index"
-        >
-          <div class="home-benefits__card d-flex align-items-center">
-            <p class="home-benefits__number mb-0">{{ generateTwoDigits(index + 1) }}</p>
-            <p class="home-benefits__title mb-0">{{ card }}</p>
+          class="home-benefits__line">
+          <div class="home-benefits__content">
+            <div class="home-benefits__card d-flex align-items-center">
+              <p class="home-benefits__number mb-0">{{ generateTwoDigits(index + 1) }}</p>
+              <p class="home-benefits__title mb-0">{{ card }}</p>
+            </div>
           </div>
-        </MGradientCard>
+        </div>
       </div>
       <b-button class="universal-button mt-5">
         MInt NFT

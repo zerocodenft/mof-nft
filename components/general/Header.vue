@@ -1,7 +1,7 @@
 <template>
   <div class="header-block container-box mx-auto">
     <b-navbar
-      class="d-flex align-items-center justify-content-between"
+      class="d-flex align-items-center justify-content-between px-0"
       toggleable="lg"
       type="dark">
       <b-navbar-brand

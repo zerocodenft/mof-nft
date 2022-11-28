@@ -53,6 +53,7 @@ export default {
 			content: '';
 			position: absolute;
 			left: 50%;
+			transform: translateX(-50%);
 			top: -1rem;
 			width: 2px;
 			background: $circleColor;
@@ -87,7 +88,7 @@ export default {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		transform: scale(1.4) translate(0%, -30%);
+		transform: scale(1.4) translate(0%, -20%);
 		z-index: 1;
 
 		&::before {
