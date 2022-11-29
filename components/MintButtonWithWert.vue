@@ -24,59 +24,13 @@
           :src="require(`~/assets/img/header/${buttonImg}.svg`)"/>
       </b-button
       >
-      <b-dropdown
-        v-else-if="isConnected && isMetaMask && !isMobile"
-        split
-        block
-        split-class="split-mint-button font-weight-bold border-0"
-        menu-class="w-100 text-center"
-        toggle-class="split-mint-toggle"
-        :text="`Mint [${mintCount}]`"
-        @click="mintWithCrypto">
-        <b-dropdown-item @click="reconnectMetamask"
-        >Select Different Wallet
-        </b-dropdown-item
-        >
-        <b-dropdown-item @click="disconnectConnectedWallet"
-        >Disconnect
-        </b-dropdown-item
-        >
-      </b-dropdown>
-
-      <b-button
-        v-else
-        class="mint-button border-0"
-        @click="mintWithCrypto"
-      >Mint [{{ mintCount }}]</b-button
+      <div v-if="walletAddress" 
+        class="mint-button font-weight-bold border-0 justify-content-between align-items-center"
       >
-      <b-button
-        v-if="isConnected"
-        class="mint-button font-weight-bold border-0 mt-2"
-        @click="mintWithWert"
-      >Pay with wert</b-button
-      >
+        {{walletAddress}}
+      </div>
     </b-overlay>
-    <b-alert
-      :show="message.show || !!message.text"
-      :variant="message.variant"
-      dismissible
-      class="mt-2"
-      @dismissed="message = {}">
-      {{ message.text }}
-    </b-alert>
-    <b-button
-      v-if="$route.name === 'button'"
-      v-show="isConnected"
-      variant="link"
-      class="mt-2 text-decoration-none"
-      :disabled="isBusy"
-      @click="disconnectConnectedWallet"
-    >Disconnect Wallet</b-button
-    >
-    <TweetModal
-      :images="mintedTokens"
-      :mint-count="mintCount"
-      @hidden="handleTweetModalHide"></TweetModal>
+     
   </div>
 </template>
 
