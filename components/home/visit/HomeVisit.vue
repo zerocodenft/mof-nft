@@ -38,6 +38,8 @@ export default {
 
 .welcome-visit {
 	padding: clamp(1.4rem, 2.5vw, 2.4rem) 0;
+	max-width: 100vw;
+	overflow: hidden;
 	background: linear-gradient(89.47deg, rgba(21, 11, 64, 0) -37.13%, #3936FF 10.51%, #F83FFF 90.65%, rgba(21, 11, 64, 0) 121.5%);
 
 	&__title {
