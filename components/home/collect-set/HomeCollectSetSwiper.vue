@@ -71,12 +71,13 @@ export default {
   },
   setup() {
     const mySwiper = ref()
-    const swiperKey = ref(0)
     const swiperOptions = {
       loop: true,
       slidesPerView: 'auto',
       centeredSlides: true,
-      spaceBetween: 30
+      spaceBetween: 30,
+      autoResize: false,
+      resizeReInit: true,
     }
     const balls = ref([
       {id: 1, title: 'GOLD BALL'},
@@ -86,11 +87,9 @@ export default {
 
     const prevSlide = () => {
       mySwiper.value.$swiper.slidePrev()
-      swiperKey.value++
     }
     const nextSlide = () => {
       mySwiper.value.$swiper.slideNext()
-      swiperKey.value++
     }
     return {
       swiperOptions,

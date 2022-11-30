@@ -34,8 +34,11 @@ export default {
 </script>
 <style lang="scss">
 .team-sponsor-wrapper {
-	margin-top: 7.5rem;
-	margin-bottom: 4.063rem;
+	padding-top: 8.375rem;
+
+	@media (max-width: 768px) {
+		padding-top: 4.375rem;
+	}
 }
 
 .team-sponsor-block {

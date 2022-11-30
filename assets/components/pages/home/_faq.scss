@@ -2,14 +2,14 @@
 @import "assets/styles/variables";
 
 .faq {
-	overflow: hidden;
-	margin-top: 8.375rem;
 	padding-left: 10rem;
 	padding-right: 10rem;
+	padding-top: 8.375rem;
+	max-width: 1920px;
+	margin: 0 auto;
 
 	@media (max-width: 768px) {
-		margin-top: 4rem;
-		padding-top: 4rem;
+		padding-top: 4.375rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}

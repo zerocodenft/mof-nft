@@ -1,5 +1,9 @@
-.sponsors-wrapper{
-	&__header{
+.sponsors-wrapper {
+	@media (max-width: 768px) {
+		padding-top: 4rem;
+	}
+
+	&__header {
 		font-size: 2.25rem;
 		line-height: 2.625rem;
 		margin-bottom: 3.125rem;
@@ -7,18 +11,21 @@
 			text-align: center;
 		}
 	}
-	&__line{
+
+	&__line {
 		border-radius: 1rem;
 		padding: 1px 0;
 		overflow: hidden;
 		background: linear-gradient(90deg, rgba(21, 11, 64, 1) 0%, rgba(248, 63, 255, 1) 30%, rgba(57, 54, 255, 1) 80%, rgba(21, 11, 64, 1) 100%);
 		margin-bottom: 1.25rem;
 	}
-	&__content{
+
+	&__content {
 		padding: 1.5rem 1.5rem 1.5rem 1.25rem;
 		background: radial-gradient(circle, rgba(38, 29, 78, 1) 0%, rgba(21, 11, 64, 1) 100%);
 	}
-	&__paragraph{
+
+	&__paragraph {
 		font-size: 1rem;
 		line-height: 1.375rem;
 		margin-bottom: 0.625rem;

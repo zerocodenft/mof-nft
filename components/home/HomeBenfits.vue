@@ -41,13 +41,11 @@
 
 <script>
 import MBlur from '@/components/ui/MBlur';
-import MGradientCard from '@/components/ui/MGradientCard';
 
 export default {
   name: 'HomeBenfits',
   components: {
     MBlur,
-    MGradientCard,
   },
   setup() {
     const listTitles = ['Access to closed community with football superstars and Khabib Nurmagomedov',

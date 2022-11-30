@@ -32,6 +32,10 @@ $mintPaddingX: 1.25rem;
 	}
 }
 
+.main {
+	overflow: hidden;
+}
+
 .container-box {
 	max-width: 1920px;
 	padding-left: clamp(5rem, 10vw, 10rem);
