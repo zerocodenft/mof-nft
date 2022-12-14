@@ -14,13 +14,18 @@
 .project-ecosystem {
 	overflow: hidden;
 
+	&__logo{
+		width: 173px;
+		height: 125px;
+	}
+
 	&__head {
 		@include fonts(normal, 700, clamp(1.5rem, 2.5vw, 2.25rem), inherit);
 		color: $white;
 	}
 
 	&__content {
-		padding: 4.3rem 3rem;
+		padding: 4rem 3rem;
 
 		@media (max-width: 991px) {
 			padding: 2rem 0.5rem;
