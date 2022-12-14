@@ -43,7 +43,7 @@ export default {
 		htmlAttrs: {
 			lang: 'en',
 		},
-		title: 'vFootball Mint Page',
+		title: 'vFootballs',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -69,6 +69,9 @@ export default {
 			},
 			{ hid: 'og:url', property: 'og:url', content: 'https://vfootballs.io' },
 		],
+		link: [
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+		]
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
