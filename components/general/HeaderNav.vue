@@ -21,7 +21,6 @@ export default {
       {id: '#roadmap', link: 'Roadmap'},
       {id: '#team', link: 'Team'},
       {id: '#howToBuy', link: 'How to buy'},
-      {id: '#faq', link: 'Faq'}
     ]
     return {
       headerLinks

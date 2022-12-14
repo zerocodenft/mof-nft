@@ -7,6 +7,7 @@
       <b-navbar-brand
         active-class="header-block__logo text-white text-uppercase font-weight-bold"
         to="/">
+        <b-img width="205px" src="../../assets/img/logos/logo.png"></b-img>
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse
@@ -35,7 +36,6 @@ export default {
       {id: '#roadmap', link: 'Roadmap'},
       {id: '#team', link: 'Team'},
       {id: '#howToBuy', link: 'How to buy'},
-      {id: '#faq', link: 'Faq'}
     ]
     return {headerLinks}
   },

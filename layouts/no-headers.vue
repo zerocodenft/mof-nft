@@ -6,10 +6,9 @@
 
 <script>
 import StylesMixin from '@/mixins/stylesMixin'
-import HeadTagMixin from '@/mixins/headTagMixin'
 
 export default {
-  mixins: [StylesMixin, HeadTagMixin],
+  mixins: [StylesMixin],
   created() {
     const {isAttributionHidden} = this.$siteConfig.smartContract
     const {companyName} = this.$appConfig

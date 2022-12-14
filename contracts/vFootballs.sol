@@ -14,10 +14,9 @@ contract vFootballs is ERC721A, Ownable {
 	uint256 public constant COLLECTION_SIZE = 5000;
 	uint256 public constant TOKENS_PER_TRAN_LIMIT = 20;
 
-	uint256 public MINT_PRICE = 0.05 ether;
+	uint256 public MINT_PRICE = 0 ether;
 	SaleStatus public saleStatus = SaleStatus.PUBLIC;
 
-	bool public isRevealed = false;
 	string private _baseURL;
 	string private _hiddenURI;
 	mapping(address => uint256) private _mintedCount;
@@ -28,7 +27,6 @@ contract vFootballs is ERC721A, Ownable {
 
 	/// @notice Reveal metadata for all the tokens
 	function reveal(string memory uri) external onlyOwner {
-		isRevealed = true;
 		_baseURL = uri;
 	}
 
@@ -75,11 +73,11 @@ contract vFootballs is ERC721A, Ownable {
 			_exists(tokenId),
 			'ERC721Metadata: URI query for nonexistent token'
 		);
+		string memory baseURI = _baseURI();
 
-		if (!isRevealed) {
+		if (bytes(baseURI).length < 0) {
 			return _hiddenURI;
 		}
-		string memory baseURI = _baseURI();
 		return
 			bytes(baseURI).length > 0
 				? string(abi.encodePacked(baseURI, _toString(tokenId), '.json'))

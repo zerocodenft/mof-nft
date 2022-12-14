@@ -27,18 +27,21 @@
       class="position-relative welcome-block__content container-box mx-auto flex justify-content-between align-items-center">
       <div>
         <div class="welcome-block__info">
-          <h1 class="welcome-block__title text-uppercase text-white font-weight-bold">Welcome to vFootballs!</h1>
-          <p class="welcome-block__paragraph">Limited NFT collection
-            <span class="font-weight-bold">sponsored by Khabib Nurmagomedov</span>
-            featuring iconic footballs portraying the
-            same football
-            moments that has gifted us the beautiful game.
+          <h1 class="welcome-block__title text-uppercase text-white font-weight-bold">
+            LET’S BEGIN!
+            </h1>
+          <p class="welcome-block__paragraph">
+            Limited NFT collection
+            Football is the world’s most popular sport, uniting over 4 billion people in powerful emotions. Likewise, our goal is to connect football fans around the globe, transcending borders between nations and clubs.
           </p>
-          <p class="mt-2 welcome-block__paragraph">
-            Buy vFootballs NFT and get
-            <span
-              class="font-weight-bold">an access to closed community with football superstars
-            </span>
+          <p class="welcome-block__paragraph">
+            To celebrate the world’s most anticipated event - the 2022 FIFA World Cup, we are launching an exclusive collection of NFTs featuring iconic footballs portraying the same moments which have gifted us the beautiful game.
+          </p>
+          <p class="welcome-block__paragraph">
+          We value our early adopters and want to make sure that more people can join Museum of Footballs community; hence, the first edition of vFootballs NFT collection will be a free mint. NFT holders will have access to online events in our metaverse and future benefits in the Play-to-Earn game. 
+          </p>
+          <p class="welcome-block__paragraph">
+          Mint vFootballs NFT and get access to the global community of football fans that will rock the world!
           </p>
           <HomeCountdown/>
           <div class="d-flex">
