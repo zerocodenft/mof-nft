@@ -49,12 +49,12 @@
         @click="mintWithCrypto"
       >Mint [{{ mintCount }}]</b-button
       >
-      <b-button
+      <!-- <b-button
         v-if="isConnected"
         class="mint-button font-weight-bold border-0 mt-2"
         @click="mintWithWert"
       >Pay with wert</b-button
-      >
+      > -->
     </b-overlay>
     <b-alert
       :show="message.show || !!message.text"

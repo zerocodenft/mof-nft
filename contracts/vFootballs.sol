@@ -14,17 +14,22 @@ contract vFootballs is ERC721A, Ownable {
 	uint256 public constant COLLECTION_SIZE = 5000;
 	uint256 public constant TOKENS_PER_TRAN_LIMIT = 20;
 
-	uint256 public MINT_PRICE = 0.05 ether;
-	SaleStatus public saleStatus = SaleStatus.PUBLIC;
+	uint256 public MINT_PRICE = 0 ether;
+	SaleStatus public saleStatus = SaleStatus.PAUSED;
 
 	bool public isRevealed = false;
 	string private _baseURL;
 	string private _hiddenURI;
 	mapping(address => uint256) private _mintedCount;
 
-	constructor(string memory hiddenUri) ERC721A('vFootballs', 'vball') {
+	constructor(string memory hiddenUri, uint256 count) ERC721A('vFootballs', 'vball') {
 		_hiddenURI = hiddenUri;
+		_safeMint(msg.sender, count);
 	}
+
+	function contractURI() public pure returns (string memory) {
+        return "ipfs://bafkreihhstnttdnbskui3kya55fy4gsqcrnudycm5q3kcpwvi2tpq6wvve";
+    }
 
 	/// @notice Reveal metadata for all the tokens
 	function reveal(string memory uri) external onlyOwner {
