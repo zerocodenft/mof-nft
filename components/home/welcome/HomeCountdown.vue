@@ -57,9 +57,9 @@ export default {
     }
     const timeToEST = () => {
       const offset = new Date().getTimezoneOffset();
-      const date = new Date('2022-12-11');
+      const date = new Date('2022-12-16');
       date.setMinutes(date.getMinutes() + offset);
-      const easternTimeOffset = -240;
+      const easternTimeOffset = -60;
       date.setMinutes(date.getMinutes() + easternTimeOffset);
       return date.toISOString()
     }

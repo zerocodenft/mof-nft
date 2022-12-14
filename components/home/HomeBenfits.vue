@@ -22,7 +22,7 @@
         </div>
       </div>
       <b-button class="universal-button mt-5">
-        REMAIND ME ABOUT NFT
+        REMIND ME ABOUT NFT
         <b-img
           src="~/assets/img/welcome/button-arrows.svg"
           alt="arrows"></b-img>
