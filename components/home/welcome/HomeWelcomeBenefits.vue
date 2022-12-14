@@ -31,9 +31,9 @@ export default {
   setup() {
     const benefits = [
       {imgName: 'nft', title: 'Only 5000 NFTs'},
-      {imgName: 'star', title: 'Access to events with super stars and Khabib'},
-      {imgName: 'allocation', title: 'Token Allocation in vGame tokensale'},
-      {imgName: 'ticket', title: 'Football Event Tickets/Raffles'},
+      {imgName: 'star', title: 'Access to events with superstars'},
+      {imgName: 'allocation', title: 'Token allocation in vGame tokensale'},
+      {imgName: 'ticket', title: 'Football event tickets/raffles'},
     ]
     return {
       benefits

@@ -15,8 +15,14 @@
           cols="12"
           md="6">
           <div class="d-flex flex-column">
-            <p class="roadmap-tab__header text-white text-uppercase">Lorem ipsum dolor sit amet, consectetur.</p>
-            <p class="roadmap-tab__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sapiente.</p>
+            <p class="roadmap-tab__header text-white text-uppercase">LAUNCH OF VGOAL PLAY-TO-EARN GAME</p>
+            <ul class="roadmap-tab__paragraph">
+              <li
+                v-for="(list,index) in fifthTabListData"
+                :key="index">
+                {{list}}
+              </li>
+            </ul>
           </div>
         </b-col>
       </b-row>
@@ -26,6 +32,10 @@
 
 <script>
 export default {
-  name: 'RoadmapFifthTab'
+  name: 'RoadmapFifthTab',
+  setup(){
+    const fifthTabListData = ["Partnerships with sport brands and official football leagues"]
+    return {fifthTabListData}
+  }
 }
 </script>

@@ -43,7 +43,7 @@ export default {
   },
   setup() {
     const mySwiper = ref()
-    const swiperSlides = ref(['RoadmapFirstTab', 'RoadmapSecondTab', 'RoadmapThirdTab', 'RoadmapFifthTab', 'RoadmapFourthTab'])
+    const swiperSlides = ref(['RoadmapFirstTab', 'RoadmapSecondTab', 'RoadmapThirdTab', 'RoadmapFourthTab', 'RoadmapFifthTab'])
     const swiperOptions = ref({
       autoHeight: true,
       direction: 'horizontal',

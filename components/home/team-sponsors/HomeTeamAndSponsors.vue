@@ -4,21 +4,18 @@
     class="container-box mx-auto team-sponsor-wrapper">
     <b-row class="team-sponsor-block">
       <b-col
-        xl="9"
-        xs="12"
-        lg="8"
-        sm="12"
+        cols="12"
         class="p-0">
         <HomeTeamMember/>
       </b-col>
-      <b-col
-        xl="3"
-        xs="12"
-        lg="4"
-        sm="12"
-      >
-        <HomeSponsor/>
-      </b-col>
+      <!--      <b-col-->
+      <!--        xl="3"-->
+      <!--        xs="12"-->
+      <!--        lg="4"-->
+      <!--        sm="12"-->
+      <!--      >-->
+      <!--        <HomeSponsor/>-->
+      <!--      </b-col>-->
     </b-row>
   </section>
 </template>

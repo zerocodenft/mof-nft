@@ -41,40 +41,34 @@ export default {
   setup() {
     const teamData = [
       {
-        imgName: 'first-member',
-        alt: 'first-member',
-        name: 'lorem ipsum',
-        describe: 'lorem ipsum'
-      },
-      {
-        imgName: 'second-member',
-        alt: 'second-member',
-        name: 'lorem ipsum',
-        describe: 'lorem ipsum'
-      },
-      {
-        imgName: 'third-member',
-        alt: 'third-member',
-        name: 'lorem ipsum',
-        describe: 'lorem ipsum'
-      },
-      {
         imgName: 'fourth-member',
-        alt: 'fourth-member',
-        name: 'lorem ipsum',
-        describe: 'lorem ipsum'
+        alt: 'first-member',
+        name: 'KHABIB NURMAGOMEDOV FOUNDATION',
+        describe: 'Founder'
+      },
+      {
+        imgName: 'first-member',
+        alt: 'second-member',
+        name: 'EKATERINA SHIMKO',
+        describe: 'Founder'
       },
       {
         imgName: 'fifth-member',
-        name: 'lorem ipsum',
-        alt: 'fifth-member',
-        describe: 'lorem ipsum'
+        alt: 'third-member',
+        name: 'OLGA ZHILENKO',
+        describe: 'Founder'
       },
       {
-        imgName: 'sixth-member',
-        alt: 'sixth-member',
-        name: 'lorem ipsum',
-        describe: 'lorem ipsum'
+        imgName: 'second-member',
+        alt: 'fourth-member',
+        name: 'MISHA RYABOV',
+        describe: 'Creative Advisor'
+      },
+      {
+        imgName: 'third-member',
+        name: 'FELIPE L. VOROBEY',
+        alt: 'fifth-member',
+        describe: 'Growth & Marketing'
       },
     ]
     return {teamData}

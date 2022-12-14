@@ -6,7 +6,7 @@
       type="dark">
       <b-navbar-brand
         active-class="header-block__logo text-white text-uppercase font-weight-bold"
-        to="/">LOGO
+        to="/">
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse

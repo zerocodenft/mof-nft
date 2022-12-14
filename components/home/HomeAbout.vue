@@ -34,15 +34,34 @@
         xl="5"
         class="align-self-center">
         <h2 class="about-wrapper__header">About the project</h2>
-        <p
-          v-for="(paragraph,index) in paragraphData"
-          :key="paragraph"
-          class="about-wrapper__paragraph"
-          :class="{'about-wrapper__paragraph2': index === 1 || index === paragraphData.length-1}">
-          {{ paragraph }}
+        <p class="about-wrapper__paragraph">
+          <span class="about-wrapper__paragraph-span">Our Mission</span> is unite all football fans around the world. The
+          Museum of Footballs project unites people together just as football does.
+        </p>
+        <p class="about-wrapper__paragraph">
+          The project was initiated by <span class="about-wrapper__paragraph-span">Khabib Nurmagomedov Foundation</span> and
+          includes:
+        </p>
+        <ul class="about-wrapper__paragraph">
+          <li>vMuseum of Footballs in the<span class="about-wrapper__paragraph-span"> metaverse</span></li>
+          <li>vFootablls NFT Collection<span class="about-wrapper__paragraph-span"> NFT Collection</span></li>
+          <li>future <span class="about-wrapper__paragraph-span">P2E</span> game vGoal</li>
+          <li>museum has more than 1,000 footballs all over around the world and from different football leagues.</li>
+        </ul>
+        <p class="about-wrapper__paragraph">
+          <span class="about-wrapper__paragraph-span">Metaverse version started with one room and 24 3D balls.</span> In the
+          future, all 1,000 balls will be added to the metaverse. NFT Collection will be copies of 3D balls that are present
+          in the metaverse.
+        </p>
+        <p class="about-wrapper__paragraph">
+          We will start with a small collection (season 1) and launch more seasons in the future. Those drops will be tight
+          to major football events.
         </p>
         <b-button class="universal-button">
-          go to museum of footballs
+          <a
+            target="_blank"
+            class="about-wrapper__link"
+            href="https://vfootballs.com/en"> go to museum of footballs</a>
           <b-img
             src="~/assets/img/welcome/button-arrows.svg"
             alt="arrows"></b-img>
@@ -59,14 +78,7 @@ export default {
   name: 'HomeBenfits',
   components: {MBlur},
   setup() {
-    const paragraphData = ['Our Mission is unite all football fans around the world. The Museum of Footballs project unites people together just as football does.',
-      'The project was initiated by Khabib Nurmagomedov Foundation and includes vMuseum of Footballs in the metaverse, ' +
-			'vFootablls NFT Collection, and future P2E game vGoal.IRL museum has more than 1,000 footballs all over around ' +
-			'the world and from different football leagues. Metaverse version will start with 1 room and 24 3D copies of ' +
-			'balls from World Cups. In the future, all 1,000 balls will be added to the metaverse.' +
-			'  NFT Collection will be copies of 3D balls that are present in the metaverse. We will start with a small collection (season 1) ' + 'and launch more seasons in the future. Those drops will be tight to major football events. The first drop will be on November 27 when the World Cup 2022 in Qatar starts.',
-      'Play-to-Earn game development will commence Q1 2023. vGoal is being developed with the usage of the Play-to-Earn game model that allows players to receive tokens and NFTs for victories and tournaments as well as for completing daily tasks. The game will be on the Unity engine, allowing it to be eventually deployed on both Desktop and Mobile.']
-    return {paragraphData}
+    return {}
   }
 }
 </script>

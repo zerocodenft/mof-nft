@@ -1,22 +1,28 @@
 <template>
   <section class="home-benefits container-box mx-auto position-relative">
-    <h2 class="home-benefits__header">What benefits get the owners of vFootballs NFT?</h2>
-    <div>
+    <div class="home-benefits__wrapper">
+      <h2 class="home-benefits__header">What benefits the owners of vFootballs NFT get?</h2>
       <div class="home-benefits__cards">
         <div
-          v-for="(card, index) in listTitles"
+          v-for="(card,index) in paragraphData"
           :key="index"
-          class="home-benefits__line">
-          <div class="home-benefits__content">
-            <div class="home-benefits__card d-flex align-items-center">
-              <p class="home-benefits__number mb-0">{{ generateTwoDigits(index + 1) }}</p>
-              <p class="home-benefits__title mb-0">{{ card }}</p>
-            </div>
-          </div>
+          class="home-benefits__content">
+          <img
+            :src="require(`~/assets/img/benefits/${card.img}`)"
+            alt="img">
+          <p>
+            <span
+              v-for="(text,index) in card.title"
+              :key="index"
+              :class="text.standard ? 'home-benefits__title' : 'home-benefits__bold-title'"
+            >
+              {{text.data}}
+            </span>
+          </p>
         </div>
       </div>
       <b-button class="universal-button mt-5">
-        MInt NFT
+        REMAIND ME ABOUT NFT
         <b-img
           src="~/assets/img/welcome/button-arrows.svg"
           alt="arrows"></b-img>
@@ -37,6 +43,7 @@
       />
     </div>
   </section>
+
 </template>
 
 <script>
@@ -48,15 +55,54 @@ export default {
     MBlur,
   },
   setup() {
-    const listTitles = ['Access to closed community with football superstars and Khabib Nurmagomedov',
-      'Football Event Tickets/Raffles for NFT owners only.',
-      'Guaranteed Token Allocation in a future token sale.',
-      'Marketplace Reduced Fees.',
-      'Holders will start accumulating tokens for the future vGoal in-game purchases.',
-      'NFT holders will be receiving free in-game items airdrops.',
-      'NFT will be served as a “premium” subscription to the game.']
-    const generateTwoDigits = value => value.toString().padStart(2, '0')
-    return {listTitles, generateTwoDigits}
+    const paragraphData = [
+      {
+        title: [
+          { data: "Access to closed ", standard: true },
+          { data: "community with football superstars", standard: false },
+        ],
+        img:"accessibility.png",
+      },
+      {
+        title: [
+          { data:"Football Event ", standard: true },
+          { data:"Tickets/Raffles", standard: false },
+          { data:" for ", standard: true },
+          { data:"NFT owners only", standard: false },
+        ],
+        img:"ticket.svg"
+      },
+      {
+        title: [
+          {data:"Guaranteed Token Allocation in a future token sale", standard: true}
+        ],
+        img:"nft.svg"
+      },
+      {
+        title: [
+          {data:"Holders will start accumulating tokens for the future ", standard: true},
+          {data:"vGoal ", standard: false},
+          {data:"in-game purchases", standard: true},
+        ],
+        img:"tokenization.png"
+      },
+      {
+        title:[
+          {data:"NFT holders will be receiving free in-game items airdrops", standard: true}
+        ],
+        img:"free.png"
+      },
+      {
+        title:[
+          {data: "NFT ", standard: false},
+          {data: "will be served as a ", standard: true},
+          {data: "subscription to the game", standard: false},
+          {data: " Marketplace Reduced Fees.", standard: true},
+        ],
+        img:"discount.png"
+      },
+    ]
+    return { paragraphData}
   }
 }
 </script>

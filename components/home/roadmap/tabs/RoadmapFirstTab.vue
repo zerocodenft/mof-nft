@@ -17,7 +17,12 @@
           md="6">
           <div class="d-flex flex-column">
             <p class="roadmap-tab__header text-white text-uppercase">Launch of world’s first Museum of Footballs</p>
-            <p class="roadmap-tab__paragraph">Museum presence at World Cup 2018 in Russia</p>
+            <ul
+              v-for="(item,index) in firstTabListData"
+              :key="index"
+              class="roadmap-tab__paragraph">
+              <li>{{ item }}</li>
+            </ul>
           </div>
         </b-col>
       </b-row>
@@ -27,6 +32,10 @@
 
 <script>
 export default {
-  name: 'RoadmapFirstTab'
+  name: 'RoadmapFirstTab',
+  setup(){
+    const firstTabListData = ["Launch of world’s first Museum of Footballs", "Museum presence at World Cup 2018 in Russia"]
+    return {firstTabListData}
+  }
 }
 </script>

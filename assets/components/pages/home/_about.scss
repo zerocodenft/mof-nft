@@ -11,6 +11,11 @@
 		z-index: 222;
 	}
 
+	&__link{
+		text-decoration: none !important;
+		color: white;
+	}
+
 	&__header {
 		font-size: 2.25rem;
 		font-weight: 700;
@@ -18,6 +23,13 @@
 		text-transform: uppercase;
 		color: white;
 		margin-bottom: 1.875rem;
+	}
+
+	&__paragraph-span{
+		font-family: 'Kanit',Arial,sans-serif;
+		color: $pigeon;
+		line-height: 1.375rem;
+		font-weight: 700;
 	}
 
 	&__paragraph {

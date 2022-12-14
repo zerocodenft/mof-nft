@@ -10,6 +10,15 @@
 		color: $white;
 	}
 
+	&__links{
+		gap: 0.938rem;
+	}
+
+	&__link{
+		width: 2.688rem;
+		height: 2.688rem;
+	}
+
 	&__list {
 		list-style-type: none;
 		gap: 1.875rem;

@@ -82,7 +82,7 @@ export default {
     const balls = ref([
       {id: 1, title: 'GOLD BALL'},
       {id: 2, title: 'PREMIUM BALL'},
-      {id: 3, title: 'BORNZE BALL'},
+      {id: 3, title: 'BRONZE BALL'},
     ])
 
     const prevSlide = () => {

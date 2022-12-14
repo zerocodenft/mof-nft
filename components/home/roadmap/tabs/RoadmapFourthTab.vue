@@ -15,8 +15,14 @@
           cols="12"
           md="6">
           <div class="d-flex flex-column">
-            <p class="roadmap-tab__header text-white text-uppercase">Lorem ipsum dolor sit amet, consectetur.</p>
-            <p class="roadmap-tab__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sapiente.</p>
+            <p class="roadmap-tab__header text-white text-uppercase">COLLABORATIONS WITH METAVERSE WORLDS / VR GALLERIES</p>
+            <ul class="roadmap-tab__paragraph">
+              <li
+                v-for="(list,index) in fourthTabListData"
+                :key="index">
+                {{list}}
+              </li>
+            </ul>
           </div>
         </b-col>
       </b-row>
@@ -26,6 +32,15 @@
 
 <script>
 export default {
-  name: 'RoadmapFourthTab'
+  name: 'RoadmapFourthTab',
+  setup(){
+    const fourthTabListData = [
+      "Collaborations with metaverse worlds / VR galleries",
+      "Launch 2nd season of vFootballs NFT Collection",
+      "Release of vGoal Play-to-Earn game",
+      "Future Development: Complete development of Metaverse museum and metaverse expansion"
+    ]
+    return {fourthTabListData}
+  }
 }
 </script>

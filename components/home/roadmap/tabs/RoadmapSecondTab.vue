@@ -15,8 +15,14 @@
           cols="12"
           md="6">
           <div class="d-flex flex-column">
-            <p class="roadmap-tab__header text-white text-uppercase">Launch of world’s first Museum of Footballs</p>
-            <p class="roadmap-tab__paragraph">Museum presence at World Cup 2026 in Ukraine</p>
+            <p class="roadmap-tab__header text-white text-uppercase">LAUNCH METAVERSE VMUSEUM OF FOOTBALLS POWERED BY <span class="tab-underline">VSPACE</span></p>
+            <ul class="roadmap-tab__paragraph">
+              <li
+                v-for="(list,index) in secondTabListData"
+                :key="index">
+                {{list}}
+              </li>
+            </ul>
           </div>
         </b-col>
       </b-row>
@@ -26,7 +32,26 @@
 
 <script>
 export default {
-  name: 'RoadmapSecondTab'
+  name: 'RoadmapSecondTab',
+  setup(){
+    const secondTabListData = [
+      "Launch of vMuseum of footballs Discord and Twitter",
+      "Announcement of strategy, roadmap, and whitepaper of the vFootballs NFT Collection",
+      "Launch a website for vMuseum of footballs project",
+      "Choose Artists for the NFT Collection",
+      "Key partnerships, promotions, and collaborations with partners/sponsors",
+      "Launch metaverse vMuseum of Footballs build by vSpace",
+      "Daily activities in Discord: contests, raffles, activity, challenges and leadership contests with the reward of WL spots",
+      "Daily activities in Discord: contests, raffles, activity, challenges and leadership contests with the reward of WL spots"
+    ]
+    return {secondTabListData}
+  }
 }
 </script>
-
+<style scoped lang="scss">
+.tab-underline{
+	text-decoration: underline;
+	text-decoration-color: white;
+	text-underline-offset: 14px;
+}
+</style>

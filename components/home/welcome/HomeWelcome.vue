@@ -23,7 +23,8 @@
       top="50px"
       left="20%"
     />
-    <div class="welcome-block__content container-box mx-auto flex justify-content-between align-items-center">
+    <div
+      class="position-relative welcome-block__content container-box mx-auto flex justify-content-between align-items-center">
       <div>
         <div class="welcome-block__info">
           <h1 class="welcome-block__title text-uppercase text-white font-weight-bold">Welcome to vFootballs!</h1>
@@ -36,9 +37,9 @@
           <p class="mt-2 welcome-block__paragraph">
             Buy vFootballs NFT and get
             <span
-              class="font-weight-bold">a access to closed community with football superstars and Khabib Nurmagomedov
+              class="font-weight-bold">an access to closed community with football superstars
             </span>
-            NFT mint will start:</p>
+          </p>
           <HomeCountdown/>
           <div class="d-flex">
             <b-button class="universal-button">
@@ -47,22 +48,30 @@
                 src="~/assets/img/welcome/button-arrows.svg"
                 alt="arrows"></b-img>
             </b-button>
-            <b-button class="welcome-block__sign-in">
-              Sign in Whitelist
-            </b-button>
           </div>
         </div>
         <HomeWelcomeBenefits
           :benefits-data-first-row="benefitsDataFirstRow"
           :benefits-data-second-row="benefitsDataSecondRow"
         />
-
       </div>
-      <b-img
-        class="position-relative welcome-block__balls"
-        src="~/assets/img/welcome/balls-all-new.svg"
-        alt="ballsIcons"
-      />
+      <div class="position-absolute test">
+        <b-img
+          class="position-relative  first_ball welcome-block__balls "
+          src="~/assets/img/welcome/index-ball-1.png"
+          alt="ballsIcons"
+        />
+        <b-img
+          class="position-relative second_ball welcome-block__balls"
+          src="~/assets/img/welcome/index-ball-2.png"
+          alt="ballsIcons"
+        />
+        <b-img
+          class="position-relative third_ball welcome-block__balls"
+          src="~/assets/img/welcome/index-ball-3.png"
+          alt="ballsIcons"
+        />
+      </div>
       <!--		blue		-->
       <MBlur
         height="300px"
@@ -110,4 +119,35 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.test{
+	top: 0;
+	right: 20%;
+}
+.first_ball{
+	margin-right: 100px !important;
+	top: 100px !important;
+	width: clamp(102px, 10vw, 150px);
+	@media (max-width: 1024px) {
+		margin-right: 65px !important;
+	}
+}
+.second_ball{
+	margin-right: -150px !important;
+	top: 250px !important;
+	width: clamp(145px, 15vw, 207px);
+	@media (max-width: 1024px) {
+		margin-right: -150px !important;
+		top: 225px !important;
+	}
 
+}
+.third_ball{
+	top: 350px !important;
+	margin-right: 90px !important;
+	width: clamp(12.8rem, 22vw, 18.75rem);
+	@media (max-width: 1024px) {
+		margin-right: 40px !important;
+	}
+}
+</style>

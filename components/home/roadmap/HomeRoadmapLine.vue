@@ -6,12 +6,6 @@
         :key="index"
         class="position-relative">
         <transition name="fade">
-          <!--          <component-->
-          <!--            :is="item.active ? 'RoadmapActiveCircle' : 'RoadmapDefaultCircle'"-->
-          <!--            :index="index"-->
-          <!--            :item="item"-->
-          <!--            @changeTab="changeTab"-->
-          <!--          />-->
           <HomeRoadmapLineItem
             :index="index"
             :item="item"

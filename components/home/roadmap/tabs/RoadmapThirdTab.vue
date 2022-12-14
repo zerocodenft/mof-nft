@@ -15,8 +15,14 @@
           cols="12"
           md="6">
           <div class="d-flex flex-column">
-            <p class="roadmap-tab__header text-white text-uppercase">Lorem ipsum dolor sit amet, consectetur.</p>
-            <p class="roadmap-tab__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sapiente.</p>
+            <p class="roadmap-tab__header text-white text-uppercase">METAVERSE VMUSEUM OF FOOTBALLS EXPANSION</p>
+            <ul class="roadmap-tab__paragraph">
+              <li
+                v-for="(list,index) in thirdTabListData"
+                :key="index">
+                {{list}}
+              </li>
+            </ul>
           </div>
         </b-col>
       </b-row>
@@ -26,6 +32,19 @@
 
 <script>
 export default {
-  name: 'RoadmapThirdTab'
+  name: 'RoadmapThirdTab',
+  setup(){
+    const thirdTabListData = [
+      "Metaverse vMuseum of Footballs expansion",
+      "Live events, live streams, and other activations in the metaverse",
+      "Marketplace launch",
+      "Token presale",
+      "Launch of Alpha version of vGoal Play-to-Earn game",
+      "Introduce In-App Marketplace for users to sell/buy in-game items",
+      "In-game improvements (UI/UX)",
+      "Launch of Beta version of MetaGoal Play-to-Earn game"
+    ]
+    return {thirdTabListData}
+  }
 }
 </script>

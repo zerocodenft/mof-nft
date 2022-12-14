@@ -35,7 +35,6 @@ export default {
 	transform: translateX(10px);
 	opacity: 0;
 }
-
 .list-move,
 .list-enter-active,
 .list-leave-active {

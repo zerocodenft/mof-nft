@@ -42,7 +42,6 @@
 		position: absolute !important;
 		right: 0;
 		top: 10rem;
-		width: clamp(10rem, 36vw, 36rem);
 
 		@media (max-width: 769px) {
 			margin-bottom: 3rem;
@@ -84,7 +83,6 @@
 	&__title {
 		font-size: clamp(2.5rem, 4.5vw, 4.5rem);
 		line-height: 4.5rem;
-
 	}
 
 	&__paragraph {

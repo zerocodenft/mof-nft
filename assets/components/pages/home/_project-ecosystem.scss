@@ -31,17 +31,24 @@
 	&__title {
 		@include fonts(normal, 700, clamp(1rem, 1.5vw, 1.5rem), inherit);
 		color: $white;
-		margin-top: 4.5rem;
-
+		margin-top: 2.5rem;
+		text-transform: uppercase;
+		text-align: center;
 		@media (max-width: 768px) {
-			margin-top: 2rem;
+			margin-top: 1rem;
 		}
+	}
+
+	&__subtitle{
+  color: #b6b6e2;
+		margin: 0;
 	}
 
 	&__description {
 		@include fonts(normal, 400, clamp(0.85rem, 1.5vw, 1rem), inherit);
 		color: $pigeon;
 		margin-top: 1.25rem;
+		text-align: center;
 
 		@media (max-width: 768px) {
 			margin-top: 1rem;
