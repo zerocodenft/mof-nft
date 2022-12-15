@@ -107,7 +107,7 @@ export default {
 	},
 	setup(_, { root }) {
 		const mintedTokens = ref([])
-		const mintCount = ref(0)
+		const mintCount = ref(1)
 		const { name: smartContractName, chainId } = root.$siteConfig.smartContract
 		const hexChainId = `0x${chainId.toString(16)}`
 

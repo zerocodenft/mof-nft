@@ -50,11 +50,16 @@ import { computed, onMounted, ref } from '@vue/composition-api'
 
 export default {
 	name: 'HomeCountdown',
-	setup() {
+	props:{
+		date:{
+			type:String,
+		}
+	},
+	setup(props) {
 		const currentDate = ref(Math.trunc(new Date().getTime() / 1000))
 
 		const dateInMilliseconds = computed(() =>
-			Math.trunc(Date.parse(timeToEST()) / 1000)
+			Math.trunc(Date.parse(props.date) / 1000)
 		)
 		const getSeconds = computed(
 			() => (dateInMilliseconds.value - currentDate.value) % 60
@@ -81,7 +86,7 @@ export default {
 		}
 		const timeToEST = () => {
 			const offset = new Date().getTimezoneOffset()
-			const date = new Date('2022-12-15T15:00:00Z')
+			const date = new Date('2022-12-15T15:00:00')
 			date.setMinutes(date.getMinutes() + offset)
 			const easternTimeOffset = -60
 			date.setMinutes(date.getMinutes() + easternTimeOffset)

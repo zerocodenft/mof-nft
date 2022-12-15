@@ -41,7 +41,7 @@
 					<p class="welcome-block__paragraph">
 						Mint vFootballs NFT to get access to the global community of football fans and stay tuned for more!
 					</p>
-					<HomeCountdown />
+					<HomeCountdown :date="countDownDate" />
 					<div class="d-flex">
 						<MintButtonWithWert
 							:button-img="'wallet'"
@@ -91,7 +91,12 @@ import HomeWelcomeBenefits from '~/components/home/welcome/HomeWelcomeBenefits'
 import MBlur from '~/components/ui/MBlur'
 import HomeCountdown from '~/components/home/welcome/HomeCountdown'
 import MintButtonWithWert from '~/components/MintButtonWithWert'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
 
+dayjs.extend(utc)
+dayjs.extend(timezone)
 export default {
 	name: 'HomeWelcome',
 	components: {
@@ -100,7 +105,7 @@ export default {
 		HomeCountdown,
 		MintButtonWithWert,
 	},
-	setup() {
+	setup(_, {root}) {
 		const benefitsDataFirstRow = [
 			{ imgName: 'nft', title: 'Only 5000 NFTs' },
 			{ imgName: 'star', title: 'Access to events with super stars and Khabib' },
@@ -109,7 +114,10 @@ export default {
 			{ imgName: 'allocation', title: 'Token Allocation in vGame tokensale' },
 			{ imgName: 'ticket', title: 'Football Event Tickets/Raffles' },
 		]
-		return { benefitsDataFirstRow, benefitsDataSecondRow }
+		
+      	const {dropDate, dropTimeZone} = root.$siteConfig
+      	const countDownDate = dayjs.utc(dropDate).tz(dropTimeZone).toString()
+		return { benefitsDataFirstRow, benefitsDataSecondRow ,countDownDate}
 	},
 }
 </script>
