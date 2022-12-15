@@ -1,5 +1,15 @@
 <template>
 	<div class="text-center w-100">
+		<b-form-spinbutton
+			v-if="isConnected"
+			v-model.number="mintCount"
+			class="font-weight-bold mr-3 mb-1"
+			min="1"
+			:max="
+				$siteConfig.smartContract.maxTokensPerTransaction ||
+				$siteConfig.smartContract.collectionSize
+			"
+			step="1"></b-form-spinbutton>
 		<b-overlay :show="isBusy" z-index="2" rounded>
 			<b-button
 				v-if="soldOut"
@@ -38,12 +48,12 @@
 			<b-button v-else class="mint-button border-0" @click="mintWithCrypto"
 				>Mint [{{ mintCount }}]</b-button
 			>
-			<b-button
+			<!-- <b-button
 				v-if="isConnected"
 				class="mint-button font-weight-bold border-0 mt-2"
 				@click="mintWithWert"
 				>Pay with wert</b-button
-			>
+			> -->
 		</b-overlay>
 		<b-alert
 			:show="message.show || !!message.text"

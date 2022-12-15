@@ -35,7 +35,7 @@ contract vFootballs is ERC721A, Ownable {
 		return _baseURL;
 	}
 
-	function _startTokenId() internal pure override returns(uint256){
+	function _startTokenId() internal pure override returns (uint256) {
 		return 1;
 	}
 
@@ -73,15 +73,13 @@ contract vFootballs is ERC721A, Ownable {
 			_exists(tokenId),
 			'ERC721Metadata: URI query for nonexistent token'
 		);
-		string memory baseURI = _baseURI();
 
-		if (bytes(baseURI).length < 0) {
-			return _hiddenURI;
-		}
 		return
-			bytes(baseURI).length > 0
-				? string(abi.encodePacked(baseURI, _toString(tokenId), '.json'))
-				: '';
+			bytes(_baseURI()).length > 0
+				? string(
+					abi.encodePacked(_baseURI(), _toString(tokenId), '.json')
+				)
+				: _hiddenURI;
 	}
 
 	function calcTotal(uint256 count) public view returns (uint256) {
