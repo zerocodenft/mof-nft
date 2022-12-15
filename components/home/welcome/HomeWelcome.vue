@@ -30,16 +30,16 @@
 						LET’S BEGIN!
 					</h1>
 					<p class="welcome-block__paragraph">
-						Our NFT collection, just like Football, the world's most popular sport, was made to bring together billions of fans worldwide to participate in the first of it kind collector digital memorabilia. 
+						Football unites billions of people in powerful emotions. Likewise, our goal is to connect football fans around the globe on our unique interactive platform, transcending borders between nations and clubs.
 					</p>
 					<p class="welcome-block__paragraph">
-						To celebrate the 2022 FIFA World Cup, we are launching an exclusive collection of NFTs featuring iconic footballs portraying h events that will forever live in the history of the “beautiful game.”
+						To celebrate the 2022 FIFA World Cup, we are launching an exclusive collection of NFTs that features iconic footballs portraying the same moments which have gifted us the beautiful game.
 					</p>
 					<p class="welcome-block__paragraph">
-						As a gesture of gratitude to our early adopters, we want to ensure that everyone will be able to join our Museum of Football, and with that said, we are excited to announce our first collection with a free mint. Thus, NFT holders will have access to online events in our metaverse and future benefits in the Play-to-Earn game.
+						We value our early adopters and want to make sure that more people can join Museum of Footballs community; hence, we are excited to announce that our first NFT collection will be a free mint. NFT holders will have access to online events in our Metaverse and future benefits in the Play-to-Earn game. 
 					</p>
 					<p class="welcome-block__paragraph">
-						The vFootballs NFT will have all-access status to some private and exciting events to come! So get ready for more, and stay tuned to our mint day!
+						Mint vFootballs NFT to get access to the global community of football fans and stay tuned for more!
 					</p>
 					<HomeCountdown />
 					<div class="d-flex">
