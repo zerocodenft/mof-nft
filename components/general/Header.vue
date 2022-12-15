@@ -8,14 +8,14 @@
 			<b-navbar-brand
 				active-class="header-block__logo text-white text-uppercase font-weight-bold"
 				to="/">
-				<b-img width="205px" src="../../assets/img/logos/logo.png"></b-img>
+				<b-img width="205px" src="@/assets/img/logos/logo.png"></b-img>
 			</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 			<b-collapse id="nav-collapse" is-nav>
 				<HeaderNav />
-				<MintButtonWithWert
+				<!-- <MintButtonWithWert
 					:button-img="'wallet'"
-					:button-text="'Connect wallet'"></MintButtonWithWert>
+					:button-text="'Connect wallet'"></MintButtonWithWert> -->
 			</b-collapse>
 		</b-navbar>
 	</div>
