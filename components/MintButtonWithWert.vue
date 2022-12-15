@@ -3,7 +3,7 @@
 		<b-form-spinbutton
 			v-if="isConnected"
 			v-model.number="mintCount"
-			class="font-weight-bold mr-3 mb-1"
+			class="font-weight-bold mr-3 mb-2"
 			min="1"
 			:max="
 				$siteConfig.smartContract.maxTokensPerTransaction ||

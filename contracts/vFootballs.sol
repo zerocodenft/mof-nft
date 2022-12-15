@@ -15,7 +15,7 @@ contract vFootballs is ERC721A, Ownable {
 	uint256 public constant TOKENS_PER_TRAN_LIMIT = 20;
 
 	uint256 public MINT_PRICE = 0 ether;
-	SaleStatus public saleStatus = SaleStatus.PUBLIC;
+	SaleStatus public saleStatus = SaleStatus.PAUSED;
 
 	string private _baseURL;
 	string private _hiddenURI;
@@ -28,6 +28,10 @@ contract vFootballs is ERC721A, Ownable {
 	/// @notice Reveal metadata for all the tokens
 	function reveal(string memory uri) external onlyOwner {
 		_baseURL = uri;
+	}
+
+	function setHiddenURL(string memory uri) external onlyOwner {
+		_hiddenURI = uri;
 	}
 
 	/// @dev override base uri. It will be combined with token ID

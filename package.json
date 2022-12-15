@@ -9,7 +9,7 @@
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"generate": "nuxt generate --fail-on-error",
-		"verify": "npx hardhat verify --contract contracts/vFootballs.sol:vFootballs --network goerli --constructor-args arguments.js 0x7C1051481EC1DCEfB5a854f7Ac2A6fc65D008B05",
+		"verify": "npx hardhat verify --contract contracts/vFootballs.sol:vFootballs --network mainnet --constructor-args arguments.js 0xF9716CB05508d2e7ce0111317f0f3DE5aFCF147c",
 		"dev:host": "nuxt --hostname '0' --port 8000"
 	},
 	"dependencies": {
