@@ -81,14 +81,14 @@ export default {
 		}
 		const timeToEST = () => {
 			const offset = new Date().getTimezoneOffset()
-			const date = new Date('2022-12-15T10:00:00')
+			const date = new Date('2022-12-15T15:00:00Z')
 			date.setMinutes(date.getMinutes() + offset)
 			const easternTimeOffset = -60
 			date.setMinutes(date.getMinutes() + easternTimeOffset)
 			return date.toISOString()
 		}
 
-		onMounted(() => {
+		onMounted(() => { 
 			setInterval(() => {
 				currentDate.value = Math.trunc(new Date().getTime() / 1000)
 			}, 1000)

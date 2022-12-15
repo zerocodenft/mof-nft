@@ -30,26 +30,16 @@
 						LET’S BEGIN!
 					</h1>
 					<p class="welcome-block__paragraph">
-						Limited NFT collection Football is the world’s most popular sport, uniting
-						over 4 billion people in powerful emotions. Likewise, our goal is to
-						connect football fans around the globe, transcending borders between
-						nations and clubs.
+						Our NFT collection, just like Football, the world's most popular sport, was made to bring together billions of fans worldwide to participate in the first of it kind collector digital memorabilia. 
 					</p>
 					<p class="welcome-block__paragraph">
-						To celebrate the world’s most anticipated event - the 2022 FIFA World Cup,
-						we are launching an exclusive collection of NFTs featuring iconic
-						footballs portraying the same moments which have gifted us the beautiful
-						game.
+						To celebrate the 2022 FIFA World Cup, we are launching an exclusive collection of NFTs featuring iconic footballs portraying h events that will forever live in the history of the “beautiful game.”
 					</p>
 					<p class="welcome-block__paragraph">
-						We value our early adopters and want to make sure that more people can
-						join Museum of Footballs community; hence, the first edition of vFootballs
-						NFT collection will be a free mint. NFT holders will have access to online
-						events in our metaverse and future benefits in the Play-to-Earn game.
+						As a gesture of gratitude to our early adopters, we want to ensure that everyone will be able to join our Museum of Football, and with that said, we are excited to announce our first collection with a free mint. Thus, NFT holders will have access to online events in our metaverse and future benefits in the Play-to-Earn game.
 					</p>
 					<p class="welcome-block__paragraph">
-						Mint vFootballs NFT and get access to the global community of football
-						fans that will rock the world!
+						The vFootballs NFT will have all-access status to some private and exciting events to come! So get ready for more, and stay tuned to our mint day!
 					</p>
 					<HomeCountdown />
 					<div class="d-flex">

@@ -7,8 +7,9 @@
           md="8"
           lg="6"
           class="justify-content-center align-items-center text-center">
-          <p class="welcome-visit__title text-white font-weight-bold mb-0">Visit the first Museum of Footballs in
-            Metaverse</p>
+          <p class="welcome-visit__title text-white font-weight-bold mb-0">
+			VISIT THE FIRST MUSEUM OF FOOTBALLS IN THE METAVERSE
+			</p>
         </b-col>
         <b-col class="col-6 justify-content-center align-items-center text-center">
           <b-button

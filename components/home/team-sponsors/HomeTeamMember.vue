@@ -19,7 +19,7 @@
           <div class="d-flex flex-column align-items-center team-wrapper__content">
             <b-img
               class="w-100"
-              :src="require(`~/assets/img/team-sponsors/${member.imgName}.svg`)"
+              :src="require(`~/assets/img/team-sponsors/${member.imgName}.png`)"
               :alt="member.alt"/>
             <p class="team-wrapper__content-paragraph mt-4 mb-0 text-white text-uppercase font-weight-bold">
               {{ member.name }}</p>
@@ -41,7 +41,7 @@ export default {
   setup() {
     const teamData = [
       {
-        imgName: 'fourth-member',
+        imgName: 'third-member',
         alt: 'first-member',
         name: 'KHABIB NURMAGOMEDOV FOUNDATION',
         describe: 'Founder'
@@ -65,7 +65,7 @@ export default {
         describe: 'Creative Advisor'
       },
       {
-        imgName: 'third-member',
+        imgName: 'fourth-member',
         name: 'FELIPE L. VOROBEY',
         alt: 'fifth-member',
         describe: 'Growth & Marketing'
