@@ -104,13 +104,10 @@ export default {
 			type: String,
 			default: '',
 		},
-		mintCount: {
-			type: Number,
-			default: 1,
-		},
 	},
 	setup(_, { root }) {
 		const mintedTokens = ref([])
+		const mintCount = ref(0)
 		const { name: smartContractName, chainId } = root.$siteConfig.smartContract
 		const hexChainId = `0x${chainId.toString(16)}`
 
@@ -247,6 +244,7 @@ export default {
 			isMetaMask,
 			mintedTokens,
 			isMobile,
+			mintCount
 		}
 	},
 	methods: {

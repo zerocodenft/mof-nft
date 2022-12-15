@@ -1,7 +1,9 @@
 <template>
   <section class="home-benefits container-box mx-auto position-relative">
     <div class="home-benefits__wrapper">
-      <h2 class="home-benefits__header">What benefits the owners of vFootballs NFT get?</h2>
+      <h2 class="home-benefits__header">
+        WHAT ARE THE BENEFITS FOR NFT HOLDERS?
+        </h2>
       <div class="home-benefits__cards">
         <div
           v-for="(card,index) in paragraphData"
