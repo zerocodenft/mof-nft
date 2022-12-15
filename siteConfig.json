@@ -36,7 +36,7 @@
 		"symbol": "vball",
 		"address": "0x7C1051481EC1DCEfB5a854f7Ac2A6fc65D008B05",
 		"collectionSize": 5000,
-		"maxTokensPerTransaction": 5,
+		"maxTokensPerTransaction": 20,
 		"firstXFree": 0,
 		"mintPrice": 0,
 		"chainId": 5,
