@@ -1,6 +1,8 @@
 <template>
   <footer class="footer">
-    <h1 class="footer__logo text-center">LOGO</h1>
+    <h1 class="footer__logo text-center">
+        <b-img width="180px" src="../../assets/img/logos/logo.png"></b-img>
+    </h1>
     <b-row class="d-flex m-0 align-items-center justify-content-center">
       <HeaderNav class="mt-5 mb-4"/>
       <SocialLinks class="mt-2 mb-3"/>

@@ -42,7 +42,7 @@ export default {
       "Key partnerships, promotions, and collaborations with partners/sponsors",
       "Launch metaverse vMuseum of Footballs build by vSpace",
       "Daily activities in Discord: contests, raffles, activity, challenges and leadership contests with the reward of WL spots",
-      "Daily activities in Discord: contests, raffles, activity, challenges and leadership contests with the reward of WL spots"
+      "Launch 1st season of vFootballs NFT Collection"
     ]
     return {secondTabListData}
   }

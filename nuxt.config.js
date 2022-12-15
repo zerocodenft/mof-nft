@@ -43,7 +43,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    title: 'vFootball Mint Page',
+    title: 'vFootballs',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},

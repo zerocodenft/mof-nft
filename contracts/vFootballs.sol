@@ -14,10 +14,9 @@ contract vFootballs is ERC721A, Ownable {
 	uint256 public constant COLLECTION_SIZE = 5000;
 	uint256 public constant TOKENS_PER_TRAN_LIMIT = 20;
 
-	uint256 public MINT_PRICE = 0.05 ether;
-	SaleStatus public saleStatus = SaleStatus.PUBLIC;
+	uint256 public MINT_PRICE = 0 ether;
+	SaleStatus public saleStatus = SaleStatus.PAUSED;
 
-	bool public isRevealed = false;
 	string private _baseURL;
 	string private _hiddenURI;
 	mapping(address => uint256) private _mintedCount;
@@ -28,8 +27,11 @@ contract vFootballs is ERC721A, Ownable {
 
 	/// @notice Reveal metadata for all the tokens
 	function reveal(string memory uri) external onlyOwner {
-		isRevealed = true;
 		_baseURL = uri;
+	}
+
+	function setHiddenURL(string memory uri) external onlyOwner {
+		_hiddenURI = uri;
 	}
 
 	/// @dev override base uri. It will be combined with token ID
@@ -37,7 +39,7 @@ contract vFootballs is ERC721A, Ownable {
 		return _baseURL;
 	}
 
-	function _startTokenId() internal pure override returns(uint256){
+	function _startTokenId() internal pure override returns (uint256) {
 		return 1;
 	}
 
@@ -76,14 +78,12 @@ contract vFootballs is ERC721A, Ownable {
 			'ERC721Metadata: URI query for nonexistent token'
 		);
 
-		if (!isRevealed) {
-			return _hiddenURI;
-		}
-		string memory baseURI = _baseURI();
 		return
-			bytes(baseURI).length > 0
-				? string(abi.encodePacked(baseURI, _toString(tokenId), '.json'))
-				: '';
+			bytes(_baseURI()).length > 0
+				? string(
+					abi.encodePacked(_baseURI(), _toString(tokenId), '.json')
+				)
+				: _hiddenURI;
 	}
 
 	function calcTotal(uint256 count) public view returns (uint256) {

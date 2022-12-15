@@ -21,12 +21,6 @@
           </p>
         </div>
       </div>
-      <b-button class="universal-button mt-5">
-        REMIND ME ABOUT NFT
-        <b-img
-          src="~/assets/img/welcome/button-arrows.svg"
-          alt="arrows"></b-img>
-      </b-button>
     </div>
     <div class="home-benefits__poster position-absolute">
       <b-img
