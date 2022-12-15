@@ -1,7 +1,7 @@
 const type = 'website'
 const twitterCard = 'summary_large_image'
 
-export default ({ logoURL, mainWebsiteURL, companyName, description }) => {
+export default ({ logoURL, url : mainWebsiteURL, title: companyName, description }) => {
 	return [
 		{
 			property: 'og:site_name',

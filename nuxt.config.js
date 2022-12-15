@@ -47,20 +47,6 @@ export default {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'title', name: 'title', content: 'vFootball Mint Page'},
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Limited NFT collection sponsored by Khabib Nurmagomedov, featuring iconic footballs portraying the same football moments that has gifted us the beautiful game. Buy vFootballs NFT and get a acsess to closed community with football superstars and Khabib Nurmagomedov'
-      },
-      {hid: 'og:title', property: 'og:title', content: 'vFootball Mint Page'},
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Limited NFT collection sponsored by Khabib Nurmagomedov, featuring iconic footballs portraying the same football moments that has gifted us the beautiful game. Buy vFootballs NFT and get a acsess to closed community with football superstars and Khabib Nurmagomedov'
-      },
-      {hid: 'og:image', property: 'og:image', content: 'https://mint.zerocodenft.com/img/zerocodenftlogo_dark.svg'},
-      {hid: 'og:url', property: 'og:url', content: 'https://mint.zerocodenft.com'}
     ],
   },
 
