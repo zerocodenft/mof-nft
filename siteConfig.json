@@ -1,14 +1,14 @@
 {
-  "title": "vFootballs Mint Page",
-	 "logo": "LOGO",
-  "description": "Another drop powered by Zero Code NFT",
-  "url": "https://mint.zerocodenft.com",
-  "mainImage": "https://mint.zerocodenft.com/img/zerocodenftlogo_dark.svg",
+  "title": "vFootballs",
+  "logo": "LOGO",
+  "description": "Limited NFT collection Football is the world’s most popular sport, uniting over 4 billion people in powerful emotions. Likewise, our goal is to connect football fans around the globe, transcending borders between nations and clubs",
+  "url": "https://vfootballs.io",
+  "mainImage": "https://vfootballs.io/img/zerocodenftlogo_dark.svg",
   "dropDate": null,
   "instagramURL": "https://instagram.com/zerocodenft",
   "twitterURL": "https://twitter.com/zero_code_nft",
   "discordURL": "https://discord.gg/NdEpB6ZYKn",
-  "blockExplorerUrl": "https://rinkeby.etherscan.io/address/0x402fe7a8c27f483e05ae216473da7f3b6fcef7cf",
+  "blockExplorerUrl": "https://etherscan.io/address/0x402fe7a8c27f483e05ae216473da7f3b6fcef7cf",
   "facebookURL": null,
   "tiktokURL": null,
   "marketplaceURL": null,
@@ -19,16 +19,6 @@
   "mintBtnVersion": "MintButtonWithWert",
   "mintCountSelectorType": 0,
   "configs": {
-    "widgetBot": {
-      "server": "926589433833213962",
-      "channel": "970772831019347968",
-      "notifications": true,
-      "indicator": true,
-      "location": [
-        "bottom",
-        "center"
-      ]
-    },
     "analytics": {
       "gtagId": null
     }
@@ -44,12 +34,12 @@
   "smartContract": {
     "name": "vFootballs",
     "symbol": "vball",
-    "address": "0x7C1051481EC1DCEfB5a854f7Ac2A6fc65D008B05",
+    "address": "0xF9716CB05508d2e7ce0111317f0f3DE5aFCF147c",
     "collectionSize": 5000,
     "maxTokensPerTransaction": 20,
     "firstXFree": 0,
-    "mintPrice": 0.05,
-    "chainId": 5,
+    "mintPrice": 0,
+    "chainId": 1,
     "hasWhitelist": false,
     "whitelist": [],
     "hasDelayedReveal": true,
@@ -413,19 +403,6 @@
         "type": "function"
       },
       {
-        "inputs": [],
-        "name": "isRevealed",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
         "inputs": [
           {
             "internalType": "uint256",
@@ -581,6 +558,19 @@
           }
         ],
         "name": "setApprovalForAll",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "uri",
+            "type": "string"
+          }
+        ],
+        "name": "setHiddenURL",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"

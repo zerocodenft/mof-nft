@@ -19,7 +19,7 @@ export const AVALANCHE_TESTNET_PARAMS = {
 		decimals: 18,
 	},
 	rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
-	blockExplorerUrls: ['https://testnet.snowtrace.io']
+	blockExplorerUrls: ['https://testnet.snowtrace.io'],
 }
 
 export const POLYGON_MAINNET_PARAMS = {
@@ -50,9 +50,9 @@ export const POLYGON_MUMBAI_TESTNET_CONFIG = {
 	},
 	rpcUrls: [
 		'https://polygon-mumbai.g.alchemy.com/v2/pNeHkDmnb5yRz1gD2uKctD9STtnAtmoS',
-		'https://rpc-mumbai.maticvigil.com'
+		'https://rpc-mumbai.maticvigil.com',
 	],
-	blockExplorerUrls: ['https://mumbai.polygonscan.com']
+	blockExplorerUrls: ['https://mumbai.polygonscan.com'],
 }
 
 export const FANTOM_TESTNET_CONFIG = {
@@ -65,9 +65,9 @@ export const FANTOM_TESTNET_CONFIG = {
 	},
 	rpcUrls: [
 		'https://xapi.testnet.fantom.network/lachesis',
-		'https://rpc.testnet.fantom.network'
+		'https://rpc.testnet.fantom.network',
 	],
-	blockExplorerUrls: ['https://testnet.ftmscan.com']
+	blockExplorerUrls: ['https://testnet.ftmscan.com'],
 }
 
 export const FANTOM_MAINNET_CONFIG = {
@@ -82,19 +82,19 @@ export const FANTOM_MAINNET_CONFIG = {
 	blockExplorerUrls: ['https://ftmscan.com'],
 }
 
-
 export const ETHEREUM_GOERLI = {
 	chainId: '0x5',
 	chainName: 'Goerli',
 	nativeCurrency: {
 		name: 'Ethereum',
 		symbol: 'GoerliETH',
-		decimals: 18
+		decimals: 18,
 	},
-	rpcUrls: ["https://eth-goerli.g.alchemy.com/v2/mOLxnODEDgfoeldZVup3j7LEd2TANS3U"],
-	blockExplorerUrls: ['https://goerli.etherscan.io']
+	rpcUrls: [
+		'https://eth-goerli.g.alchemy.com/v2/mOLxnODEDgfoeldZVup3j7LEd2TANS3U',
+	],
+	blockExplorerUrls: ['https://goerli.etherscan.io'],
 }
-
 
 export const ETHEREUM_MAINNET = {
 	chainId: '0x1',
@@ -102,9 +102,11 @@ export const ETHEREUM_MAINNET = {
 	nativeCurrency: {
 		name: 'Ethereum',
 		symbol: 'ETH',
-		decimals: 18
+		decimals: 18,
 	},
-	rpcUrls: ["https://eth-mainnet.alchemyapi.io/v2/Ck_TxTHd6T3d4PO38SpSoloqLdUe_2mh"],
+	rpcUrls: [
+		'https://eth-mainnet.alchemyapi.io/v2/KTOAt8HziAmtVspf4HpKYmWK7gAMs7t1',
+	],
 	blockExplorerUrls: ['https://etherscan.io'],
 }
 
@@ -114,7 +116,7 @@ export const BSC_MAINNET = {
 	nativeCurrency: {
 		name: 'BNB',
 		symbol: 'BNB',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://bsc-dataseed.binance.org'],
 	blockExplorerUrls: ['https://bscscan.com'],
@@ -126,7 +128,7 @@ export const BSC_TESTNET = {
 	nativeCurrency: {
 		name: 'BNB',
 		symbol: 'BNB',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545'],
 	blockExplorerUrls: ['https://testnet.bscscan.com'],
@@ -138,7 +140,7 @@ export const CRONOS_TESTNET = {
 	nativeCurrency: {
 		name: 'CRONOS',
 		symbol: 'TCRO',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://evm-t3.cronos.org'],
 	blockExplorerUrls: ['https://testnet.cronoscan.com'],
@@ -150,7 +152,7 @@ export const CRONOS_MAINNET = {
 	nativeCurrency: {
 		name: 'Cronos',
 		symbol: 'CRO',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://evm.cronos.org'],
 	blockExplorerUrls: ['https://cronoscan.com'],
@@ -162,7 +164,7 @@ export const SONGBIRD_TESTNET = {
 	nativeCurrency: {
 		name: 'Flare',
 		symbol: 'CFLR',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://coston-api.flare.network/ext/bc/C/rpc'],
 	blockExplorerUrls: ['https://coston-explorer.flare.network'],
@@ -174,7 +176,7 @@ export const SONGBIRD_MAINNET = {
 	nativeCurrency: {
 		name: 'Flare',
 		symbol: 'SGB',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://songbird.towolabs.com/rpc'],
 	blockExplorerUrls: ['https://songbird-explorer.flare.network'],
@@ -186,7 +188,7 @@ export const THINKIUM_TESTNET = {
 	nativeCurrency: {
 		name: 'Thinkium',
 		symbol: 'TKM',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://test1.thinkiumrpc.net'],
 	blockExplorerUrls: ['http://browser.thinkiumdev.net'],
@@ -198,7 +200,7 @@ export const THINKIUM_MAINNET = {
 	nativeCurrency: {
 		name: 'Thinkium',
 		symbol: 'TKM',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://proxy1.thinkiumrpc.net'],
 	blockExplorerUrls: ['https://www.thinkiumscan.net'],
@@ -210,9 +212,11 @@ export const ARBITRUM_MAINNET = {
 	nativeCurrency: {
 		name: 'Arbitrum',
 		symbol: 'ETH',
-		decimals: 18
+		decimals: 18,
 	},
-	rpcUrls: ['https://arb-mainnet.g.alchemy.com/v2/tnn0kuKPh4zkQWE6rK8X24xyh8gfLj6Q'],
+	rpcUrls: [
+		'https://arb-mainnet.g.alchemy.com/v2/tnn0kuKPh4zkQWE6rK8X24xyh8gfLj6Q',
+	],
 	blockExplorerUrls: ['https://arbiscan.io'],
 }
 
@@ -222,9 +226,11 @@ export const ARBITRUM_TESTNET = {
 	nativeCurrency: {
 		name: 'Arbitrum',
 		symbol: 'AGOR',
-		decimals: 18
+		decimals: 18,
 	},
-	rpcUrls: ['https://arb-goerli.g.alchemy.com/v2/11IOzUM7AuN5qGgBQ2WEPETQonMUnIT4'],
+	rpcUrls: [
+		'https://arb-goerli.g.alchemy.com/v2/11IOzUM7AuN5qGgBQ2WEPETQonMUnIT4',
+	],
 	blockExplorerUrls: ['https://goerli.arbiscan.io'],
 }
 
@@ -234,7 +240,7 @@ export const OPTIMISM_MAINNET = {
 	nativeCurrency: {
 		name: 'Ethereum',
 		symbol: 'ETH',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://mainnet.optimism.io'],
 	blockExplorerUrls: ['https://optimistic.etherscan.io'],
@@ -246,9 +252,11 @@ export const OPTIMISM_TESTNET = {
 	nativeCurrency: {
 		name: 'Ethereum',
 		symbol: 'ETH',
-		decimals: 18
+		decimals: 18,
 	},
-	rpcUrls: ['https://opt-goerli.g.alchemy.com/v2/3oydbli3tKsKv5gQ2AJguh8xPJLCVjDi'],
+	rpcUrls: [
+		'https://opt-goerli.g.alchemy.com/v2/3oydbli3tKsKv5gQ2AJguh8xPJLCVjDi',
+	],
 	blockExplorerUrls: ['https://goerli-optimism.etherscan.io'],
 }
 
@@ -258,7 +266,7 @@ export const HARMONY_MAINNET = {
 	nativeCurrency: {
 		name: 'Harmony Mainnet',
 		symbol: 'ONE',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://api.harmony.one'],
 	blockExplorerUrls: ['https://explorer.harmony.one/'],
@@ -269,7 +277,7 @@ export const HARMONY_TESTNET = {
 	nativeCurrency: {
 		name: 'Harmony Testnet',
 		symbol: 'ONE',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://api.s0.b.hmny.io'],
 	blockExplorerUrls: ['https://explorer.pops.one/'],
@@ -281,7 +289,7 @@ export const KLAYTN_MAINNET = {
 	nativeCurrency: {
 		name: 'Klaytn Mainnet',
 		symbol: 'KLAY',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://public-node-api.klaytnapi.com/v1/cypress'],
 	blockExplorerUrls: ['https://scope.klaytn.com'],
@@ -292,7 +300,7 @@ export const KLAYTN_TESTNET = {
 	nativeCurrency: {
 		name: 'Klaytn Testnet',
 		symbol: 'KLAY',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://api.baobab.klaytn.net:8651'],
 	blockExplorerUrls: ['https://baobab.scope.klaytn.com/'],
@@ -304,7 +312,7 @@ export const HECO_MAINNET = {
 	nativeCurrency: {
 		name: 'Heco Mainnet',
 		symbol: 'HT',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://http-mainnet.hecochain.com'],
 	blockExplorerUrls: ['https://hecoinfo.com'],
@@ -315,7 +323,7 @@ export const HECO_TESTNET = {
 	nativeCurrency: {
 		name: 'Heco Testnet',
 		symbol: 'HT',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: ['https://http-testnet.hecochain.com'],
 	blockExplorerUrls: ['https://testnet.hecoinfo.com/'],
@@ -327,12 +335,12 @@ export const CUBE_MAINNET = {
 	nativeCurrency: {
 		name: 'Cube Mainnet',
 		symbol: 'CUBE',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: [
 		'https://http-mainnet.cube.network',
 		'https://http-mainnet-sg.cube.network',
-		'https://http-mainnet-us.cube.network'
+		'https://http-mainnet-us.cube.network',
 	],
 	blockExplorerUrls: ['https://www.cubescan.network'],
 }
@@ -342,33 +350,32 @@ export const CUBE_TESTNET = {
 	nativeCurrency: {
 		name: 'Cube Testnet',
 		symbol: 'CUBET',
-		decimals: 18
+		decimals: 18,
 	},
 	rpcUrls: [
 		'https://http-testnet.cube.network',
 		'https://http-testnet-sg.cube.network',
 		'https://http-testnet-jp.cube.network',
-		'https://http-testnet-us.cube.network'
+		'https://http-testnet-us.cube.network',
 	],
 	blockExplorerUrls: ['https://testnet.cubescan.network'],
 }
 
-
 export const testMainChainIdMap = {
-	'5': 1,
-	'97': 56,
-	'80001': 137,
-	'43113': 43114,
-	'4002': 250,
-	'338': 25,
-	'16': 19,
-	'60001': 70001,
-	'421613': 42161,
-	'69': 10,
-	'1666700000': 1666600000,
-	'1001': 8217,
-	'256': 128,
-	'1819':1818
+	5: 1,
+	97: 56,
+	80001: 137,
+	43113: 43114,
+	4002: 250,
+	338: 25,
+	16: 19,
+	60001: 70001,
+	421613: 42161,
+	69: 10,
+	1666700000: 1666600000,
+	1001: 8217,
+	256: 128,
+	1819: 1818,
 }
 
 export const CHAINID_CONFIG_MAP = {
@@ -399,7 +406,7 @@ export const CHAINID_CONFIG_MAP = {
 	'128': HECO_MAINNET,
 	'256': HECO_TESTNET,
 	'1818': CUBE_MAINNET,
-	'1819':CUBE_TESTNET,
+	'1819': CUBE_TESTNET,
 
 	'0x1': ETHEREUM_MAINNET,
 	'0x5': ETHEREUM_GOERLI,
@@ -426,56 +433,56 @@ export const CHAINID_CONFIG_MAP = {
 	'0x2019': KLAYTN_MAINNET,
 	'0x3E9': KLAYTN_TESTNET,
 	'0x80': HECO_MAINNET,
-	'0x100': HECO_TESTNET,	
+	'0x100': HECO_TESTNET,
 	'0x71A': CUBE_MAINNET,
 	'0x71B': CUBE_TESTNET,
 }
 
 export const FAUCETS = {
-	"43113": ["https://faucet.avax-test.network"],
-	"80001": ["https://faucet.polygon.technology"],
-	"5": ["https://goerlifaucet.com","https://goerli-faucet.mudit.blog"],
-	"4002": ["https://faucet.fantom.network"],
-	"97": ["https://testnet.binance.org/faucet-smart"],
-	"338": ["https://cronos.org/faucet"],
-	"16": ["https://faucet.towolabs.com"],
-	"60001": ["https://www.thinkiumdev.net/DApp%20Development/Faucet.html"],
-	"421613": ["https://goerlifaucet.com","https://goerli-faucet.mudit.blog"],
-	'420': ["https://optimismfaucet.xyz"],
-	'166670e0000': ["https://stakely.io/en/faucet/harmony-one"],
-	'1001':["https://baobab.wallet.klaytn.foundation/faucet"],
-	'256': ["https://scan-testnet.hecochain.com/faucet"],
-	'1819':["https://faucet.cube.network"]
+	'43113': ['https://faucet.avax-test.network'],
+	'80001': ['https://faucet.polygon.technology'],
+	'5': ['https://goerlifaucet.com', 'https://goerli-faucet.mudit.blog'],
+	'4002': ['https://faucet.fantom.network'],
+	'97': ['https://testnet.binance.org/faucet-smart'],
+	'338': ['https://cronos.org/faucet'],
+	'16': ['https://faucet.towolabs.com'],
+	'60001': ['https://www.thinkiumdev.net/DApp%20Development/Faucet.html'],
+	'421613': ['https://goerlifaucet.com', 'https://goerli-faucet.mudit.blog'],
+	'420': ['https://optimismfaucet.xyz'],
+	'166670e0000': ['https://stakely.io/en/faucet/harmony-one'],
+	'1001': ['https://baobab.wallet.klaytn.foundation/faucet'],
+	'256': ['https://scan-testnet.hecochain.com/faucet'],
+	'1819': ['https://faucet.cube.network'],
 }
 
 const toHex = (chainId) => {
 	const isHex = isNaN(Number(chainId))
-	return isHex 
-		? chainId 
-		: '0x' + chainId.toString(16)
+	return isHex ? chainId : '0x' + chainId.toString(16)
 }
 
 // get corresponding mainnet config based on testnet chainID
 export function getMainnetConfig(testnetChainId) {
-	if(typeof testnetChainId !== 'string') {
+	if (typeof testnetChainId !== 'string') {
 		testnetChainId = testnetChainId.toString()
 	}
-	if(['0x4', '4', '0x5', '5'].includes(testnetChainId)) return ETHEREUM_MAINNET
-	if(['0xA869', '43113'].includes(testnetChainId)) return AVALANCHE_MAINNET_PARAMS
-	if(['0x89', '80001'].includes(testnetChainId)) return POLYGON_MAINNET_PARAMS
-	if(['0xFA2', '4002'].includes(testnetChainId)) return FANTOM_MAINNET_CONFIG
-	if(['0x61', '97'].includes(testnetChainId)) return BSC_MAINNET
-	if(['0x152', '338'].includes(testnetChainId)) return CRONOS_MAINNET
-	if(['0x10', '16'].includes(testnetChainId)) return SONGBIRD_MAINNET
-	if(['0xEA61', '60001'].includes(testnetChainId)) return THINKIUM_MAINNET
-	if(['0x66EED', '421613'].includes(testnetChainId)) return ARBITRUM_MAINNET
+	if (['0x4', '4', '0x5', '5'].includes(testnetChainId)) return ETHEREUM_MAINNET
+	if (['0xA869', '43113'].includes(testnetChainId))
+		return AVALANCHE_MAINNET_PARAMS
+	if (['0x89', '80001'].includes(testnetChainId)) return POLYGON_MAINNET_PARAMS
+	if (['0xFA2', '4002'].includes(testnetChainId)) return FANTOM_MAINNET_CONFIG
+	if (['0x61', '97'].includes(testnetChainId)) return BSC_MAINNET
+	if (['0x152', '338'].includes(testnetChainId)) return CRONOS_MAINNET
+	if (['0x10', '16'].includes(testnetChainId)) return SONGBIRD_MAINNET
+	if (['0xEA61', '60001'].includes(testnetChainId)) return THINKIUM_MAINNET
+	if (['0x66EED', '421613'].includes(testnetChainId)) return ARBITRUM_MAINNET
 	if (['0x1A4', '420'].includes(testnetChainId)) return OPTIMISM_MAINNET
-	if (["0x6357D2E0", '1666700000'].includes(testnetChainId)) return HARMONY_MAINNET
-	if (["0x3E9", '1001'].includes(testnetChainId)) return KLAYTN_MAINNET
-	if (["0x100", '256'].includes(testnetChainId)) return HECO_MAINNET
-	if (["0x71B", '1819'].includes(testnetChainId)) return CUBE_MAINNET
+	if (['0x6357D2E0', '1666700000'].includes(testnetChainId))
+		return HARMONY_MAINNET
+	if (['0x3E9', '1001'].includes(testnetChainId)) return KLAYTN_MAINNET
+	if (['0x100', '256'].includes(testnetChainId)) return HECO_MAINNET
+	if (['0x71B', '1819'].includes(testnetChainId)) return CUBE_MAINNET
 
-	throw new Error("Matching mainnet config not found")
+	throw new Error('Matching mainnet config not found')
 }
 
 export function getExplorerUrl(chainId) {

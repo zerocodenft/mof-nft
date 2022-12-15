@@ -1,5 +1,3 @@
-const { HIDDEN_METADATA_CID } = process.env;
+const { HIDDEN_METADATA_CID } = process.env
 
-module.exports = [
-  `ipfs://${HIDDEN_METADATA_CID}`,
-];
+module.exports = [`ipfs://${HIDDEN_METADATA_CID}`]
