@@ -9,7 +9,7 @@
           class="d-flex justify-content-center">
           <img
             class="roadmap-tab__image"
-            src="~/assets/img/roadmap/first-tab-ball.svg"
+            src="~/assets/img/welcome/index-ball-3.png"
             alt="ball">
         </b-col>
         <b-col
